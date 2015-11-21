@@ -1,5 +1,32 @@
 angular.module('starter.controllers', [])
 
+.controller('LoginCtrl', function($scope, auth, $state, store) {
+	  function doAuth() {
+	    auth.signin({
+	      closable: false,
+	      // This asks for the refresh token
+	      // So that the user never has to log in again
+	      authParams: {
+	        scope: 'openid offline_access'
+	      }
+	    }, function(profile, idToken, accessToken, state, refreshToken) {
+	      store.set('profile', profile);
+	      store.set('token', idToken);
+	      store.set('refreshToken', refreshToken);
+	      $state.go('app.browse');
+	    }, function(error) {
+	      console.log("There was an error logging in", error);
+	    });
+	  }
+
+	  $scope.$on('$ionic.reconnectScope', function() {
+	    doAuth();
+	  });
+
+	  doAuth();
+	  
+	  
+	})
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
@@ -41,15 +68,25 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
+.controller('PlaylistsCtrl', function($scope,auth,store,$state) {
+	$scope.auth = auth;
   $scope.playlists = [
-    { title: 'Reggae', id: 1 },
+    { title: 'Reggae11', id: 1 },
     { title: 'Chill', id: 2 },
     { title: 'Dubstep', id: 3 },
     { title: 'Indie', id: 4 },
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
   ];
+  
+  $scope.logout = function() {
+	  console.log('logout');
+	    auth.signout();
+	    store.remove('token');
+	    store.remove('profile');
+	    store.remove('refreshToken');
+	    $state.go('login', {}, {reload: true});
+	  };
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
