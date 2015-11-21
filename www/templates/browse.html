@@ -1,10 +1,25 @@
 <ion-view view-title="Browse">
   <ion-content>
-  <span>His name is {{auth.profile.nickname}}</span>
+  <span>Name: {{auth.profile.nickname}}</span>
+  
+  <ion-refresher on-refresh="doRefresh()" 
+  		 pulling-text="Pull to refresh"></ion-refresher>
+    <ion-list>
+      <ion-item ng-if="newItems.length > 0" ng-click="doRefresh()">
+        {{newItems.length}} new items
+      </ion-item>
+      
+      <!-- <ion-item class="item-avatar" ng-repeat="item in items"> -->
+      <ion-item class="item-avatar" collection-repeat="item in items" collection-item-width="'100%'" collection-item-height="'70px'">
+        <img src="{{item.user.picture.thumbnail}} " />
+        <h2>{{item.user.name.first}} {{item.user.name.last}}</h2>
+        <p>{{item.user.location.city}} {{item.user.password}}</p>
+      </ion-item>
+      
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadMore()" distance="5%"></ion-infinite-scroll>
+  
    
-    <h1>Browse</h1>
-    <button class="button button-positive button-block" ng-click="logout()">
-    Logout11
-    </button>
+    
   </ion-content>
 </ion-view>

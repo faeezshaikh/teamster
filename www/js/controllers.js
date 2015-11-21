@@ -68,7 +68,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope,auth,store,$state) {
+.controller('PlaylistsCtrl', function($scope,auth,store,$state,$timeout, PersonService,$cordovaToast) {
 	$scope.auth = auth;
   $scope.playlists = [
     { title: 'Reggae11', id: 1 },
@@ -79,15 +79,71 @@ angular.module('starter.controllers', [])
     { title: 'Cowbell', id: 6 }
   ];
   
-  $scope.logout = function() {
-	  console.log('logout');
-	    auth.signout();
-	    store.remove('token');
-	    store.remove('profile');
-	    store.remove('refreshToken');
-	    $state.go('login', {}, {reload: true});
+  
+	  
+	  
+	  $scope.items = [];
+	  $scope.newItems = [];
+	  
+	  PersonService.GetFeed().then(function(items){
+		$scope.items = items;
+	  });
+	  
+	  $scope.doRefresh = function() {
+		  var addedNumber = 0;
+			if($scope.newItems.length > 0){
+				$scope.items = $scope.newItems.concat($scope.items);
+				addedNumber = 	$scope.newItems.length;
+				//Stop the ion-refresher from spinning
+				$scope.$broadcast('scroll.refreshComplete');
+				
+				$scope.newItems = [];
+			} else {
+				PersonService.GetNewUsers().then(function(items){
+					$scope.items = items.concat($scope.items);
+					addedNumber = items.length;
+					//Stop the ion-refresher from spinning
+					$scope.$broadcast('scroll.refreshComplete');
+				});
+			}
+			var msg = addedNumber==0 ? 'Nothing new yet.' : 'Loaded ' + addedNumber + ' new posts.';
+			$cordovaToast.showShortBottom(msg)
+	        .then(function(success) {
+	            // Do something on success
+	        }, function(error) {
+	            // Handle error
+	        });
 	  };
+	  
+	  $scope.loadMore = function(){
+	    PersonService.GetOldUsers().then(function(items) {
+	      $scope.items = $scope.items.concat(items);
+		  
+	      $scope.$broadcast('scroll.infiniteScrollComplete');
+	    });
+	  };
+	  
+	   var CheckNewItems = function(){
+			$timeout(function(){
+				PersonService.GetNewUsers().then(function(items){
+					$scope.newItems = items.concat($scope.newItems);
+				
+					CheckNewItems();
+				});
+			},10000);
+	   }
+	  
+	  CheckNewItems();
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('PlaylistCtrl', function($scope,auth,store,$state,$timeout, PersonService) {
+	$scope.logout = function() {
+		  console.log('logout');
+		    auth.signout();
+		    store.remove('token');
+		    store.remove('profile');
+		    store.remove('refreshToken');
+		    $state.go('login', {}, {reload: true});
+		  };
+	
 });

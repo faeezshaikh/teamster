@@ -7,7 +7,7 @@
 angular.module(
 		'starter',
 		[ 'ionic', 'starter.controllers', 'auth0', 'angular-storage',
-				'angular-jwt' ])
+				'angular-jwt','ngCordova' ])
 
 .run(function($ionicPlatform,auth,$rootScope,store,jwtHelper) {
 	$ionicPlatform.ready(function() {
@@ -56,9 +56,92 @@ angular.module(
 	  });
 })
 
+.factory('PersonService', function($http){
+	var BASE_URL = "http://api.randomuser.me/";
+	var items = [];
+	
+	function shuffle(array) {
+		  var currentIndex = array.length, temporaryValue, randomIndex ;
+
+		  // While there remain elements to shuffle...
+		  while (0 !== currentIndex) {
+
+		    // Pick a remaining element...
+		    randomIndex = Math.floor(Math.random() * currentIndex);
+		    currentIndex -= 1;
+
+		    // And swap it with the current element.
+		    temporaryValue = array[currentIndex];
+		    array[currentIndex] = array[randomIndex];
+		    array[randomIndex] = temporaryValue;
+		  }
+
+		  return array;
+		}
+	
+	return {
+		GetFeed: function(){
+			
+			return $http({
+//			    url: BASE_URL+'?results=10',
+				url: 'data/data.json',
+			    method: "GET",
+			    
+			    headers: {
+			        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+			    }
+			}).then(function(response){
+				items = response.data.results;
+				return shuffle(items);
+			});
+//			return $http.get(BASE_URL+'?results=10').then(function(response){
+//				items = response.data.results;
+//				return items;
+//			});
+		},
+		GetNewUsers: function(){
+//			return $http.get(BASE_URL+'?results=2').then(function(response){
+//				items = response.data.results;
+//				return items;
+//			});
+			return $http({
+			    url: 'data/data.json',
+			    method: "GET",
+			    
+			    headers: {
+			        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+			    }
+			}).then(function(response){
+				items = response.data.results;
+				return shuffle(items);
+			});
+		},  
+		GetOldUsers: function(){
+//			return $http.get(BASE_URL+'?results=10').then(function(response){
+//				items = response.data.results;
+//				return items;
+//			});
+			return $http({
+//			    url: BASE_URL+'?results10',
+				url: 'data/data.json',
+			    method: "GET",
+			    
+			    headers: {
+			        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+			    }
+			}).then(function(response){
+				items = response.data.results;
+				return shuffle(items);
+			});
+		}
+	}
+})
+
+
 .config(
 		function($stateProvider, $urlRouterProvider, authProvider,
 				jwtInterceptorProvider, $httpProvider) {
+			
 			$stateProvider
 
 			.state('login', {
@@ -100,6 +183,16 @@ angular.module(
 					'menuContent' : {
 						templateUrl : 'templates/playlists.html',
 						controller : 'PlaylistsCtrl'
+					}
+				}
+			})
+			
+			.state('app.logout', {
+				url : '/logout',
+				views : {
+					'menuContent' : {
+						templateUrl : 'templates/logout.html',
+						controller : 'PlaylistCtrl'
 					}
 				}
 			})
