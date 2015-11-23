@@ -2,8 +2,7 @@
 
   <ion-content class="padding">
     Logged in as {{user }}
-  <section class="chats">
-
+  <!-- <section class="chats">
     <span ng-repeat="message in messages">
       <span>
         <div ng-class='from-me'>
@@ -15,11 +14,8 @@
         <p class="notification" ng-bind="message.text"></p>
       </span>
     </span>
-
+  </section> -->
  
- 	
-  </section>
-<!-- 
 <p>
 		Search: <input ng-model="searchText" />
 	</p>
@@ -27,10 +23,10 @@
 		<li
 			ng-repeat="message in messages | orderBy:orderBy | filter:searchText">
 			
-			{{message.user}} ({{message.timestamp | date:'MM/dd/yyyy h:mma'}}) : {{message.text}} delete a message using the $remove method
+			{{message.user}} ({{message.timestamp | date:'MM/dd/yyyy h:mma'}}) : {{message.text}} 
 			<a href="#" ng-click="messages.$remove(message)">X</a>
 		</li>
-	</ul> -->
+	</ul>
 
 
   </ion-content>
