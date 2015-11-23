@@ -232,7 +232,20 @@ angular.module(
 				}
 			});
 			// if none of the above states are matched, use this as the fallback
-			$urlRouterProvider.otherwise('/app/playlists');
+//			$urlRouterProvider.otherwise('/app/chat');
+			
+			// this is due to the chatUI widget with hyperlinks, so if anytime other than the first login a link is clicked go to chat.
+			$urlRouterProvider.otherwise(function($injector, $location){
+				   var state = $injector.get('$state');
+				   if(state.current.name == '') {
+					   state.go('app.playlists');
+				   }
+				   else {
+					   state.go('app/chat');
+				   }
+				   return $location.path();
+				});
+			
 
 			// Configure Auth0
 			authProvider.init({
