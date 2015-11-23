@@ -1,0 +1,51 @@
+<ion-view view-title="Chats" ng-controller="chatController">
+
+  <ion-content class="padding">
+    Logged in as {{user }}
+  <section class="chats">
+
+    <span ng-repeat="message in messages">
+      <span>
+        <div ng-class='from-me'>
+          <p ng-bind="message.text"></p>
+        </div>
+        <div class="clear"></div>
+      </span>
+      <span>
+        <p class="notification" ng-bind="message.text"></p>
+      </span>
+    </span>
+
+ 
+ 	
+  </section>
+<!-- 
+<p>
+		Search: <input ng-model="searchText" />
+	</p>
+	<ul class="chatbox">
+		<li
+			ng-repeat="message in messages | orderBy:orderBy | filter:searchText">
+			
+			{{message.user}} ({{message.timestamp | date:'MM/dd/yyyy h:mma'}}) : {{message.text}} delete a message using the $remove method
+			<a href="#" ng-click="messages.$remove(message)">X</a>
+		</li>
+	</ul> -->
+
+
+  </ion-content>
+
+  <form name="sendMessageForm" ng-submit="addMessage(message)" novalidate>
+      <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach>
+          <label class="item-input-wrapper">
+              <input id="msg-input" ng-change="updateTyping()" ng-model="message" class="input-message" type="text" placeholder="Message">
+          </label>
+          <div class="footer-btn-wrap">
+            <button class="button button-icon icon ion-ios-paperplane footer-btn" type="submit"
+                ng-disabled="!message || message === ''">
+            </button>
+          </div>
+      </ion-footer-bar>
+  </form>
+
+</ion-view>

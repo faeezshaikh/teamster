@@ -7,7 +7,7 @@
 angular.module(
 		'starter',
 		[ 'ionic', 'starter.controllers', 'auth0', 'angular-storage',
-				'angular-jwt','ngCordova' ,'Icecomm'])
+				'angular-jwt','ngCordova' ,'Icecomm','firebase'])
 
 .run(function($ionicPlatform,auth,$rootScope,store,jwtHelper) {
 	$ionicPlatform.ready(function() {
@@ -54,6 +54,9 @@ angular.module(
 	      }
 	    }
 	  });
+	  
+	  
+	  
 })
 
 .factory('PersonService', function($http){
@@ -138,6 +141,28 @@ angular.module(
 })
 
 
+.factory('Message', 
+	function($firebase,auth) {
+		var ref = new Firebase('https://daughertyapp.firebaseio.com/');
+		var messages = $firebase(ref.child('messages')).$asArray();
+ 
+		var Message = {
+			all: messages,
+			create: function (message) {
+//				return messages.$add(message);
+				messages.$add({user: auth.profile.nickname, text: message, timestamp: Firebase.ServerValue.TIMESTAMP});
+			},
+			get: function (messageId) {
+				return $firebase(ref.child('messages').child(messageId)).$asObject();
+			},
+			delete: function (message) {
+				return messages.$remove(message);
+			}
+		};
+ 
+		return Message;
+})
+
 .config(
 		function($stateProvider, $urlRouterProvider, authProvider,
 				jwtInterceptorProvider, $httpProvider) {
@@ -160,11 +185,11 @@ angular.module(
 				}
 			})
 
-			.state('app.search', {
-				url : '/search',
+			.state('app.chat', {
+				url : '/chat',
 				views : {
 					'menuContent' : {
-						templateUrl : 'templates/search.html'
+						templateUrl : 'templates/chat.html'
 					}
 				}
 			})

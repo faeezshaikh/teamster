@@ -1,0 +1,21 @@
+<ion-view view-title="Search"> <ion-content>
+<div ng-controller="chatController">
+	<p>
+		Search: <input ng-model="searchText" />
+	</p>
+	<ul class="chatbox">
+		<!-- arrays are fully sortable and filterable in directives -->
+		<li
+			ng-repeat="message in messages | orderBy:orderBy | filter:searchText">
+			{{message.user}}: {{message.text}} <!-- delete a message using the $remove method -->
+			<a href="#" ng-click="messages.$remove(message)">X</a>
+		</li>
+	</ul>
+	<form ng-submit="addMessage(message)">
+		<input type="text" ng-model="message" /> <input type="submit"
+			value="Send Message" />
+	</form>
+	
+	Logged in as {{user }}
+</div>
+</ion-content> </ion-view>

@@ -146,4 +146,20 @@ angular.module('starter.controllers', [])
 		    $state.go('login', {}, {reload: true});
 		  };
 	
+})
+
+
+.controller('chatController',function($scope,Message,auth){
+ 
+		$scope.user= auth.profile.nickname;
+ 
+		$scope.messages= Message.all;
+ 
+		$scope.addMessage = function(message){
+			Message.create(message);
+			$scope.message = "";
+		};
 });
+
+
+;
