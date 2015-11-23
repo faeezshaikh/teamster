@@ -241,7 +241,7 @@ angular.module(
 					   state.go('app.playlists');
 				   }
 				   else {
-					   state.go('app/chat');
+					   state.go('app.chat');
 				   }
 				   return $location.path();
 				});
