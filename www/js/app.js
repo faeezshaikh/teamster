@@ -7,7 +7,7 @@
 angular.module(
 		'starter',
 		[ 'ionic', 'starter.controllers', 'auth0', 'angular-storage',
-				'angular-jwt','ngCordova' ,'Icecomm','firebase'])
+				'angular-jwt','ngCordova' ,'Icecomm','firebase','ngColorThis'])
 
 .run(function($ionicPlatform,auth,$rootScope,store,jwtHelper) {
 	$ionicPlatform.ready(function() {

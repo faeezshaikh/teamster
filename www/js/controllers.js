@@ -159,6 +159,34 @@ angular.module('starter.controllers', [])
 			Message.create(message);
 			$scope.message = "";
 		};
+		
+		
+		
+		////
+		
+		var chatRef = new Firebase('https://daughertyapp.firebaseio.com/');
+
+		$scope.login = function() {
+		  chatRef.authWithOAuthPopup("twitter", function(error, authData) {
+		    if (error) {
+		      console.log(error);
+		    }
+		  });
+		}
+
+		chatRef.onAuth(function(authData) {
+		  // Once authenticated, instantiate Firechat with our user id and user name
+		  if (authData) {
+//		    initChat(authData);
+			  var chat = new FirechatUI(chatRef, angular.element(document.querySelector('#firechat-wrapper')));
+			  chat.setUser(authData.uid, authData[authData.provider].displayName);
+		  }
+		});
+		
+		
+		
+		
+		////
 });
 
 

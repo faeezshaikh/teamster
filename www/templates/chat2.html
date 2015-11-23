@@ -1,9 +1,20 @@
 <ion-view view-title="Chats" ng-controller="chatController">
 
   <ion-content class="padding">
-    <div id='firechat-wrapper'>
-    <a href='#' ng-click='login("twitter");'>Login</a>
-    </div>
+    Logged in as {{user }}
+<p>
+		Search: <input ng-model="searchText" />
+	</p>
+	<ul class="chatbox">
+		<li
+			ng-repeat="message in messages | orderBy:orderBy | filter:searchText">
+			<span class="text" color-this="color" data-color="message.text">
+			{{message.user}}  </span>
+			<small>({{message.timestamp | date:'MM/dd/yyyy h:mma'}}) </small>: {{message.text}}
+			<!-- <a href="#" ng-click="messages.$remove(message)">X</a> -->
+		</li>
+	</ul>
+
 
   </ion-content>
 
