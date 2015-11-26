@@ -149,45 +149,62 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('chatController',function($scope,Message,auth){
- 
-		$scope.user= auth.profile.nickname;
- 
-		$scope.messages= Message.all;
- 
-		$scope.addMessage = function(message){
-			Message.create(message);
-			$scope.message = "";
-		};
-		
-		
-		
-		////
-		
+.controller('chatController',function($scope,auth,$state,$window,$firebaseAuth){
+	
 		var chatRef = new Firebase('https://daughertyapp.firebaseio.com/');
-
-		$scope.login = function() {
-		  chatRef.authWithOAuthPopup("twitter", function(error, authData) {
-		    if (error) {
-		      console.log(error);
-		    }
-		  });
+		var auth = $firebaseAuth(chatRef);
+		$scope.msg = "Initializing chat..";
+		$scope.date = new Date();
+		
+		$scope.login = function(socialPlatform) {
+			$scope.loginProgress = true;
+			auth.$authWithOAuthPopup(socialPlatform).then(function(authData) {
+			    console.log("Logged in as:", authData.uid);
+			    $scope.loggedIn = true;
+				$scope.loginProgress = false;
+			  }).catch(function(error) {
+				  console.log("Authentication failed:", error);
+			      $scope.loginProgress = false;
+			      console.log(error);
+			      $scope.msg = "";
+			      $( "#firechat-wrapper" ).effect( "shake",{times:4},1000 );
+			  });
 		}
-
-		chatRef.onAuth(function(authData) {
+		
+		$scope.logout = function() {
+			chatRef.unauth();
+			$scope.msg = "Signing out of chat..";
+			$scope.loggedIn = false;
+			$scope.loginProgress = true;
+			$state.go('app.playlists'); // adding this for device.. location.href doesnt work on device
+			$window.location.reload();
+			
+		}
+		auth.$onAuth(function(authData) {
 		  // Once authenticated, instantiate Firechat with our user id and user name
 		  if (authData) {
-//		    initChat(authData);
+			  $scope.loginProgress = false;
+			  $scope.loggedIn = true;
+			  if(authData.provider == 'facebook') {
+				  $scope.userName = authData.facebook.displayName;
+				  $scope.userImg = authData.facebook.profileImageURL;
+				  $scope.userEmail = authData.facebook.email; // Email works only if user has exposed.
+			  }
+			  if(authData.provider == 'twitter') {
+				  $scope.userName = authData.twitter.displayName;
+				  $scope.userImg = authData.twitter.profileImageURL;
+				  $scope.userEmail = authData.twitter.email;
+			  }
+			  if(authData.provider == 'google') {
+				  $scope.userName = authData.google.displayName;
+				  $scope.userImg = authData.google.profileImageURL;
+				  $scope.userEmail = authData.google.email;
+			  }
 			  var chat = new FirechatUI(chatRef, angular.element(document.querySelector('#firechat-wrapper')));
 			  chat.setUser(authData.uid, authData[authData.provider].displayName);
 		  }
 		});
 		
-		
-		
-		
-		////
 });
 
 
-;

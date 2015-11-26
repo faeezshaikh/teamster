@@ -7,7 +7,7 @@
 angular.module(
 		'starter',
 		[ 'ionic', 'starter.controllers', 'auth0', 'angular-storage',
-				'angular-jwt','ngCordova' ,'Icecomm','firebase','ngColorThis'])
+				'angular-jwt','ngCordova' ,'firebase'])
 
 .run(function($ionicPlatform,auth,$rootScope,store,jwtHelper) {
 	$ionicPlatform.ready(function() {
@@ -140,28 +140,27 @@ angular.module(
 	}
 })
 
-
-.factory('Message', 
-	function($firebase,auth) {
-		var ref = new Firebase('https://daughertyapp.firebaseio.com/');
-		var messages = $firebase(ref.child('messages')).$asArray();
- 
-		var Message = {
-			all: messages,
-			create: function (message) {
-//				return messages.$add(message);
-				messages.$add({user: auth.profile.nickname, text: message, timestamp: Firebase.ServerValue.TIMESTAMP});
-			},
-			get: function (messageId) {
-				return $firebase(ref.child('messages').child(messageId)).$asObject();
-			},
-			delete: function (message) {
-				return messages.$remove(message);
-			}
-		};
- 
-		return Message;
-})
+// This is for one on one chat..
+//.factory('Message', 
+//	function($firebase,auth) {
+//		var ref = new Firebase('https://daughertyapp.firebaseio.com/');
+//		var messages = $firebase(ref.child('messages')).$asArray();
+// 
+//		var Message = {
+//			all: messages,
+//			create: function (message) {
+//				messages.$add({user: auth.profile.nickname, text: message, timestamp: Firebase.ServerValue.TIMESTAMP});
+//			},
+//			get: function (messageId) {
+//				return $firebase(ref.child('messages').child(messageId)).$asObject();
+//			},
+//			delete: function (message) {
+//				return messages.$remove(message);
+//			}
+//		};
+// 
+//		return Message;
+//})
 
 .config(
 		function($stateProvider, $urlRouterProvider, authProvider,
