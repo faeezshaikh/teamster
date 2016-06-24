@@ -3,7 +3,9 @@ angular.module(
     'angular-jwt', 'ngCordova', 'firebase','angularMoment'
   ])
 
-.run(function($ionicPlatform, auth, $rootScope, store, jwtHelper) {
+.run(function($ionicPlatform, auth, $rootScope, store, jwtHelper,$ionicModal) {
+	
+	
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -18,106 +20,23 @@ angular.module(
     }
 
   });
+  
+  
+  $rootScope.$on('$stateChangeStart', function (event, toState, toParams,$location) {
+	    var requireLogin = toState.data.requireLogin;
 
-})
-.constant("FIREBASE_URL", 'https://daughertyapp.firebaseio.com/')
-.factory('PersonService', function($http) {
-  var BASE_URL = "http://api.randomuser.me/";
-  var items = [];
-  var avatar;
-  var loggedinUser = {};
+	    if (requireLogin && typeof $rootScope.currentUser === 'undefined') {
+	      event.preventDefault();
+	      // get me a login modal!
+	      $ionicModal.fromTemplateUrl('templates/login.html', {
+				scope : $rootScope
+			}).then(function(modal) {
+				$rootScope.explModal = modal;
+				$rootScope.explModal.show();
+			});
+	    }
+	  });
 
-  function shuffle(array) {
-    var currentIndex = array.length,
-      temporaryValue, randomIndex;
-
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-  }
-
-  return {
-	
-	  SetUserDetails: function(name,img,email) {
-		  loggedinUser.name = name;
-		  loggedinUser.img = img;
-		  loggedinUser.email = email;
-	  },
-	  GetUserDetails: function() {
-		  return loggedinUser;
-	  },
-	  GetAvatar : function() {
-		  return avatar;
-	  },
-	  SetAvatar: function(url) {
-		  avatar = url;
-	  },
-    GetFeed: function() {
-
-      return $http({
-        //			    url: BASE_URL+'?results=10',
-        url: 'data/data.json',
-        method: "GET",
-
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
-      }).then(function(response) {
-        items = response.data.results;
-        return shuffle(items);
-      });
-      //			return $http.get(BASE_URL+'?results=10').then(function(response){
-      //				items = response.data.results;
-      //				return items;
-      //			});
-    },
-    GetNewUsers: function() {
-      //			return $http.get(BASE_URL+'?results=2').then(function(response){
-      //				items = response.data.results;
-      //				return items;
-      //			});
-      return $http({
-        url: 'data/data.json',
-        method: "GET",
-
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
-      }).then(function(response) {
-        items = response.data.results;
-        return shuffle(items);
-      });
-    },
-    GetOldUsers: function() {
-      //			return $http.get(BASE_URL+'?results=10').then(function(response){
-      //				items = response.data.results;
-      //				return items;
-      //			});
-      return $http({
-        //			    url: BASE_URL+'?results10',
-        url: 'data/data.json',
-        method: "GET",
-
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
-      }).then(function(response) {
-        items = response.data.results;
-        return shuffle(items);
-      });
-    }
-  }
 })
 
 // This is for one on one chat..
@@ -143,11 +62,10 @@ angular.module(
 //})
 
 .config(
-    function($stateProvider, $urlRouterProvider, authProvider,
-      jwtInterceptorProvider, $httpProvider) {
+    function($stateProvider, $urlRouterProvider) {
 
       $stateProvider
-
+      
 
       .state('app', {
         url: '/app',
@@ -155,7 +73,7 @@ angular.module(
         templateUrl: 'templates/menu.html',
         controller: 'AppCtrl',
         data: {
-          requiresLogin: true
+          requireLogin: true
         }
       })
 
@@ -177,6 +95,26 @@ angular.module(
           }
         }
       })
+      
+      .state('app.login', {
+        url: '/login',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/login.html',
+            controller: 'FeedsCtrl'
+          }
+        }
+      })
+
+       .state('app.logout', {
+    	   url: '/logout',
+    	   views: {
+    	          'menuContent': {
+    	            templateUrl: 'templates/logout.html',
+    	            controller: 'FeedsCtrl'
+    	          }
+    	        }
+      })
 
       .state('app.single', {
         url: '/feeds/:feedId',
@@ -194,10 +132,11 @@ angular.module(
       $urlRouterProvider.otherwise(function($injector, $location) {
         var state = $injector.get('$state');
         if (state.current.name == '') {
-          state.go('app.feeds');
-        } else {
           state.go('app.chat');
         }
+//        } else {
+//          state.go('app.feeds');
+//        }
         return $location.path();
       });
 

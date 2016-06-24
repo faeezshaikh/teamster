@@ -1,25 +1,32 @@
 <ion-modal-view>
-  <ion-header-bar>
+ <!--  <ion-header-bar>
     <h1 class="title">Login1</h1>
     <div class="buttons">
       <button class="button button-clear" ng-click="closeLogin()">Close</button>
     </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
-      </div>
-    </form>
+  </ion-header-bar> -->
+  <ion-content ng-controller="chatController">
+   <div >
+	    
+			   <div class="row text-center">
+				   <div class="col col-100"><img style="width:50%;height:50%;"src="img/chatbubbles2.svg"></div>
+			   </div>
+			
+				
+				<a class="btn btn-block btn-social btn-facebook" style="width:80%;margin-left:auto;margin-right:auto;"
+					ng-click='login("facebook");'> <span class="fa fa-facebook"></span>
+					Sign in with Facebook
+				</a> 
+				<a class="btn btn-block btn-social btn-google" style="width:80%;margin-left:auto;margin-right:auto;"
+					ng-click='login("google");'> <span class="fa fa-google"></span>
+					Sign in with Google
+				</a>
+				<a class="btn btn-block btn-social btn-twitter" style="width:80%;margin-left:auto;margin-right:auto;"
+					ng-click='login("twitter");'> <span class="fa fa-twitter"></span>
+					Sign in with Twitter
+				</a> 
+				<p></p><p></p><p></p>
+				<div class="text-center">© Copyright 2015</div>
+		</div>
   </ion-content>
 </ion-modal-view>

@@ -172,9 +172,9 @@ angular.module('starter.controllers', [])
 			$scope.data.messages.$add({
 				feedId: $scope.feedId,
 				text: $scope.data.message,
-				username: 'fshaikh',
+				username: $scope.getName(),
 				userId: 'asd@gmail.com',
-				profilePic: '',
+				profilePic: $scope.getImg(),
 				timestamp: new Date().getTime()
 			});
 			
@@ -198,6 +198,113 @@ angular.module('starter.controllers', [])
  
 })
 
+
+.constant("FIREBASE_URL", 'https://daughertyapp.firebaseio.com/')
+.factory('PersonService', function($http) {
+  var BASE_URL = "http://api.randomuser.me/";
+  var items = [];
+  var avatar,loginState;
+  var loggedinUser = {};
+
+  function shuffle(array) {
+    var currentIndex = array.length,
+      temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
+
+  return {
+	
+	  SetLoginState: function(val) {
+		  loginState = val;
+	  },
+	  GetLoginState: function() {
+		  return loginState;
+	  },
+	  SetUserDetails: function(name,img,email) {
+		  loggedinUser.name = name;
+		  loggedinUser.img = img;
+		  loggedinUser.email = email;
+	  },
+	  GetUserDetails: function() {
+		  return loggedinUser;
+	  },
+	  GetAvatar : function() {
+		  return avatar;
+	  },
+	  SetAvatar: function(url) {
+		  avatar = url;
+	  },
+    GetFeed: function() {
+
+      return $http({
+        //			    url: BASE_URL+'?results=10',
+        url: 'data/data.json',
+        method: "GET",
+
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        }
+      }).then(function(response) {
+        items = response.data.results;
+        return shuffle(items);
+      });
+      //			return $http.get(BASE_URL+'?results=10').then(function(response){
+      //				items = response.data.results;
+      //				return items;
+      //			});
+    },
+    GetNewUsers: function() {
+      //			return $http.get(BASE_URL+'?results=2').then(function(response){
+      //				items = response.data.results;
+      //				return items;
+      //			});
+      return $http({
+        url: 'data/data.json',
+        method: "GET",
+
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        }
+      }).then(function(response) {
+        items = response.data.results;
+        return shuffle(items);
+      });
+    },
+    GetOldUsers: function() {
+      //			return $http.get(BASE_URL+'?results=10').then(function(response){
+      //				items = response.data.results;
+      //				return items;
+      //			});
+      return $http({
+        //			    url: BASE_URL+'?results10',
+        url: 'data/data.json',
+        method: "GET",
+
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        }
+      }).then(function(response) {
+        items = response.data.results;
+        return shuffle(items);
+      });
+    }
+  }
+})
+
 .controller('chatController', function($scope, auth, $state, $window, $firebase, $firebaseAuth,$rootScope,PersonService) {
 
   var chatRef = new Firebase('https://daughertyapp.firebaseio.com/');
@@ -211,6 +318,7 @@ angular.module('starter.controllers', [])
       console.log("Logged in as:", authData.uid);
       $scope.loggedIn = true;
       $scope.loginProgress = false;
+      PersonService.SetLoginState(true);
     }).catch(function(error) {
       console.log("Authentication failed:", error);
       $scope.loginProgress = false;
@@ -223,6 +331,7 @@ angular.module('starter.controllers', [])
   }
 
   $scope.logout = function() {
+	  PersonService.SetLoginState(false);
     chatRef.unauth();
     $scope.msg = "Signing out of chat..";
     $scope.loggedIn = false;
@@ -236,6 +345,9 @@ angular.module('starter.controllers', [])
     if (authData) {
       $scope.loginProgress = false;
       $scope.loggedIn = true;
+      $rootScope.currentUser = "user";
+      $scope.explModal.hide();
+      $window.location.href = "#/app/chat/";
       if (authData.provider == 'facebook') {
         $scope.userName = authData.facebook.displayName;
         $scope.userImg = authData.facebook.profileImageURL;
