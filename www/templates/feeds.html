@@ -27,7 +27,7 @@
   </ion-content>
 </ion-view>
  -->
-<ion-view view-title="Browse">
+<ion-view view-title="Feeds">
 
  <ion-pane>
       <!-- <ion-header-bar class="bar-positive">
@@ -67,11 +67,11 @@
           </div>
 
           <div class="item tabs tabs-secondary tabs-icon-left">
-            <a class="tab-item" href="#">
-              <i class="icon ion-thumbsup"></i>
+            <a class="tab-item" ng-click= "liked(item.id)">
+               <i ng-class="liked==true ? 'icon ion-thumbsup' : 'icon ion-thumbsup balanced'"></i>
               Like
             </a>
-            <a class="tab-item" href="#">
+            <a class="tab-item" href="#/app/feeds/{{item.id}}">
               <i class="icon ion-chatbox"></i>
               Comment
             </a>
