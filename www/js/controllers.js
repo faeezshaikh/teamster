@@ -44,29 +44,7 @@ angular.module('starter.controllers', [])
 
 .controller('FeedsCtrl', function($scope, auth, store, $state, $timeout, PersonService, $cordovaToast) {
   $scope.auth = auth;
-  $scope.playlists = [{
-    title: 'Reggae11',
-    id: 1
-  }, {
-    title: 'Chill',
-    id: 2
-  }, {
-    title: 'Dubstep',
-    id: 3
-  }, {
-    title: 'Indie',
-    id: 4
-  }, {
-    title: 'Rap',
-    id: 5
-  }, {
-    title: 'Cowbell',
-    id: 6
-  }];
-
-
-
-
+  
   $scope.items = [];
   $scope.newItems = [];
 
@@ -118,18 +96,37 @@ angular.module('starter.controllers', [])
     }, 10000);
   }
 
-  CheckNewItems();
+ // CheckNewItems();
   
-  $scope.liked = function(feedId) {
-	  console.log('Liked' , feedId);
-	  
-  }
 })
 
-.controller('FeedCtrl', function($scope, auth, store, $state, $timeout, PersonService) {
+//.controller('FeedCtrl', function($scope, auth, store, $state, $timeout, PersonService) {
+//  $scope.logout = function() {
+//    console.log('logout');
+//    auth.signout();
+//    store.remove('token');
+//    store.remove('profile');
+//    store.remove('refreshToken');
+//    $state.go('login', {}, {
+//      reload: true
+//    });
+//    
+//    
+//    $scope.data.messages = [{'text': 'hello','username': 'Faeez','profilePic':''},
+//                            {'text': 'hello22','username': 'FSz','profilePic':''},
+//    						{'text': 'hello33','username': 'sdfs','profilePic':''}];
+//  };
+//
+//})
+//
+
+.controller('FeedCtrl', function($scope, 
+		 store, $state,$stateParams,
+         $ionicScrollDelegate,$firebaseArray,$firebase, 
+         FIREBASE_URL,PersonService) {
+	
   $scope.logout = function() {
     console.log('logout');
-    auth.signout();
     store.remove('token');
     store.remove('profile');
     store.remove('refreshToken');
@@ -138,10 +135,70 @@ angular.module('starter.controllers', [])
     });
   };
 
+  $scope.feedId = $stateParams.feedId;
+  
+  // TBD: From FeedId call service to get FeedName (Details etc).
+  console.log('feedId -->',$scope.feedId);
+	$scope.data = {
+		messages: [],
+		message: '',
+		loading: true,
+		showInfo: false
+	};
+	var messagesRef = new Firebase('https://daughertyapp.firebaseio.com/');
+	
+	$scope.loadMessages = function () {
+
+		console.log("Loading data for show ", $scope.feedId);
+
+		var query = messagesRef
+			.child("messages")
+			.orderByChild("feedId")
+			.equalTo($scope.feedId)
+			.limitToLast(200);
+
+		$scope.data.messages = $firebaseArray(query);
+		$scope.data.messages.$loaded().then(function (data) {
+			console.log("AngularFire $loaded");
+			$scope.data.loading = false;
+			$ionicScrollDelegate.$getByHandle('show-page').scrollBottom(true);
+		});
+
+	};
+
+	$scope.sendMessage = function () {
+
+		if ($scope.data.message) {
+			$scope.data.messages.$add({
+				feedId: $scope.feedId,
+				text: $scope.data.message,
+				username: 'fshaikh',
+				userId: 'asd@gmail.com',
+				profilePic: '',
+				timestamp: new Date().getTime()
+			});
+			
+			$scope.data.message = '';
+			$ionicScrollDelegate.$getByHandle('show-page').scrollBottom(true);
+		}
+
+	};
+
+	$scope.loadMessages();
+	
+	$scope.getName = function() {
+//		console.log('name:' ,PersonService.GetUserDetails().name);
+		return PersonService.GetUserDetails().name;
+	};
+	
+	$scope.getImg = function() {
+		console.log(PersonService.GetAvatar());
+		return PersonService.GetAvatar();
+	};
+ 
 })
 
-
-.controller('chatController', function($scope, auth, $state, $window, $firebaseAuth) {
+.controller('chatController', function($scope, auth, $state, $window, $firebase, $firebaseAuth,$rootScope,PersonService) {
 
   var chatRef = new Firebase('https://daughertyapp.firebaseio.com/');
   var auth = $firebaseAuth(chatRef);
@@ -170,7 +227,7 @@ angular.module('starter.controllers', [])
     $scope.msg = "Signing out of chat..";
     $scope.loggedIn = false;
     $scope.loginProgress = true;
-    $state.go('app.playlists'); // adding this for device.. location.href doesnt work on device
+    $state.go('app.feeds'); // adding this for device.. location.href doesnt work on device
     $window.location.reload();
 
   }
@@ -183,20 +240,27 @@ angular.module('starter.controllers', [])
         $scope.userName = authData.facebook.displayName;
         $scope.userImg = authData.facebook.profileImageURL;
         $scope.userEmail = authData.facebook.email; // Email works only if user has exposed.
+        PersonService.SetAvatar(authData.facebook.profileImageURL);
+        PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail);
       }
       if (authData.provider == 'twitter') {
         $scope.userName = authData.twitter.displayName;
         $scope.userImg = authData.twitter.profileImageURL;
         $scope.userEmail = authData.twitter.email;
+        PersonService.SetAvatar(authData.twitter.profileImageURL);
+        PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail);
       }
       if (authData.provider == 'google') {
         $scope.userName = authData.google.displayName;
         $scope.userImg = authData.google.profileImageURL;
         $scope.userEmail = authData.google.email;
+        PersonService.SetAvatar(authData.google.profileImageURL);
+        PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail);
       }
       var chat = new FirechatUI(chatRef, angular.element(document.querySelector('#firechat-wrapper')));
       chat.setUser(authData.uid, authData[authData.provider].displayName);
     }
   });
+  
 
 });

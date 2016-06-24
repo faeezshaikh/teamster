@@ -3,25 +3,25 @@
   "main": "build/auth0-angular.js",
   "dependencies": {
     "angular": "*",
-    "auth0.js": ">= 5.2.2",
-    "auth0-lock": ">= 6.3.0"
+    "auth0-lock": ">= 6.3.0",
+    "auth0.js": ">= 5.2.2"
   },
   "devDependencies": {
-    "angular-mocks": "~1.3.0",
-    "angular-route": "~1.3.0"
+    "angular-mocks": "~1.5.5",
+    "angular-route": "~1.5.5"
   },
   "resolutions": {
-    "angular": "1.3.0"
+    "angular": "1.5.5"
   },
   "homepage": "https://github.com/auth0/auth0-angular",
-  "version": "4.0.5",
-  "_release": "4.0.5",
+  "version": "4.2.3",
+  "_release": "4.2.3",
   "_resolution": {
     "type": "version",
-    "tag": "v4.0.5",
-    "commit": "6eb64a3553719b220844af895ca71e279c509ca9"
+    "tag": "v4.2.3",
+    "commit": "8e3271a6247e3e15e48ef5004b7731146523acf0"
   },
-  "_source": "git://github.com/auth0/auth0-angular.git",
+  "_source": "https://github.com/auth0/auth0-angular.git",
   "_target": "4.*",
   "_originalSource": "auth0-angular"
 }

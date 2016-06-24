@@ -67,11 +67,11 @@
           </div>
 
           <div class="item tabs tabs-secondary tabs-icon-left">
-            <a class="tab-item" ng-click= "liked(item.id)">
+            <a class="tab-item" ng-click= "liked=!liked">
                <i ng-class="liked==true ? 'icon ion-thumbsup' : 'icon ion-thumbsup balanced'"></i>
               Like
             </a>
-            <a class="tab-item" href="#/app/feeds/{{item.id}}">
+            <a class="tab-item" href="#/app/feeds/{{item.user.SSN}}">
               <i class="icon ion-chatbox"></i>
               Comment
             </a>

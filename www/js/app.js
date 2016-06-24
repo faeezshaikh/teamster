@@ -1,6 +1,6 @@
 angular.module(
   'starter', ['ionic', 'starter.controllers', 'auth0', 'angular-storage',
-    'angular-jwt', 'ngCordova', 'firebase'
+    'angular-jwt', 'ngCordova', 'firebase','angularMoment'
   ])
 
 .run(function($ionicPlatform, auth, $rootScope, store, jwtHelper) {
@@ -20,10 +20,12 @@ angular.module(
   });
 
 })
-
+.constant("FIREBASE_URL", 'https://daughertyapp.firebaseio.com/')
 .factory('PersonService', function($http) {
   var BASE_URL = "http://api.randomuser.me/";
   var items = [];
+  var avatar;
+  var loggedinUser = {};
 
   function shuffle(array) {
     var currentIndex = array.length,
@@ -46,6 +48,21 @@ angular.module(
   }
 
   return {
+	
+	  SetUserDetails: function(name,img,email) {
+		  loggedinUser.name = name;
+		  loggedinUser.img = img;
+		  loggedinUser.email = email;
+	  },
+	  GetUserDetails: function() {
+		  return loggedinUser;
+	  },
+	  GetAvatar : function() {
+		  return avatar;
+	  },
+	  SetAvatar: function(url) {
+		  avatar = url;
+	  },
     GetFeed: function() {
 
       return $http({

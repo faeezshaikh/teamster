@@ -199,6 +199,14 @@ SigninPanel.prototype.bindAll = function() {
 
   this.query('input').val('');
 
+  if (this.options.initialEmail) {
+    this.query('.a0-email input').val(this.options.initialEmail);
+  }
+
+  if (this.options.initialPassword) {
+    this.query('.a0-password input').val(this.options.initialPassword);
+  }
+
   // show email, password, separator and button if there are enterprise/db connections
   var anyEnterpriseOrDbConnection = options._isThereAnyEnterpriseOrDbConnection();
   var anySocialConnection = options._isThereAnySocialConnection();
@@ -233,6 +241,9 @@ SigninPanel.prototype.onemailinput = function (e) {
 
   var isEnterpriseConnection = this.options._isEnterpriseConnection(mailField.val() || '');
   var adConnection = this.options._findConnectionByADDomain(emailDomain);
+
+  var widget = this.widget;
+
   var msg;
 
   if ('username' !== this.options.usernameStyle && this.options.gravatar) {
@@ -269,6 +280,7 @@ SigninPanel.prototype.onemailinput = function (e) {
 
   if (isEnterpriseConnection) {
     this.query('.a0-sso-notice-container').removeClass('a0-hide');
+    this.query('.a0-forgot-pass').addClass('a0-hide');
     this.query('.a0-password').addClass('a0-hide');
     this.query('.a0-db-actions').addClass('a0-hide');
     this.oldText = nextButton.text();
@@ -279,15 +291,17 @@ SigninPanel.prototype.onemailinput = function (e) {
     nextButton.text(msg);
     nextButton.attr('title', msg);
 
+    widget.emit('enterprise ready');
+
     return pwdField.attr('disabled', true);
   }
 
   this.query('.a0-sso-notice-container').addClass('a0-hide');
+  this.query('.a0-forgot-pass').removeClass('a0-hide');
   this.query('.a0-password').removeClass('a0-hide');
   this.query('.a0-db-actions').removeClass('a0-hide');
 
   // If HRD was triggered by a previous panel, return to the panel if we no longer have HRD.
-  var widget = this.widget;
   var previousPanel = widget._getPreviousPanel();
   if (previousPanel) {
     widget._clearPreviousPanel();
