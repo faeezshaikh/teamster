@@ -120,10 +120,33 @@ angular.module('starter.controllers', [])
 //})
 //
 
+
+.controller('GrpsCtrl', function($scope, 
+		 store, $state,$stateParams,
+         $ionicScrollDelegate,$firebaseArray,$firebase, 
+         FIREBASE_URL,PersonService) {
+	
+	$scope.items = [
+	                { 'image' : 'https://randomuser.me/api/portraits/med/men/43.jpg',
+	                	'title': 'Tech Planning',
+	                		'date': 'May 01,2018',
+	                			'people' : 'Tom, Rob, Paul, Mike'
+	                	
+	                },
+	                { 'image' : 'https://randomuser.me/api/portraits/med/men/43.jpg',
+	                	'title': 'Tech Planning',
+	                		'date': 'May 01,2018',
+	                			'people' : 'Tom, Rob, Paul, Mike'
+	                	
+	                }
+	                ];
+})
+
 .controller('FeedCtrl', function($scope, 
 		 store, $state,$stateParams,
          $ionicScrollDelegate,$firebaseArray,$firebase, 
          FIREBASE_URL,PersonService) {
+	
 	
   $scope.logout = function() {
     console.log('logout');
@@ -173,7 +196,6 @@ angular.module('starter.controllers', [])
 				feedId: $scope.feedId,
 				text: $scope.data.message,
 				username: $scope.getName(),
-				userId: 'asd@gmail.com',
 				profilePic: $scope.getImg(),
 				timestamp: new Date().getTime()
 			});

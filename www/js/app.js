@@ -85,6 +85,7 @@ angular.module(
           }
         }
       })
+     
 
       .state('app.feeds', {
         url: '/feeds',
@@ -115,7 +116,14 @@ angular.module(
     	          }
     	        }
       })
-
+      .state('app.groups', {
+        url: '/groups',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/groups.html'
+          }
+        }
+      })
       .state('app.single', {
         url: '/feeds/:feedId',
         views: {

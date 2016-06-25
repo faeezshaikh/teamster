@@ -29,22 +29,18 @@
  -->
 <ion-view view-title="Feeds">
 
- <ion-pane>
-      <!-- <ion-header-bar class="bar-positive">
-        <div class="buttons">
-          <button class="button button-icon ion-navicon"></button>
-        </div>
-        <h1 class="title">Things</h1>
-      </ion-header-bar> -->
+ <ion-pane class="background-color-grey">
+    
       
       <ion-content view-title="Feed" header-shrink scroll-event-interval="5">
         <div style="height: 10px;"></div>
-      <!-- <span>Name: {{auth.profile.nickname}}</span> -->
       <ion-refresher on-refresh="doRefresh()" pulling-text="Pull to refresh"></ion-refresher>
   
  	 <ion-item ng-if="newItems.length > 0" ng-click="doRefresh()">
         {{newItems.length}} new items
       </ion-item>
+      
+      
         <div class="list card" ng-repeat="item in items">
 
           <div class="item item-avatar">
