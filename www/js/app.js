@@ -1,9 +1,9 @@
 angular.module(
   'starter', ['ionic', 'starter.controllers', 'auth0', 'angular-storage',
-    'angular-jwt', 'ngCordova', 'firebase','angularMoment'
+     'ngCordova', 'firebase','angularMoment'
   ])
 
-.run(function($ionicPlatform, auth, $rootScope, store, jwtHelper,$ionicModal) {
+.run(function($ionicPlatform, auth, $rootScope, store,$ionicModal) {
 	
 	
   $ionicPlatform.ready(function() {
