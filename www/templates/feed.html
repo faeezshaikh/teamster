@@ -7,66 +7,55 @@
 		</button >
 	</ion-nav-buttons >
 
-	<ion-content delegate-handle="show-page" >
+	<ion-content  >
 
-		<!-- Loading Indicator -->
-		<div class="loading"  ng-if="data.loading" >
-			<ion-spinner icon="ripple" ></ion-spinner >
-			<p >Loading messages...</p >
-		</div >
+	<div class="list card" ng-controller="FeedDetailsCtrl">
 
-		<!-- Empty room message -->
-		<div class="loading"
-		     ng-show="!data.loading && data.messages.length == 0" >
-			<p >This room is empty, be the first to post!</p >
-		</div >
+          <div class="item item-avatar">
+            <img src="{{item.user.picture.thumbnail}}">
+            <h2>Marty McFly</h2>
+            <p>November 05, 1955</p>
+          </div>
 		
-	
-		<!-- Discussion list Old Style - comments style-->
-	<!-- 	<ol class="list"   >
-		    <li class="item item-avatar" ng-repeat="message in data.messages">
-		      <img ng-src={{message.profilePic}}>
-		       <div class="item item-text-wrap" >
-			      <strong style="font-size:90%">{{message.username}}</strong>
-			      <p style="font-size:10px; color:#5A93C7"> <span am-time-ago="message.timestamp" ></span ></p> 
-			      <p></p><p></p><p></p>
-					  {{message.text}}
-  				</div>
-		    </li>
-		</ol> -->
-		
-		
-		<ul class="ChatLog">
-		  <li ng-class="getName() != message.username ? 'ChatLog__entry' : 'ChatLog__entry ChatLog__entry_mine'" ng-repeat="message in data.messages">
-		    <img class="ChatLog__avatar" ng-src={{message.profilePic}} />
-		    <p class="ChatLog__message">
-		       {{message.text}}
-		       <br>
-		      <!-- <time class="ChatLog__timestamp"> <p style="font-size:10px; color:#5A93C7"> <span am-time-ago="message.timestamp" ></span ></p> </time> -->
-		       <span style="font-size:10px; color:white; " am-time-ago="message.timestamp" ></span > 
-		    </p>
-		  </li>
-		</ul>
-		
-		
-		
+	          <div class="item item-body">
+	            <img class="full-image" src="http://ionicframework.com/img/docs/delorean.jpg">
+	            <p>
+	              This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+	              the content is from a card-body consisting of an image and paragraph text. The footer
+	              consists of tabs, icons aligned left, within the card-footer.   This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+	              the content is from a card-body consisting of an image and paragraph text. The footer
+	              consists of tabs, icons aligned left, within the card-footer.   This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+	              the content is from a card-body consisting of an image and paragraph text. The footer
+	              consists of tabs, icons aligned left, within the card-footer.   This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+	              the content is from a card-body consisting of an image and paragraph text. The footer
+	              consists of tabs, icons aligned left, within the card-footer.   This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+	              the content is from a card-body consisting of an image and paragraph text. The footer
+	              consists of tabs, icons aligned left, within the card-footer.
+	            </p>
+	            <p>
+	              <a href="#" class="subdued">1 Like</a>
+	              <a href="#" class="subdued">5 Comments</a>
+	            </p>
+	          </div>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" ng-click= "liked=!liked">
+               <i ng-class="liked==true ? 'icon ion-thumbsup balanced' : 'icon ion-thumbsup'"></i>
+              Thumbs up
+            </a>
+            <a class="tab-item" href="#/app/feeds/{{feedDetailId}}">
+              <i class="icon ion-chatbox"></i>
+              Chat about this
+            </a>
+            <a class="tab-item" href="#">
+              <i class="icon ion-share"></i>
+              Share
+            </a>
+          </div>
+
+        </div>
 		
 
 	</ion-content >
-
-	<!-- Send Message Footer Area -->
-	<ion-footer-bar keyboard-attach
-	                class="bar-positive item-input-inset" >
-		<label class="item-input-wrapper" >
-			<input type="text"
-			       placeholder="Type your message"
-			       ng-enter="sendMessage()"
-			       ng-model="data.message" />
-		</label >
-		<button class="button button-clear"
-		        ng-click="sendMessage()" >
-			Send
-		</button >
-	</ion-footer-bar >
 </ion-pane>
 </ion-view >

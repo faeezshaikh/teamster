@@ -1,35 +1,29 @@
 <ion-view title="Groups"  class="show" >
 
-	<ion-pane class="background-color-grey">
-	      <ion-header-bar class="bar-positive>
-	        <h1 class="title">Ionic Facebook Groups</h1>
-	      </ion-header-bar>
 	
-	      <ion-content ng-controller="GrpsCtrl">
-	
-	      <div class="row " >
-	        <div class="col col-50" ng-repeat="item in items">
-	          <div class="card card-facebook margin-none">
-	            <div class="item item-avatar-center">
-	              <img ng-src="{{ item.image }}" style="padding-left:40px;" />
-	              <h2>{{ item.title }}</h2>
-	              <p>{{ item.date }}</p>
-	            </div>
-	            <div class="item item-divider">
-	              {{ item.people }}
-	            </div>
-	          </div>
-	        </div>
-	     </div>
-	
-	      </ion-content>
-	    </ion-pane>
+		  <ion-pane class="background-color-grey">
+      <ion-header-bar class="bar-positive">
+        <h1 class="title">Ionic Facebook Groups</h1>
+      </ion-header-bar>
+      <ion-content ng-controller="MyController" style="padding-left:9%">
 
-	<ion-content  >
+      <div class="row row-wrap">
+        <div class="col col-50" ng-repeat="item in items">
+          <div class="card card-facebook margin-0">
+            <div class="item item-avatar-center" >
+              <img ng-src="{{ item.image }}" />
+              <h2>{{ item.title }}</h2>
+              <p>{{ item.date }}</p>
+            </div>
+            <div class="item item-divider">
+              <span div class="center">{{ item.people }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		
-	</ion-content >
+      </ion-content>
+    </ion-pane>
 
-	<!-- Send Message Footer Area -->
 
 </ion-view >

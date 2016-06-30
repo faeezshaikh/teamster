@@ -1,5 +1,11 @@
 /* Decorators */
 
+.ameren {
+	color: rgb(36, 147, 60) !important;
+}
+.larger {
+	 font-size: 90px;
+}
 .nav-bar-block, .bar {
   background-color: rgb(36, 147, 60) !important;
 }
@@ -7,43 +13,10 @@
   background-color: #F7F7F7;
 }
 
-.row-wrap {
-  flex-wrap: wrap;
-  display:-webkit-flex;
-  -webkit-flex-flow: row wrap;
-}
-
-.margin-none {
-  margin: 0px;
-}
-
-.card-facebook {
-  border-radius: 6px;
-  box-shadow: 0px 0.5px 1px rgba(0,0,0,0.2);
-}
-
-.card-facebook h2 {
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.card-facebook p {
-  color: #999;
-  text-align: center;
-}
-
-.card-facebook .item-divider {
-  font-size: 13px;
-  font-weight: 300;
-  text-align: left;
-  border-top: 1px solid #F3F3F3;
-  background-color: #FAFAFA;
-}
-
-.item-avatar-center, .item-avatar-center .item-content {
-    min-height: 72px;
-    border-radius: 6px;
+.button.button-positive {
+    border-color: rgb(36, 147, 60) !important;
+    background-color: rgb(36, 147, 60) !important;
+    color: #fff;
 }
 
 /* Facebook Like Chat Begin */

@@ -6,10 +6,14 @@
     "a0-angular-storage": ">= 0.0.12",
     "angular-jwt": ">= 0.0.9",
     "ngCordova": "~0.1.23-alpha",
-    "angular-moment": "^0.10.3"
+    "angular-moment": "^0.10.3",
+    "ngtweet": "^0.5.1"
   },
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.1.1",
-    "ionic-service-core": "~0.1.10"
+    "ionic-service-core": "^0.1.10",
+    "ionic-service-push": "^0.1.13",
+    "angular-websocket": "^2.0.0",
+    "ionic-platform-web-client": "^0.7.1"
   }
 }

@@ -1,9 +1,10 @@
 angular.module(
   'starter', ['ionic', 'starter.controllers', 'auth0', 'angular-storage',
-     'ngCordova', 'firebase','angularMoment'
+     'ngCordova', 'firebase','angularMoment','ngtweet'
   ])
+  
 
-.run(function($ionicPlatform, auth, $rootScope, store,$ionicModal) {
+.run(function($ionicPlatform, auth, $rootScope, store,$ionicModal,$window) {
 	
 	
   $ionicPlatform.ready(function() {
@@ -18,7 +19,18 @@ angular.module(
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    
 
+//    var push = new Ionic.Push({
+//      "debug": true
+//    });
+//
+//    push.register(function(token) {
+//      console.log("Device token:",token.token);
+//      push.saveToken(token);  // persist the token in the Ionic Platform
+//    });
+ 
+	
   });
   
   
@@ -39,28 +51,18 @@ angular.module(
 
 })
 
-// This is for one on one chat..
-//.factory('Message', 
-//	function($firebase,auth) {
-//		var ref = new Firebase('https://daughertyapp.firebaseio.com/');
-//		var messages = $firebase(ref.child('messages')).$asArray();
-// 
-//		var Message = {
-//			all: messages,
-//			create: function (message) {
-//				messages.$add({user: auth.profile.nickname, text: message, timestamp: Firebase.ServerValue.TIMESTAMP});
-//			},
-//			get: function (messageId) {
-//				return $firebase(ref.child('messages').child(messageId)).$asObject();
-//			},
-//			delete: function (message) {
-//				return messages.$remove(message);
-//			}
-//		};
-// 
-//		return Message;
-//})
 
+.filter('getById', function() {
+  return function(input, id) {
+    var i=0, len=input.length;
+    for (; i<len; i++) {
+      if (+input[i].id == +id) {
+        return input[i];
+      }
+    }
+    return null;
+  }
+})
 .config(
     function($stateProvider, $urlRouterProvider) {
 
@@ -124,12 +126,38 @@ angular.module(
           }
         }
       })
+         .state('app.tweets', {
+        url: '/tweets',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/tweets.html'
+          }
+        }
+      })
+         .state('app.timesheet', {
+        url: '/timesheet',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/timesheet.html',
+            controller: ''
+          }
+        }
+      })
       .state('app.single', {
         url: '/feeds/:feedId',
         views: {
           'menuContent': {
+            templateUrl: 'templates/feedChat.html',
+            controller: 'FeedChatCtrl'
+          }
+        }
+      })
+       .state('app.feed', {
+        url: '/feeds/detail/:feedId',
+        views: {
+          'menuContent': {
             templateUrl: 'templates/feed.html',
-            controller: 'FeedCtrl'
+            controller: 'FeedDetailsCtrl'
           }
         }
       });
@@ -141,8 +169,8 @@ angular.module(
         var state = $injector.get('$state');
         if (state.current.name == '') {
           state.go('app.chat');
-        }
-//        } else {
+        } 
+//        else {
 //          state.go('app.feeds');
 //        }
         return $location.path();

@@ -1,6 +1,6 @@
 {
   "name": "sideMenuWithLogin",
-  "app_id": "f0e3d5a4",
+  "app_id": "de6c6b7e",
   "gulpStartupTasks": [
     "sass",
     "watch"
@@ -8,5 +8,11 @@
   "watchPatterns": [
     "www/**/*",
     "!www/lib/**/*"
+  ],
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://api.twitter.com/1.1/"
+    }
   ]
 }

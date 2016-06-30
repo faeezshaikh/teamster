@@ -13,6 +13,18 @@
 					Sign in with Facebook
 				</a> 
 				<div class="text-center">© Copyright 2015</div>
+				
+				<div ng-controller="PushCtrl">
+				      
+				      <button class="button button-block button-dark" ng-click="identifyUser()">
+				        Identify a user
+				      </button>
+				 
+				      <button class="button button-block button-positive" ng-if="identified" ng-click="pushRegister()">
+				        Register for Push
+				      </button>
+				 
+				</div>
 		</div>
   </ion-content>
 </ion-modal-view>
