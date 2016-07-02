@@ -1,0 +1,7 @@
+{
+    "name": "Ameren Teamster",
+    "description": "A simple Collaboration & Social Monitoring app for Ameren.",
+    "repository": "https://github.com/faeezshaikh/teamster",
+    "logo": "http://pathToYourLogo.png",
+    "keywords": ["Ameren", "Teamster", "Collaboration"]
+}
