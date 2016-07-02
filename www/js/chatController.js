@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
 .controller('chatController', function($scope, auth, $state, $window, $firebase, $firebaseAuth,$rootScope,PersonService) {
 
-  var chatRef = new Firebase('https://daughertyapp.firebaseio.com/');
+  var chatRef = new Firebase('https://teamsterapp.firebaseio.com/');
   var auth = $firebaseAuth(chatRef);
   $scope.msg = "Initializing chat..";
   $scope.date = new Date();
@@ -70,6 +70,13 @@ angular.module('starter.controllers')
         PersonService.SetAvatar(authData.google.profileImageURL);
         PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail);
       }
+      if (authData.provider == 'github') {
+          $scope.userName = authData.github.displayName;
+          $scope.userImg = authData.github.profileImageURL;
+          $scope.userEmail = authData.github.email;
+          PersonService.SetAvatar(authData.github.profileImageURL);
+          PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail);
+        }
       var chat = new FirechatUI(chatRef, angular.element(document.querySelector('#firechat-wrapper')));
       chat.setUser(authData.uid, authData[authData.provider].displayName);
     }

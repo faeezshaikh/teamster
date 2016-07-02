@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.constant("FIREBASE_URL", 'https://daughertyapp.firebaseio.com/')
+.constant("FIREBASE_URL", 'https://teamsterapp.firebaseio.com/')
 
   .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -43,45 +43,66 @@ angular.module('starter.controllers', [])
     };
   })
 
-.controller('FeedsCtrl', function($scope, auth, store, $state, $timeout, PersonService, $cordovaToast,$firebaseArray) {
+.controller('FeedsCtrl', function($scope, auth, store, $state, $timeout, PersonService, $cordovaToast,$firebaseArray,CtrlService) {
   $scope.auth = auth;
   
   $scope.items = [];
-  $scope.newItems = [];
-  var allFeeds = [];
-
+//  var allFeeds = [];
   var baseRef = new Firebase('https://teamsterapp.firebaseio.com/feeds');
 
   var scrollRef = new Firebase.util.Scroll(baseRef, 'order');
   $scope.items = $firebaseArray(scrollRef);
+  CtrlService.setFeeds($scope.items);
   scrollRef.scroll.next(3);
 
   // This function is called whenever the user reaches the bottom
   $scope.loadMore = function() {
 	  console.log('loadmore fired');
-
-	    // load the next contact
+	    // load the next item
 	    scrollRef.scroll.next(1);
 	  $scope.$broadcast('scroll.infiniteScrollComplete');
   };
-
-
-
   
+  $scope.updateLikes = function(index,obj) {
+	  $scope.liked=!$scope.liked;
+	  console.log('item = ',obj);
+	  console.log('index = ',index);
+	  if($scope.liked) 
+	  obj.likes++;
+	  else
+		  obj.likes --;
+	  $scope.items[index] = obj;
+	  $scope.items.$save(obj);   // synchronize it with Firebase array
+  }
+})
+
+.service('CtrlService', function() {
+	var feeds = [];
+	return {
+		setFeeds : function(arr) {
+			feeds = arr;
+		},
+		getFeeds : function() {
+			return feeds;
+		}
+	}
 })
 
 .controller('FeedDetailsCtrl', function($scope, 
 		 store, $state,$stateParams,
          $ionicScrollDelegate,$firebaseArray,$firebase, 
-         FIREBASE_URL,PersonService,$filter) {
+         FIREBASE_URL,PersonService,$filter,CtrlService) {
 	
 		$scope.feedDetailId = $stateParams.feedId;
 		var key = $scope.feedDetailId;
-		$scope.showdetails = function(key){
-	         var found = $filter('getById')($scope.fish, fish_id);
-	         console.log(found);
-	         $scope.selected = JSON.stringify(found);
-	     }
+		 var feeds = CtrlService.getFeeds();
+		 console.log('Feeds:' ,feeds);
+
+         $scope.feed = $filter('getById')(feeds, key);
+         console.log("Found" , $scope.feed);
+//         $scope.selected = JSON.stringify(found);
+     
+		 
 		
 })
 

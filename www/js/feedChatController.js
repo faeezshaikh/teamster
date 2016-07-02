@@ -26,7 +26,7 @@ angular.module('starter.controllers')
 		loading: true,
 		showInfo: false
 	};
-	var messagesRef = new Firebase('https://daughertyapp.firebaseio.com/');
+	var messagesRef = new Firebase('https://teamsterapp.firebaseio.com/');
 	
 	$scope.loadMessages = function () {
 

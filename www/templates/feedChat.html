@@ -16,9 +16,12 @@
 		</div >
 
 		<!-- Empty room message -->
-		<div class="loading"
-		     ng-show="!data.loading && data.messages.length == 0" >
-			<p >This room is empty, be the first to post!</p >
+		<div class="loading center" ng-show="!data.loading && data.messages.length == 0" >
+				<div class="row">
+					<div class="col-10"></div>
+		     	 	<div class="col-80"><p class="text-muted">This room is empty, be the first to post!</p></div>
+		     	 	<div class="col-10"></div>
+		     	 </div>
 		</div >
 		
 	
@@ -43,7 +46,7 @@
 		       {{message.text}}
 		       <br>
 		      <!-- <time class="ChatLog__timestamp"> <p style="font-size:10px; color:#5A93C7"> <span am-time-ago="message.timestamp" ></span ></p> </time> -->
-		       <span style="font-size:10px; color:white; " am-time-ago="message.timestamp" ></span > 
+		     <span style="font-size:11px; color:white; ">{{message.username}}</span>  <span style="font-size:10px; color:white; " am-time-ago="message.timestamp" ></span > 
 		    </p>
 		  </li>
 		</ul>

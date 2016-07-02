@@ -37,25 +37,22 @@
 	          <div class="item item-body">
 	            <img class="full-image" ng-src={{item.articleImg}}>
 	            <p class="center">
-	              The Monkey Pscychology : A must read for Ameren
-	              This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-	              the content is from a card-body consisting of an image and paragraph text. The footer
-	             
+	              {{item.article | limitTo: 100}}
 	            </p>
 	            <p>
-	              <a href="#" class="subdued">1 Like</a>
+	              <a href="#" class="subdued">{{item.likes}} {{item.likes > 1 ? 'Likes' : 'Like'}}</a>
 	              <a href="#" class="subdued">5 Comments</a>
-	              <a href="#/app/feeds/detail/{{item.SSN}}"><span class='pull-right'>Read More</span></a> 
+	              <a href="#/app/feeds/detail/{{item.id}}"><span class='pull-right'>Read More</span></a> 
 	            </p>
 	          </div>
           </a>
 
           <div class="item tabs tabs-secondary tabs-icon-left">
-            <a class="tab-item" ng-click= "liked=!liked">
-               <i ng-class="liked==true ? 'icon ion-thumbsup balanced' : 'icon ion-thumbsup'"></i>
+            <a class="tab-item" ng-click= " updateLikes({{items.indexOf(item)}},{{item}})">
+               <i ng-class="{{liked==true}} ? 'icon ion-thumbsup balanced' : 'icon ion-thumbsup'"></i>
               Thumbs up
             </a>
-            <a class="tab-item" href="#/app/feeds/{{item.SSN}}">
+            <a class="tab-item" href="#/app/feeds/{{item.id}}">
               <i class="icon ion-chatbox"></i>
               Chat about this
             </a>
