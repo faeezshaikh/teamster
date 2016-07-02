@@ -40,8 +40,8 @@
 	              {{item.article | limitTo: 100}}
 	            </p>
 	            <p>
-	              <a href="#" class="subdued">{{item.likes}} {{item.likes > 1 ? 'Likes' : 'Like'}}</a>
-	              <a href="#" class="subdued">5 Comments</a>
+	              <a class="subdued">{{item.likes}} {{item.likes > 1 ? 'Likes' : 'Like'}}</a>
+	              <span ng-show="{{item.likes>1}}" class="ion ion-fireball" style="color:red;"></span><a  ng-show="{{item.likes>1}}" class="subdued" style="color:red;">&nbsp;Hot</a>
 	              <a href="#/app/feeds/detail/{{item.id}}"><span class='pull-right'>Read More</span></a> 
 	            </p>
 	          </div>

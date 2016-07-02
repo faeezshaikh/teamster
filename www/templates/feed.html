@@ -1,4 +1,4 @@
-<ion-view title="<div><i class='icon ion-chatbubble user-messages-top-icon'></i> Tom's Posts</div>"  class="show" >
+<ion-view title="{{feed.name}}'s Thoughts"  class="show" >
 <ion-pane class="background-color-grey">
 	<ion-nav-buttons side="secondary" >
 		<button class="button button-clear"
@@ -23,8 +23,9 @@
 	             {{feed.article}}
 	            </p>
 	            <p>
-	              <a href="#" class="subdued">{{feed.likes}} {{feed.likes > 1 ? 'Likes' : 'Like'}}</a>
-	              <a href="#" class="subdued">5 Comments</a>
+	               <a class="subdued">{{feed.likes}} {{feed.likes > 1 ? 'Likes' : 'Like'}}</a>
+	              <span ng-show="{{feed.likes>1}}" class="ion ion-fireball" style="color:red;"></span><a  ng-show="{{feed.likes>1}}" class="subdued" style="color:red;">&nbsp;Hot</a>
+	              
 	            </p>
 	          </div>
 

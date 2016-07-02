@@ -3,7 +3,27 @@ angular.module(
      'ngCordova', 'firebase','angularMoment','ngtweet'
   ])
   
+// TODO:
+//  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight
+//  2. Load chat performance. Create indexes on FB
 
+
+  //  4. Implement Share
+
+
+  //  7. Implement Adding new Article
+ //  5. Article Date
+  //  3. Article Content.
+
+  //  8. Push Notification
+//  9. Ideas Tab?
+//  10. Login page Test?
+
+  
+  // 11. Page Title   ********
+  //  6. Hotness in article detail - show  ******
+
+		  
 .run(function($ionicPlatform, auth, $rootScope, store,$ionicModal,$window) {
 	
 	
