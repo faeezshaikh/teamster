@@ -4,20 +4,18 @@ angular.module(
   ])
   
 // TODO:
-//  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight
+  //  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight
   //  8. Push Notification - iOS
-  //  4. Implement Share
-   // 15. Social Sharing
-    // 11. Twitter page scrolling
+  // 15. Social Sharing
+  // 11. Twitter page scrolling
   // 12. Twitter back from twitter buttons goes back to Chat
  //  7. Implement Adding new Article
  //  5. Article Date
   //  3. Article Content.
-  
   // 13. Settings page
   // 14. Splash screen and logo - Test with Push Notifications
- 
   // 16. Demo Practice .Bitcoin article
+  // Firechat showing multiple msgs
   
 
  
@@ -29,6 +27,7 @@ angular.module(
   // 11. Page Title   ********
   //  6. Hotness in article detail - show  ******
   //  2. Load chat performance. Create indexes on FB ****
+   //  4. Implement Share ********
   
 
 //  Google API Key
