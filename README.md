@@ -1,13 +1,28 @@
 Plugins:
 --------
 1. cordova plugin add cordova-plugin-inappbrowser
+2. ionic plugin add https://github.com/apache/cordova-plugin-whitelist.git
 
 White screen of death probably due to plugins or network issues.
+
+
+For Inoic Push
+===============
+
+1. Install web client using
+
+bower install --save-dev ionic-platform-web-client
+
+
+2. Then include
+
 
 For network calls, add in config.xml
 --------
   <allow-intent href="*"/>
   <allow-navigation href="*"/>
+  
+  This goes hand in hand with the whitelist plugin listed above
   
   
  For CORS issue

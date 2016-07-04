@@ -41,7 +41,7 @@ angular.module(
     }
     
 
-   var push = new Ionic.Push({
+/*  var push = new Ionic.Push({
       "debug": false
     });
 
@@ -66,12 +66,9 @@ angular.module(
       });
       
       
-      
-      
-      
-     push.saveToken(token,{'ignore_user': true});  // persist the token in the Ionic Platform
+     push.saveToken(token,{'ignore_user': true});  // persist the token in the Ionic Platform 
     });
- 
+ */
  
  
     

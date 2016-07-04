@@ -28,10 +28,16 @@
       },
       "locator": "phonegap-plugin-push",
       "id": "phonegap-plugin-push"
+    },
+    {
+      "locator": "https://github.com/apache/cordova-plugin-whitelist.git",
+      "id": "cordova-plugin-whitelist"
     }
   ],
   "scripts": {
     "start": "node server.js"
-},
-  "cordovaPlatforms": []
+  },
+  "cordovaPlatforms": [
+    "android"
+  ]
 }
