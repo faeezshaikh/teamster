@@ -38,6 +38,7 @@
     "start": "node server.js"
   },
   "cordovaPlatforms": [
-    "android"
+    "android",
+    "ios"
   ]
 }
