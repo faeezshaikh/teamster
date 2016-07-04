@@ -15,6 +15,7 @@ Plugins:
 White screen of death probably due to plugins or network issues.
 
 3. ionic plugin add phonegap-plugin-push (see below point on how to install with GCM Number)
+4. Social Sharing plugin: cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git (see below for details)
 
 
 For Inoic Push Notifications
@@ -153,3 +154,10 @@ Start the service from CLI
 In case you get errors on missing dependencies
 
 	npm install request	
+	
+	
+Social Sharing
+===============
+1. Install plugin
+
+		sudo cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git	

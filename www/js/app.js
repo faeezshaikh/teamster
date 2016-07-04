@@ -5,19 +5,22 @@ angular.module(
   
 // TODO:
 //  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight
-  //  8. Push Notification
+  //  8. Push Notification - iOS
   //  4. Implement Share
-  // 11. Twitter page scrolling
+   // 15. Social Sharing
+    // 11. Twitter page scrolling
   // 12. Twitter back from twitter buttons goes back to Chat
+ //  7. Implement Adding new Article
+ //  5. Article Date
+  //  3. Article Content.
+  
   // 13. Settings page
   // 14. Splash screen and logo - Test with Push Notifications
-  // 15. Social Sharing
+ 
   // 16. Demo Practice .Bitcoin article
   
 
-  //  7. Implement Adding new Article
- //  5. Article Date
-  //  3. Article Content.
+ 
 
 //  9. Ideas Tab?
 //  10. Login page Test?
@@ -165,7 +168,7 @@ angular.module(
     	   views: {
     	          'menuContent': {
     	            templateUrl: 'templates/settings.html',
-    	            controller: 'FeedsCtrl'
+    	            controller: ''
     	          }
     	        }
       })
@@ -200,6 +203,15 @@ angular.module(
           'menuContent': {
             templateUrl: 'templates/feedChat.html',
             controller: 'FeedChatCtrl'
+          }
+        }
+      })
+      .state('app.share', {
+        url: '/share',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/share.html',
+            controller: ''
           }
         }
       })
