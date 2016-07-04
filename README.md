@@ -1,25 +1,61 @@
-Ionic App Base
-=====================
+Plugins:
+--------
+1. cordova plugin add cordova-plugin-inappbrowser
 
-A starting project for Ionic that optionally supports using custom SCSS.
+White screen of death probably due to plugins or network issues.
 
-## Using this project
+For network calls, add in config.xml
+--------
+  <allow-intent href="*"/>
+  <allow-navigation href="*"/>
+  
+  
+ For CORS issue
+ ----------------
+ 
+ Add Proxies array in ionic.project file:
+ ,
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://api.twitter.com/1.1/"
+    }
+  ]
+  
+  then update urls 
+  
+ 
+ For running node in browser
+ 
+ --------
+ 
+ Instead of doing a require('target.js')
+ 
+ Download target.js
+ 
+ For all its dependencies do npm install in the same folder as downloaded
+ 
+ npm install dep1
+ 
+ then do 
+ browserify -g target.js moduleName > myTarget.js
+ 
+ Then <script include> myTarget.js
+ Then inject module in angular app.js ..Use the same name as the one used in the command above?
+  
+  
 
-We recommend using the [Ionic CLI](https://github.com/driftyco/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
+In order to use pull-to-refresh and infinite-scroll
+------------------------------------------------------
 
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
+By default the newest item appears at the bottom of the list in the view. This is becasuse in Firebase the default order is always ascending.
+Used workaround. While inserting records in list, used orderId, Started with 1M and for every insert decreased by one and then in FB query ordered by 'orderId'  
 
-```bash
-$ npm install -g ionic
-```
 
-Then run:
 
-```bash
-$ ionic start myProject tabs
-```
+Permission denied for /config
+Error: EACCES: permission denied, open '/Users/faeezshaikh/.config/configstore/bower-github.json'
+You don't have access to this file.
 
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
-
-## Issues
-Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/submit-issue/) to the main Ionic repository.
+sudo chown -R $USER:$GROUP ~/.npm
+sudo chown -R $USER:$GROUP ~/.config

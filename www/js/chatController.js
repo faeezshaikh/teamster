@@ -44,6 +44,7 @@ angular.module('starter.controllers')
   auth.$onAuth(function(authData) {
     // Once authenticated, instantiate Firechat with our user id and user name
     if (authData) {
+        console.log("Succes in Logging in...Logged in as:", authData.uid);
       $scope.loginProgress = false;
       $scope.loggedIn = true;
       $rootScope.currentUser = "user";
@@ -77,6 +78,10 @@ angular.module('starter.controllers')
           PersonService.SetAvatar(authData.github.profileImageURL);
           PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail);
         }
+      
+  
+      
+      
       var chat = new FirechatUI(chatRef, angular.element(document.querySelector('#firechat-wrapper')));
       chat.setUser(authData.uid, authData[authData.provider].displayName);
     }

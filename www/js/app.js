@@ -6,8 +6,7 @@ angular.module(
 // TODO:
 //  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight
 //  2. Load chat performance. Create indexes on FB
-
-
+  //  8. Push Notification
   //  4. Implement Share
 
 
@@ -15,7 +14,6 @@ angular.module(
  //  5. Article Date
   //  3. Article Content.
 
-  //  8. Push Notification
 //  9. Ideas Tab?
 //  10. Login page Test?
 
@@ -23,34 +21,62 @@ angular.module(
   // 11. Page Title   ********
   //  6. Hotness in article detail - show  ******
 
+//  Google API Key
+//  AIzaSyD5r8X2j7QoWemIiQizNN5EjJqzsgHYU48
 		  
-.run(function($ionicPlatform, auth, $rootScope, store,$ionicModal,$window) {
+.run(function($ionicPlatform, auth, $rootScope, store,$ionicModal,$window,$http) {
 	
 	
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
-
-    }
+//    if (window.cordova && window.cordova.plugins.Keyboard) {
+//      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+//      cordova.plugins.Keyboard.disableScroll(true);
+//
+//    }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
     
 
-//    var push = new Ionic.Push({
-//      "debug": true
-//    });
-//
-//    push.register(function(token) {
-//      console.log("Device token:",token.token);
-//      push.saveToken(token);  // persist the token in the Ionic Platform
-//    });
+   var push = new Ionic.Push({
+      "debug": false
+    });
+
+    push.register(function(token) {
+      console.log("Device token:",token.token);
+      
+      
+      var data = {};
+      var config = {
+          headers : {
+              'Content-Type': 'application/json',
+              'Authorization' : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhMDNjYjgwZi0yMmVmLTRmMDQtOTJhZi1kNDNiMWFlM2E3NDIifQ.FwRyg6N3Kr_9lU2sxvfHyLwOHWbHX4_rv_dUIGkknHw'
+          }
+      }
+      var url = "https://api.ionic.io/push/tokens?token=" + token.token;
+      $http.post(url, data, config)
+      .success(function (data, status, headers, config) {
+      	console.log('SUCCESS', data);
+      })
+      .error(function (data, status, header, config) {
+      	console.log('FAIL', data);
+      });
+      
+      
+      
+      
+      
+     push.saveToken(token,{'ignore_user': true});  // persist the token in the Ionic Platform
+    });
  
-	
+ 
+ 
+    
+    
+ 
   });
   
   
