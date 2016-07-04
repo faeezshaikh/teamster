@@ -3,7 +3,7 @@ angular.module('starter.controllers')
 .controller('FeedChatCtrl', function($scope, 
 		 store, $state,$stateParams,
          $ionicScrollDelegate,$firebaseArray,$firebase, 
-         FIREBASE_URL,PersonService) {
+         FIREBASE_URL,PersonService,$timeout) {
 	
 //	http://istarter.io/ionic-starter-messenger/#/room/room_f
   $scope.logout = function() {
@@ -26,14 +26,14 @@ angular.module('starter.controllers')
 		loading: true,
 		showInfo: false
 	};
-	var messagesRef = new Firebase('https://teamsterapp.firebaseio.com/');
+	var messagesRef = new Firebase('https://teamsterapp.firebaseio.com/messages');
 	
 	$scope.loadMessages = function () {
 
 		console.log("Loading data for show ", $scope.feedId);
 
 		var query = messagesRef
-			.child("messages")
+//			.child("messages")
 			.orderByChild("feedId")
 			.equalTo($scope.feedId)
 			.limitToLast(200);
@@ -44,8 +44,17 @@ angular.module('starter.controllers')
 			$scope.data.loading = false;
 			$ionicScrollDelegate.$getByHandle('show-page').scrollBottom(true);
 		});
-
 	};
+	
+	
+	// Added below line because view is not scrolling to the bottom on the recepient side when a new msg arrives
+	messagesRef.on('child_added', function(childSnapshot, prevChildKey) {
+		  // code to handle new child.
+		console.log('Fired..',childSnapshot)
+			$timeout(function() {
+				$ionicScrollDelegate.scrollBottom(true);
+			},1000);
+		});
 
 	$scope.sendMessage = function () {
 
