@@ -5,10 +5,15 @@ angular.module(
   
 // TODO:
 //  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight
-//  2. Load chat performance. Create indexes on FB
   //  8. Push Notification
   //  4. Implement Share
-
+  // 11. Twitter page scrolling
+  // 12. Twitter back from twitter buttons goes back to Chat
+  // 13. Settings page
+  // 14. Splash screen and logo - Test with Push Notifications
+  // 15. Social Sharing
+  // 16. Demo Practice .Bitcoin article
+  
 
   //  7. Implement Adding new Article
  //  5. Article Date
@@ -20,6 +25,8 @@ angular.module(
   
   // 11. Page Title   ********
   //  6. Hotness in article detail - show  ******
+  //  2. Load chat performance. Create indexes on FB ****
+  
 
 //  Google API Key
 //  AIzaSyD5r8X2j7QoWemIiQizNN5EjJqzsgHYU48
@@ -41,14 +48,15 @@ angular.module(
     }
     
 
-/*  var push = new Ionic.Push({
+ var push = new Ionic.Push({
       "debug": false
     });
 
     push.register(function(token) {
       console.log("Device token:",token.token);
       
-      
+      // Only works on actual device
+      // apps.ionic.io --> App --> Settings --> API Keys --> token
       var data = {};
       var config = {
           headers : {
@@ -68,7 +76,7 @@ angular.module(
       
      push.saveToken(token,{'ignore_user': true});  // persist the token in the Ionic Platform 
     });
- */
+ 
  
  
     
