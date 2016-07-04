@@ -141,3 +141,15 @@ Run these 2 commands in project directory
 	
 	sudo chown -R $USER:$GROUP ~/.npm
 	sudo chown -R $USER:$GROUP ~/.config
+	
+	
+To Run Twitter Service
+========================
+Start the service from CLI
+
+	cd git/teamster
+	node index.js	
+	
+In case you get errors on missing dependencies
+
+	npm install request	

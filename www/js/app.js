@@ -160,11 +160,11 @@ angular.module(
         }
       })
 
-       .state('app.logout', {
-    	   url: '/logout',
+       .state('app.settings', {
+    	   url: '/settings',
     	   views: {
     	          'menuContent': {
-    	            templateUrl: 'templates/logout.html',
+    	            templateUrl: 'templates/settings.html',
     	            controller: 'FeedsCtrl'
     	          }
     	        }

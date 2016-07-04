@@ -22,14 +22,15 @@
     </a>
 <twitter-timeline> -->
 		    <ion-list> 
-		  <!--    <ion-item ng-if="newTweet" ng-click="doRefresh()">
-				 new tweet
-		      </ion-item> -->
+		   <!--    <ion-item ng-if="newTweet" ng-click="doRefresh()">
+				 New tweets (Pull to Refresh)
+		      </ion-item>  -->
     			<ion-item ng-repeat="tweet in filtered = (tweets | filter:searchText)">
 					 <twitter-widget> 
 						<blockquote class="twitter-tweet tw-align-center" data-lang="en">
 								<a ng-href="https://twitter.com/{{tweet.key1}}/status/{{tweet.key3}}" ></a>
 								<!--  {{tweet.key1}} - {{tweet.key3}} - {{tweet.key2}} --> 
+								{{tweet.key2}}
 						</blockquote> 
 					</twitter-widget> 
 					

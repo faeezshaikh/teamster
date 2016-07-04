@@ -117,7 +117,6 @@ angular.module('starter.controllers', [])
 	  
 	  scrollRefT.on('child_added', function(snap) {
 		   console.log('added child', snap.key());
-		   $scope.newTweet = true;
 		});
 
 
