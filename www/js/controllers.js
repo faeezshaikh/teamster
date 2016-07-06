@@ -131,7 +131,27 @@ angular.module('starter.controllers', [])
 		
 })
 
+.controller('SettingsCtrl', function($scope,PersonService,$state,$window){
+	$scope.checkboxes = [
+	                  { text: "#Ameren", checked: true },
+	                  { text: "@AmerenMissouri", checked: true },
+	                  { text: "@AmerenIllinois", checked: false },
+	                  { text: "@AmerenCorporation", checked: true }
+	                ];
+	
+	 $scope.logout = function() {
+		  PersonService.SetLoginState(false);
+		  var chatRef = new Firebase('https://teamsterapp.firebaseio.com/');
+	    chatRef.unauth();
+//	    $scope.msg = "Signing out of chat..";
+//	    $scope.loggedIn = false;
+//	    $scope.loginProgress = true;
+	    $state.go('app.feeds'); // adding this for device.. location.href doesnt work on device
+	    $window.location.reload();
 
+	  }
+	
+})
 .controller('TwitterCtrl', function($scope,$window,$timeout,$firebaseArray){
 	
 	  var baseRef = new Firebase('https://teamsterapp.firebaseio.com/tweets');

@@ -32,17 +32,23 @@
   </div>
    <ion-list>
 
-	  <ion-checkbox ng-model="true" checked>#Ameren</ion-checkbox>
+	  <!-- <ion-checkbox ng-model="true" checked>#Ameren</ion-checkbox>
 	  <ion-checkbox ng-model="true">@AmerenMissouri</ion-checkbox>
 	  <ion-checkbox ng-model="false">@AmerenIllinois</ion-checkbox>
-	  <ion-checkbox ng-model="true">@AmerenCorporation</ion-checkbox>
+	  <ion-checkbox ng-model="true">@AmerenCorporation</ion-checkbox> -->
+	  
+	  <ion-checkbox ng-repeat="item in checkboxes"
+                      ng-model="item.checked" 
+                      ng-checked="item.checked">
+          {{ item.text }}
+        </ion-checkbox>
 	
 	</ion-list>
 </div>
 	
 	
 	
-	 <button class="button button-block button-positive" style="width:80%;margin-left:auto;margin-right:auto;" ng-click="submitForm()">
+	 <button class="button button-block button-positive" style="width:80%;margin-left:auto;margin-right:auto;" ng-click="logout()">
           Logout
         </button>
 

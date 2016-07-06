@@ -1,4 +1,4 @@
-<ion-view title="<div><i class='icon ion-chatbubble user-messages-top-icon'></i> Tom's Posts</div>"  class="show" >
+<ion-view title="Timesheet"  class="show" >
 <ion-pane class="background-color-grey">
 	<ion-nav-buttons side="secondary" >
 		<button class="button button-clear"
@@ -9,8 +9,33 @@
 
 	<ion-content  >
 
-		<h3>Timesheet Coming Soon</h3>
+		<div class="list card">
+
+		  <div class="item item-avatar">
+		    <img ng-src="http://vignette3.wikia.nocookie.net/morningglories/images/7/7d/Kevin-costner-a-hollywood-genius-3_6541.jpg/revision/latest?cb=20130512234955">
+		    <h2>Coming Soon</h2>
+		    <p>We'll build it only if you come</p>
+		  </div>
 		
+		  <div class="item item-body">
+		    <img class="full-image" ng-src="https://d1j83gklk2uu1u.cloudfront.net/images/posts/393/banner/393.Cate-Costa_Top-Startup-Misconceptions-if-you-build-it-they-will-come.jpg?1408815174">
+		    <p>
+		     Unfortunately the Kevin Costner principle doesn't work too well in real life. 
+		     This is the minimum viable increment of the Teamster app. If you'd like to see the Timesheet fearture added to this app, press the button below.
+		    </p>
+		    <p>
+		      	 <button class="button button-block button-positive" style="width:80%;margin-left:auto;margin-right:auto;" ng-click="submitted=true; " ng-hide="submitted">
+          			I want Timesheet!
+      			  </button>
+
+		    </p>
+		    <button ng-show="submitted" class="button button-block button-outline" style="width:80%;margin-left:auto;margin-right:auto;" ng-click="submitted=true; " ng-hide="submitted">
+		    <i class="icon ion-android-checkmark-circle"></i> Thank you 
+		    </button>
+		    	<p ng-show="submitted" >Thank you for your feedback. We'll notify you by email and a push notification as soon as the Timesheet feature becomes available.<p>
+		  </div>
+		
+		</div>
 
 	</ion-content >
 </ion-pane>

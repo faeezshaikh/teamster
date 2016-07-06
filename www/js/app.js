@@ -5,6 +5,7 @@ angular.module(
   
 // TODO:
   //  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight
+  // 18. Settings page - Checkbox not toggable
   //  8. Push Notification - iOS
   // 15. Social Sharing
   // 11. Twitter page scrolling
@@ -15,7 +16,7 @@ angular.module(
   // 13. Settings page
   // 14. Splash screen and logo - Test with Push Notifications
   // 16. Demo Practice .Bitcoin article
-  // Firechat showing multiple msgs
+  // 17. Firechat showing multiple msgs
   
 
  
@@ -167,7 +168,7 @@ angular.module(
     	   views: {
     	          'menuContent': {
     	            templateUrl: 'templates/settings.html',
-    	            controller: ''
+    	            controller: 'SettingsCtrl'
     	          }
     	        }
       })
@@ -183,7 +184,8 @@ angular.module(
         url: '/tweets',
         views: {
           'menuContent': {
-            templateUrl: 'templates/tweets.html'
+            templateUrl: 'templates/tweets.html',
+            controller: 'TwitterCtrl'
           }
         }
       })

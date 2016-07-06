@@ -1,6 +1,6 @@
 <ion-view title="Ameren Tweets"  class="show" >
 
-	<ion-pane class="background-color-grey" ng-controller="TwitterCtrl">
+	<ion-pane class="background-color-grey">
 	
 	      <ion-content  view-title="Feed" header-shrink scroll-event-interval="5">
 	      <ion-refresher on-refresh="doRefresh()" pulling-text="Pull to refresh"></ion-refresher> 
@@ -28,9 +28,9 @@
     			<ion-item ng-repeat="tweet in filtered = (tweets | filter:searchText)">
 					 <twitter-widget> 
 						<blockquote class="twitter-tweet tw-align-center" data-lang="en">
-								<a ng-href="https://twitter.com/{{tweet.key1}}/status/{{tweet.key3}}" ></a>
+								<a ng-href="https://twitter.com/{{tweet.screenName}}/status/{{tweet.statusId}}" ></a>
 								<!--  {{tweet.key1}} - {{tweet.key3}} - {{tweet.key2}} --> 
-								{{tweet.key2}}
+								{{tweet.text}}
 						</blockquote> 
 					</twitter-widget> 
 					
