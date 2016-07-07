@@ -9,7 +9,7 @@
 		      
       </ion-header> -->
        <div style="height: 100px;"></div>
-<ion-view view-title="Feeds">
+<ion-view view-title="Ideas">
 
  <ion-pane class="background-color-grey">
     
@@ -40,8 +40,8 @@
 	              {{item.article | limitTo: 100}}
 	            </p>
 	            <p>
-	              <a class="subdued">{{item.likes}} {{item.likes > 1 ? 'Likes' : 'Like'}}</a>
-	              <span ng-show="{{item.likes>1}}" class="ion ion-fireball" style="color:red;"></span><a  ng-show="{{item.likes>1}}" class="subdued" style="color:red;">&nbsp;Hot</a>
+	              <a class="subdued">{{item.likes}} {{item.likes > 1 ? 'Votes' : 'Vote'}}</a>
+	              <span ng-show="isItemHot(item.id)" class="ion ion-fireball" style="color:red;"></span> <a  ng-show="isItemHot(item.id)" class="subdued" style="color:red;">&nbsp;Hot</a>
 	              <a href="#/app/feeds/detail/{{item.id}}"><span class='pull-right'>Read More</span></a> 
 	            </p>
 	          </div>
@@ -50,7 +50,7 @@
           <div class="item tabs tabs-secondary tabs-icon-left">
             <a class="tab-item" ng-click= " updateLikes({{items.indexOf(item)}},{{item}})">
                <i ng-class="{{liked==true}} ? 'icon ion-thumbsup balanced' : 'icon ion-thumbsup'"></i>
-              Thumbs up
+              Upvote
             </a>
             <a class="tab-item" href="#/app/feeds/{{item.id}}">
               <i class="icon ion-chatbox"></i>

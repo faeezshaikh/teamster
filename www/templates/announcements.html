@@ -1,29 +1,38 @@
-<ion-view title="Groups"  class="show" >
+<ion-view title="Announcements"  class="show" >
 
+	<ion-pane class="background-color-grey">
 	
-		  <ion-pane class="background-color-grey">
-      <ion-header-bar class="bar-positive">
-        <h1 class="title">Ionic Facebook Groups</h1>
-      </ion-header-bar>
-      <ion-content ng-controller="MyController" style="padding-left:9%">
+	      <ion-content  view-title="Feed" header-shrink scroll-event-interval="5">
+	      <!-- <ion-refresher on-refresh="doRefresh()" pulling-text="Pull to refresh"></ion-refresher> --> 
+	       <div class="bar bar-header item-input-inset">
+		      <label class="item-input-wrapper">
+		        <i class="icon ion-ios-search placeholder-icon"></i>
+		        <input  type="search" placeholder="Search" ng-model="searchText">
+		      </label>
+		      <button  class="button button-icon ion-android-cancel" ng-click="searchText=''; cancelFilter();">
+		      </button>
+		      	({{ filtered.length}})
+		    </div>
+		    
+		  <!--   <ion-list> 
+		
+    			<ion-item ng-repeat="announcement in filtered = announcements | filter:searchText)">
+					
+					</ion-item>
+			</ion-list> -->
+			  	
+			  	<div class="card"  ng-repeat="announcement in filtered = (announcements | filter:searchText)">
+				  <div class="item item-text-wrap">
 
-      <div class="row row-wrap">
-        <div class="col col-50" ng-repeat="item in items">
-          <div class="card card-facebook margin-0">
-            <div class="item item-avatar-center" >
-              <img ng-src="{{ item.image }}" />
-              <h2>{{ item.title }}</h2>
-              <p>{{ item.date }}</p>
-            </div>
-            <div class="item item-divider">
-              <span div class="center">{{ item.people }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </ion-content>
-    </ion-pane>
-
-
+				    {{announcement}}
+				      
+				  <i  ng-click="favorited(announcement)" ng-class="liked ? 'icon ion-ios-heart-outline pull-right balanced' : 'icon ion-heart pull-right'"></i>Feed
+				  </div>
+				</div>
+					
+			<!-- <ion-infinite-scroll on-infinite="loadMore()" distance="1%"></ion-infinite-scroll> -->
+					
+      
+	      </ion-content>
+	    </ion-pane>
 </ion-view >

@@ -3,7 +3,7 @@ angular.module('starter.controllers')
 .controller('FeedChatCtrl', function($scope, 
 		 store, $state,$stateParams,
          $ionicScrollDelegate,$firebaseArray,$firebase, 
-         FIREBASE_URL,PersonService,$timeout) {
+         FIREBASE_URL,PersonService,$timeout,CtrlService) {
 	
 //	http://istarter.io/ionic-starter-messenger/#/room/room_f
   $scope.logout = function() {
@@ -39,9 +39,15 @@ angular.module('starter.controllers')
 			.limitToLast(200);
 
 		$scope.data.messages = $firebaseArray(query);
+	
 		$scope.data.messages.$loaded().then(function (data) {
 			console.log("AngularFire $loaded");
 			$scope.data.loading = false;
+			if($scope.data.messages.length && $scope.data.messages.length>1) {
+				console.log('Chat lenght', $scope.data.messages.length  );
+				console.log('Since chatter marking it hot',$scope.feedId);
+				CtrlService.addHotTopic($scope.feedId);
+			}
 			$ionicScrollDelegate.$getByHandle('show-page').scrollBottom(true);
 		});
 	};
@@ -68,6 +74,7 @@ angular.module('starter.controllers')
 			});
 			
 			$scope.data.message = '';
+			
 			$ionicScrollDelegate.$getByHandle('show-page').scrollBottom(true);
 		}
 

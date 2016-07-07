@@ -63,6 +63,11 @@ angular.module('starter.controllers', [])
 	  $scope.$broadcast('scroll.infiniteScrollComplete');
   };
   
+  $scope.isItemHot = function(feedId) {
+	  console.log('Checking if topic is hot..',feedId);
+	  return CtrlService.isTopicHot(feedId);
+  };
+  
   $scope.share = function(item) {
 	  console.log('sharing called',item);
 	  $cordovaSocialSharing
@@ -89,17 +94,42 @@ angular.module('starter.controllers', [])
   }
 })
 
-.service('CtrlService', function() {
+.service('CtrlService', function(localStorage) {
 	var feeds = [];
+	var hotTopics = [];
 	return {
 		setFeeds : function(arr) {
 			feeds = arr;
 		},
 		getFeeds : function() {
 			return feeds;
+		},
+		addHotTopic : function(topicId) {
+			console.log('Added hot topic',topicId);
+			hotTopics.push(topicId);
+		},
+		isTopicHot : function(topicId) {
+			if(hotTopics.indexOf(topicId) == -1) {
+				return false;
+			}
+			else {
+				console.log(topicId + ' is hot');
+				return true;
+			}	
 		}
 	}
 })
+
+
+.controller('AnnouncementsCtrl', function($scope) {
+	$scope.announcements = ["First announcement","Second announcements","Third announcements","Fourth announcements","Fifth announcements","Sixth announcement",]
+	$scope.favorited = function() {
+		console.log('liked!');
+		$scope.liked=!$scope.liked;
+		
+	}
+})
+
 
 .controller('FeedDetailsCtrl', function($scope, 
 		 store, $state,$stateParams,

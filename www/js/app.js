@@ -1,11 +1,11 @@
 angular.module(
   'starter', ['ionic', 'starter.controllers', 'auth0', 'angular-storage',
-     'ngCordova', 'firebase','angularMoment','ngtweet'
+     'ngCordova', 'firebase','angularMoment','ngtweet','angular-storage'
   ])
   
 // TODO:
   //  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight
-  // 18. Settings page - Checkbox not toggable
+  // 18. Hotness factor
   //  8. Push Notification - iOS
   // 15. Social Sharing
   // 11. Twitter page scrolling
@@ -24,7 +24,7 @@ angular.module(
 //  9. Ideas Tab?
 //  10. Login page Test?
 
-  
+  // 18. Settings page - Checkbox not toggable ****
   // 11. Page Title   ********
   //  6. Hotness in article detail - show  ******
   //  2. Load chat performance. Create indexes on FB ****
@@ -172,11 +172,12 @@ angular.module(
     	          }
     	        }
       })
-      .state('app.groups', {
-        url: '/groups',
+      .state('app.announcements', {
+        url: '/announcements',
         views: {
           'menuContent': {
-            templateUrl: 'templates/groups.html'
+            templateUrl: 'templates/announcements.html',
+            controller : 'AnnouncementsCtrl'
           }
         }
       })

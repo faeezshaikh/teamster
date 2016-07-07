@@ -23,16 +23,15 @@
 	             {{feed.article}}
 	            </p>
 	            <p>
-	               <a class="subdued">{{feed.likes}} {{feed.likes > 1 ? 'Likes' : 'Like'}}</a>
-	              <span ng-show="{{feed.likes>1}}" class="ion ion-fireball" style="color:red;"></span><a  ng-show="{{feed.likes>1}}" class="subdued" style="color:red;">&nbsp;Hot</a>
-	              
+	               <a class="subdued">{{feed.likes}} {{feed.likes > 1 ? 'Votes' : 'Vote'}}</a>
+	              <span ng-show="isItemHot(item.id)" class="ion ion-fireball" style="color:red;"></span> <a  ng-show="isItemHot(item.id)" class="subdued" style="color:red;">&nbsp;Hot</a>
 	            </p>
 	          </div>
 
           <div class="item tabs tabs-secondary tabs-icon-left">
             <a class="tab-item" ng-click= "liked=!liked">
                <i ng-class="liked==true ? 'icon ion-thumbsup balanced' : 'icon ion-thumbsup'"></i>
-              Thumbs up
+               Upvote
             </a>
             <a class="tab-item" href="#/app/feeds/{{feedDetailId}}">
               <i class="icon ion-chatbox"></i>
