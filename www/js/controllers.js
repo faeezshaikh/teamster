@@ -43,18 +43,43 @@ angular.module('starter.controllers', [])
     };
   })
 
-.controller('FeedsCtrl', function($scope, auth, store, $state, $timeout, PersonService, $cordovaToast,$firebaseArray,CtrlService,$cordovaSocialSharing) {
+.controller('FeedsCtrl', function($scope, auth, store, $state, $timeout, PersonService, $cordovaToast,$firebaseArray,CtrlService,$cordovaSocialSharing,localStorage) {
   $scope.auth = auth;
   
   $scope.items = [];
 //  var allFeeds = [];
+  
+  function loadLikesFromCache() {
+	  var likedFeeds = JSON.parse(localStorage.get("liked"));
+	  if(likedFeeds) {
+		  return likedFeeds
+	  } else {
+		  var a = []
+		  if(a instanceof Array) {
+			  return a;
+		  } 
+	  }
+  }
+
   var baseRef = new Firebase('https://teamsterapp.firebaseio.com/feeds');
 
   var scrollRef = new Firebase.util.Scroll(baseRef, 'order');
   $scope.items = $firebaseArray(scrollRef);
   CtrlService.setFeeds($scope.items);
   scrollRef.scroll.next(3);
+ 
 
+  $scope.isLiked = function(feed) {
+	  var likedFeeds = loadLikesFromCache();
+		  if(likedFeeds.indexOf(feed.id) == -1) {
+			  // Not found so not liked
+			  	return false;
+		  } else {
+			  return true;
+		  }
+  }
+	  
+	  
   // This function is called whenever the user reaches the bottom
   $scope.loadMore = function() {
 	  console.log('loadmore fired');
@@ -82,13 +107,21 @@ angular.module('starter.controllers', [])
   }
   
   $scope.updateLikes = function(index,obj) {
-	  $scope.liked=!$scope.liked;
+	  var likedFeeds = loadLikesFromCache();
 	  console.log('item = ',obj);
 	  console.log('index = ',index);
-	  if($scope.liked) 
-	  obj.likes++;
-	  else
+	  if($scope.isLiked(obj))  {
+		  $scope.liked=false
+		  likedFeeds.splice(likedFeeds.indexOf(obj.id),1);
 		  obj.likes --;
+	  }
+	  else { // not liked yet, so go ahead and like it
+		
+		  $scope.liked= true;
+		  obj.likes++;
+		  likedFeeds.push(obj.id);
+	  }
+	  localStorage.set("liked",JSON.stringify(likedFeeds));
 	  $scope.items[index] = obj;
 	  $scope.items.$save(obj);   // synchronize it with Firebase array
   }
