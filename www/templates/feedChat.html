@@ -40,7 +40,7 @@
 		
 		
 		<ul class="ChatLog">
-		  <li ng-class="getUserImg() != message.profilePic ? 'ChatLog__entry' : 'ChatLog__entry ChatLog__entry_mine'" ng-repeat="message in data.messages">
+		  <li ng-class="!isThisMe(message.username,message.profilePic) ? 'ChatLog__entry' : 'ChatLog__entry ChatLog__entry_mine'" ng-repeat="message in data.messages">
 		    <img class="ChatLog__avatar" ng-src={{message.profilePic}} />
 		    <p class="ChatLog__message">
 		       {{message.text}}

@@ -105,9 +105,13 @@ angular.module('starter.controllers')
 	$scope.getName = function() {
 		return PersonService.GetUserDetails().name;
 	};
-	$scope.getUserImg = function() {
-		return PersonService.GetUserDetails().img;
-	};
+	
+	$scope.isThisMe = function(name,profilePic) {
+		if(PersonService.GetUserDetails().name == name && PersonService.GetUserDetails().img == profilePic) {
+			return true;
+		}
+		return false;
+	}
 	
 	$scope.getImg = function() {
 		console.log(PersonService.GetAvatar());

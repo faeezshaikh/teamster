@@ -89,7 +89,14 @@ angular.module('starter.controllers', [])
   };
   
   $scope.isItemHot = function(feed) {
-	  if(feed.commenters && feed.commenters.length>2) {
+	  var hotNumber = JSON.parse(localStorage.get("hotnessNumber"));
+	  if(hotNumber) {
+		  
+	  } else {
+		   hotNumber = 3;
+	  }
+	  console.log('Hotness number is:',hotNumber);
+	  if(feed.commenters && feed.commenters.length>hotNumber) {
 		  return true;
 	  }
 	  return false;
@@ -132,6 +139,7 @@ angular.module('starter.controllers', [])
 .service('CtrlService', function(localStorage) {
 	var feeds = [];
 	var hotTopics = [];
+	var hotnessNumber;
 	return {
 		setFeeds : function(arr) {
 			feeds = arr;
@@ -196,7 +204,7 @@ angular.module('starter.controllers', [])
 		
 })
 
-.controller('SettingsCtrl', function($scope,PersonService,$state,$window){
+.controller('SettingsCtrl', function($scope,PersonService,$state,$window,CtrlService,localStorage){
 	$scope.checkboxes = [
 	                  { text: "#Ameren", checked: true },
 	                  { text: "@AmerenMissouri", checked: true },
@@ -214,6 +222,15 @@ angular.module('starter.controllers', [])
 	    $state.go('app.feeds'); // adding this for device.. location.href doesnt work on device
 	    $window.location.reload();
 
+	  }
+	  $scope.user= {
+		        min:0,
+		        max:10,
+		        value:JSON.parse(localStorage.get("hotnessNumber"))
+		    }
+	  
+	  $scope.onRangeChange = function() {
+		  JSON.stringify(localStorage.set("hotnessNumber", $scope.user.value));
 	  }
 	
 })

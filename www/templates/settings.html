@@ -1,57 +1,56 @@
-<ion-view title="Settings"  class="show" >
-<ion-pane class="background-color-grey">
-	<ion-nav-buttons side="secondary" >
-		<button class="button button-clear"  ng-click="user.toggleFavorite(show)" >
-			<!-- <i class="ion-heart" ng-class="{'assertive':user.current.favorites[show.showid]}" ></i > -->
-		</button >
-	</ion-nav-buttons >
+<ion-view title="Settings" class="show">
+  <ion-pane class="background-color-grey">
+    <ion-nav-buttons side="secondary">
+      <button class="button button-clear" ng-click="user.toggleFavorite(show)">
+      </button>
+    </ion-nav-buttons>
 
-	<ion-content  >
+    <ion-content>
+      <div class="list">
+        <div class="item item-divider">
+          Notifications
+        </div>
 
-			
-	
-	<div class="list">
-	  <div class="item item-divider">
-    	Notifications
-  </div>
-  
+        <li class="item item-toggle">
+          Receive Push Notifications
+          <label class="toggle toggle-balanced">
+            <input type="checkbox" checked>
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+        </li>
 
-		  <li class="item item-toggle">
-		     Receive Push Notifications
-		     <label class="toggle toggle-balanced">
-		       <input type="checkbox" checked>
-		       <div class="track">
-		         <div class="handle"></div>
-		       </div>
-		     </label>
-		  </li>
+        <div class="item item-divider">
+          Twitter Monitoring
+        </div>
+        <ion-list>
 
-	<div class="list">
-	  <div class="item item-divider">
-    	Twitter Monitoring
-  </div>
-   <ion-list>
+          <ion-checkbox ng-repeat="item in checkboxes" ng-model="item.checked" ng-checked="item.checked">
+            {{ item.text }}
+          </ion-checkbox>
 
-	  <!-- <ion-checkbox ng-model="true" checked>#Ameren</ion-checkbox>
-	  <ion-checkbox ng-model="true">@AmerenMissouri</ion-checkbox>
-	  <ion-checkbox ng-model="false">@AmerenIllinois</ion-checkbox>
-	  <ion-checkbox ng-model="true">@AmerenCorporation</ion-checkbox> -->
-	  
-	  <ion-checkbox ng-repeat="item in checkboxes"
-                      ng-model="item.checked" 
-                      ng-checked="item.checked">
-          {{ item.text }}
-        </ion-checkbox>
-	
-	</ion-list>
-</div>
-	
-	
-	
-	 <button style="width:80%;margin-left:auto;margin-right:auto;" class="button button-block button-positive"  ng-click="logout()">
-          Logout
-        </button>
+        </ion-list>
+        <div class="item item-divider">
+          Hot Ideas
+        </div>
+        <li class="item ">
 
-	</ion-content >
-</ion-pane>
-</ion-view >
+          <small>Mark idea hot after these many people comment:</small>&nbsp;<span style="color:green;">{{user.value}}</span>
+          <div class="range range-positive">
+            <i class="icon ion-ios-flame-outline"  style="color:red;"></i>
+            <input type="range" min="1" max="10" value="{{user.min}}" step="1" ng-model="user.value" ng-change="onRangeChange()"> 
+            	
+            <i class="icon ion-ios-flame"  style="color:red;"></i>
+          </div>
+
+        </li>
+      </div>
+
+      <button style="width:80%;margin-left:auto;margin-right:auto;" class="button button-block button-positive" ng-click="logout()">
+        Logout
+      </button>
+
+    </ion-content>
+  </ion-pane>
+</ion-view>
