@@ -88,9 +88,11 @@ angular.module('starter.controllers', [])
 	  $scope.$broadcast('scroll.infiniteScrollComplete');
   };
   
-  $scope.isItemHot = function(feedId) {
-	  console.log('Checking if topic is hot..',feedId);
-	  return CtrlService.isTopicHot(feedId);
+  $scope.isItemHot = function(feed) {
+	  if(feed.commenters && feed.commenters.length>2) {
+		  return true;
+	  }
+	  return false;
   };
   
   $scope.share = function(item) {

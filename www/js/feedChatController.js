@@ -18,7 +18,6 @@ angular.module('starter.controllers')
 
   $scope.feedId = $stateParams.feedId;
   
-  // TBD: From FeedId call service to get FeedName (Details etc).
   console.log('feedId -->',$scope.feedId);
 	$scope.data = {
 		messages: [],
@@ -26,7 +25,16 @@ angular.module('starter.controllers')
 		loading: true,
 		showInfo: false
 	};
+	
+	var feedsRef = new Firebase('https://teamsterapp.firebaseio.com/feeds');
+	var feedQuery = feedsRef
+					.orderByChild("id")
+					.equalTo($scope.feedId);
+	var feed = $firebaseArray(feedQuery);
+	
+	
 	var messagesRef = new Firebase('https://teamsterapp.firebaseio.com/messages');
+	
 	
 	$scope.loadMessages = function () {
 
@@ -75,6 +83,18 @@ angular.module('starter.controllers')
 			
 			$scope.data.message = '';
 			
+		
+			if(feed[0].commenters) {
+				if(feed[0].commenters.indexOf($scope.getName() + '_' +$scope.getImg()) == -1) {
+					// Not found so add commenter
+					feed[0].commenters.push($scope.getName() + '_' +$scope.getImg());
+					feed.$save(feed[0]);
+				}
+			} else {
+				feed[0].commenters = [];
+				feed[0].commenters.push($scope.getName() + '_' +$scope.getImg());
+				feed.$save(feed[0]);
+			}
 			$ionicScrollDelegate.$getByHandle('show-page').scrollBottom(true);
 		}
 
@@ -83,8 +103,10 @@ angular.module('starter.controllers')
 	$scope.loadMessages();
 	
 	$scope.getName = function() {
-//		console.log('name:' ,PersonService.GetUserDetails().name);
 		return PersonService.GetUserDetails().name;
+	};
+	$scope.getUserImg = function() {
+		return PersonService.GetUserDetails().img;
 	};
 	
 	$scope.getImg = function() {
