@@ -49,7 +49,7 @@ angular.module('starter.controllers')
 		$scope.data.messages = $firebaseArray(query);
 	
 		$scope.data.messages.$loaded().then(function (data) {
-			console.log("AngularFire $loaded");
+//			console.log("AngularFire $loaded");
 			$scope.data.loading = false;
 			if($scope.data.messages.length && $scope.data.messages.length>1) {
 				CtrlService.addHotTopic($scope.feedId);
@@ -62,7 +62,6 @@ angular.module('starter.controllers')
 	// Added below line because view is not scrolling to the bottom on the recepient side when a new msg arrives
 	messagesRef.on('child_added', function(childSnapshot, prevChildKey) {
 		  // code to handle new child.
-		console.log('Fired..',childSnapshot)
 			$timeout(function() {
 				$ionicScrollDelegate.scrollBottom(true);
 			},1000);
