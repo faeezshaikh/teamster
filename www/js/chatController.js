@@ -55,28 +55,28 @@ angular.module('starter.controllers')
         $scope.userImg = authData.facebook.profileImageURL;
         $scope.userEmail = authData.facebook.email; // Email works only if user has exposed.
         PersonService.SetAvatar(authData.facebook.profileImageURL);
-        PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail);
+        PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail,authData.facebook.displayName);
       }
       if (authData.provider == 'twitter') {
         $scope.userName = authData.twitter.displayName;
         $scope.userImg = authData.twitter.profileImageURL;
         $scope.userEmail = authData.twitter.email;
         PersonService.SetAvatar(authData.twitter.profileImageURL);
-        PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail);
+        PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail,authData.twitter.displayName);
       }
       if (authData.provider == 'google') {
         $scope.userName = authData.google.displayName;
         $scope.userImg = authData.google.profileImageURL;
         $scope.userEmail = authData.google.email;
         PersonService.SetAvatar(authData.google.profileImageURL);
-        PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail);
+        PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail,authData.google.displayName);
       }
       if (authData.provider == 'github') {
           $scope.userName = authData.github.displayName;
           $scope.userImg = authData.github.profileImageURL;
           $scope.userEmail = authData.github.email;
           PersonService.SetAvatar(authData.github.profileImageURL);
-          PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail);
+          PersonService.SetUserDetails($scope.userName,$scope.userImg,$scope.userEmail,authData.github.displayName);
         }
       
   

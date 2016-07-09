@@ -24,15 +24,15 @@
 		     This is the minimum viable increment of the Teamster app. If you'd like to see the Timesheet fearture added to this app, press the button below.
 		    </p>
 		    <p>
-		      	 <button class="button button-block button-positive" style="width:80%;margin-left:auto;margin-right:auto;" ng-click="submitted=true; " ng-hide="submitted">
+		      	 <button class="button button-block button-positive" style="width:80%;margin-left:auto;margin-right:auto;" ng-click="signupForTimesheetAlerts();  " ; ng-hide="isRegistered()">
           			I want Timesheet!
       			  </button>
 
 		    </p>
-		    <button ng-show="submitted" class="button button-block button-outline" style="width:80%;margin-left:auto;margin-right:auto;" ng-click="submitted=true; " ng-hide="submitted">
+		    <button ng-show="isRegistered()" class="button button-block button-outline" style="width:80%;margin-left:auto;margin-right:auto;" ng-click="submitted=true; " ng-hide="submitted">
 		    <i class="icon ion-android-checkmark-circle"></i> Thank you 
 		    </button>
-		    	<p ng-show="submitted" >Thank you for your feedback. We'll notify you by email and a push notification as soon as the Timesheet feature becomes available.<p>
+		    	<p ng-show="isRegistered()" >Thank you for your feedback. We'll notify you by email and a push notification as soon as the Timesheet feature becomes available.<p>
 		  </div>
 		
 		</div>

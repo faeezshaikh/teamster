@@ -117,6 +117,7 @@ angular.module('starter.controllers')
 		console.log(PersonService.GetAvatar());
 		return PersonService.GetAvatar();
 	};
+	
  
 })
 

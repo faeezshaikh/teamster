@@ -12,7 +12,7 @@ angular.module(
  //  7. Implement Adding new Article
  //  5. Article Date
   //  3. Article Content.
-  // 13. Settings page
+  // 13. Settings page  - Limit numner of Favorites, Push Not, Tags 
   // 14. Splash screen and logo - Test with Push Notifications
   // 16. Demo Practice .Bitcoin article
   // 17. Firechat showing multiple msgs
@@ -197,7 +197,7 @@ angular.module(
         views: {
           'menuContent': {
             templateUrl: 'templates/timesheet.html',
-            controller: ''
+            controller: 'TimesheetCtrl'
           }
         }
       })

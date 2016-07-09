@@ -51,7 +51,6 @@ angular.module('starter.controllers')
 		  } else {
 			   hotNumber = 3;
 		  }
-		  console.log('Hotness number is:',hotNumber);
 		  if(feed.commenters && feed.commenters.length>hotNumber) {
 			  return true;
 		  }
@@ -88,4 +87,5 @@ angular.module('starter.controllers')
 		  $scope.items[index] = obj;
 		  $scope.items.$save(obj);   // synchronize it with Firebase array
 	  }
+	  
 	});

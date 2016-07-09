@@ -34,10 +34,11 @@ angular.module('starter.controllers')
 		  GetLoginState: function() {
 			  return loginState;
 		  },
-		  SetUserDetails: function(name,img,email) {
+		  SetUserDetails: function(name,img,email,displayName) {
 			  loggedinUser.name = name;
 			  loggedinUser.img = img;
 			  loggedinUser.email = email;
+			  loggedinUser.displayName = displayName;
 		  },
 		  GetUserDetails: function() {
 			  return loggedinUser;
