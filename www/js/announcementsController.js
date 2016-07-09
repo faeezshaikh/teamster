@@ -10,7 +10,7 @@ angular.module('starter.controllers')
 		  var favAnnouncements = loadAnnouncementsFromCache();
 		  if($scope.checkIfFavorite(announcement))  {
 			  if(getIndexInArray(announcement,favAnnouncements) != -1) {
-				  favAnnouncements.splice(favAnnouncements.indexOf(announcement),1);
+				  favAnnouncements.splice(getIndexInArray(announcement,favAnnouncements),1);
 			  }
 		  }
 		  else { // not liked yet, so go ahead and like it
