@@ -44,7 +44,6 @@ angular.module('starter.controllers')
   auth.$onAuth(function(authData) {
     // Once authenticated, instantiate Firechat with our user id and user name
     if (authData) {
-        console.log("Succes in Logging in...Logged in as:", authData.uid);
       $scope.loginProgress = false;
       $scope.loggedIn = true;
       $rootScope.currentUser = "user";

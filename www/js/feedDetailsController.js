@@ -15,7 +15,6 @@ angular.module('starter.controllers')
 //         $scope.selected = JSON.stringify(found);
      
          $scope.share = function(item) {
-       	  console.log('sharing called',item);
        	  $cordovaSocialSharing
        	    .share(item.article, "Teamster Article",  item.articleImg,"http://www.ameren.com") // Share via native share sheet
        	    .then(function(result) {

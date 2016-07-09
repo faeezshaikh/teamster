@@ -52,8 +52,6 @@ angular.module('starter.controllers')
 			console.log("AngularFire $loaded");
 			$scope.data.loading = false;
 			if($scope.data.messages.length && $scope.data.messages.length>1) {
-				console.log('Chat lenght', $scope.data.messages.length  );
-				console.log('Since chatter marking it hot',$scope.feedId);
 				CtrlService.addHotTopic($scope.feedId);
 			}
 			$ionicScrollDelegate.$getByHandle('show-page').scrollBottom(true);
