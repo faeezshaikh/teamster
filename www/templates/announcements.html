@@ -24,9 +24,9 @@
 			  	<div class="card"  ng-repeat="announcement in filtered = (announcements | filter:searchText)">
 				  <div class="item item-text-wrap">
 
-				    {{announcement}}
+				    {{announcement.text}}
 				      
-				  <i  ng-click="favorited(announcement)" ng-class="liked ? 'icon ion-ios-heart-outline pull-right balanced' : 'icon ion-heart pull-right'"></i>Feed
+				  <i  ng-click="updateFavorites(announcement)" ng-class="checkIfFavorite(announcement) ? 'icon ion-heart pull-right' : 'icon ion-ios-heart-outline pull-right balanced'"></i>Feed
 				  </div>
 				</div>
 					

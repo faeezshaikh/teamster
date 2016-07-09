@@ -4,8 +4,7 @@ angular.module(
   ])
   
 // TODO:
-  //  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight
-  // 18. Hotness factor
+
   //  8. Push Notification - iOS
   // 15. Social Sharing
   // 11. Twitter page scrolling
@@ -23,7 +22,10 @@ angular.module(
 
 //  9. Ideas Tab?
 //  10. Login page Test?
-
+  
+  
+  //  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight  **** 
+  // 18. Hotness factor  **
   // 18. Settings page - Checkbox not toggable ****
   // 11. Page Title   ********
   //  6. Hotness in article detail - show  ******
