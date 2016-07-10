@@ -36,7 +36,7 @@
 	            </a>
             </h2>
             <p>{{getDate(item.articleDate) | date:'MMMM dd, yyyy'}}
-	            <a class="pull-right" ng-click="items.$remove(item)" ng-show="{{isItMine(item)}}">
+	            <a class="pull-right" ng-click="openDeleteConfirmation(item)" ng-show="{{isItMine(item)}}">
 	              <i class="icon ion-trash-a"></i>
 	            </a>
             </p>

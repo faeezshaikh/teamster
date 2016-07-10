@@ -3,7 +3,7 @@ angular.module('starter.controllers')
 	  $scope.auth = auth;
 	  
 	  $scope.items = [];
-	  
+	  var ideaToDelete = {};
 	  $ionicModal.fromTemplateUrl('templates/composeIdea.html', {
 		    scope: $scope,
 		    animation: 'slide-in-up'
@@ -16,6 +16,14 @@ angular.module('starter.controllers')
 		    animation: 'slide-in-up'
 		  }).then(function(modal) {
 		    $scope.editIdeaModal = modal;
+		});
+	  
+	  
+	  $ionicModal.fromTemplateUrl('templates/deleteIdeaConfirmation.html', {
+		    scope: $scope,
+		    animation: 'slide-in-up'
+		  }).then(function(modal) {
+		    $scope.deleteIdeaModal = modal;
 		});
 	  
 	  
@@ -142,8 +150,21 @@ angular.module('starter.controllers')
 	  $scope.openConfirmation = function() {
 		  $scope.confirmationModal.show();
 	  }
+	  
+	  $scope.openDeleteConfirmation = function(item) {
+		  $scope.deleteIdeaModal.show();
+		  ideaToDelete = item;
+	  }
+	  $scope.closeDeleteConfirmation = function() {
+		  $scope.deleteIdeaModal.hide();
+	  }
 	  $scope.closeConfirmation = function() {
 		  $scope.confirmationModal.hide();
+	  }
+	  
+	  $scope.deleteIdea = function() {
+		  $scope.items.$remove(ideaToDelete);
+		  $scope.deleteIdeaModal.hide();
 	  }
 	  
 	  function getRandomImg() {
