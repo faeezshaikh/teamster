@@ -161,3 +161,10 @@ Social Sharing
 1. Install plugin
 
 		sudo cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git	
+		
+		
+To demo
+=======
+
+As soon as you load 'feeds' EVERYTHING gets deleted..all references.
+lastIdea needs to be present if you have feeds loaded, otherwise error		

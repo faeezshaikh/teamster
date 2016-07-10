@@ -31,7 +31,7 @@
           <div class="item item-avatar">
             <img ng-src="{{item.picture.thumbnail}}">
             <h2>{{item.name}}</h2>
-            <p>November 05, 1955</p>
+            <p>{{getDate(item.articleDate) | date:'MMMM dd, yyyy'}}</p>
           </div>
 			<a  href="#/app/feeds/detail/{{item.id}}">
 		
@@ -42,7 +42,7 @@
 	            </p>
 	            
 	            <p>
-	              <a class="subdued">{{item.likes}} {{item.likes > 1 ? 'Votes' : 'Vote'}}</a>
+	              <a class="subdued">{{item.likes == 0 ? '' : item.likes}} {{item.likes > 1 ? 'Votes' : item.likes == 0 ? '' : 'Vote'}}</a>
 	              <span ng-show="isItemHot(item)" class="ion ion-fireball" style="color:red;"></span> <a  ng-show="isItemHot(item)" class="subdued" style="color:red;">Hot</a>
 	              <a href="#/app/feeds/detail/{{item.id}}"><span class='pull-right'>Read More</span></a> 
 	            </p>
@@ -69,8 +69,8 @@
        <ion-infinite-scroll immediate-check="false" on-infinite="loadMore()" spinner="ripple" distance="1%"></ion-infinite-scroll>
       
       </ion-content>
-      <button class="button button-float" >
-	        <i class="icon ion-plus"></i>
+      <button class="button button-float" ng-click="openComposer()">
+	        <i class="icon ion-compose"></i>
 	      </button>
         
     </ion-pane>

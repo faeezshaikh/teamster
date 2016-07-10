@@ -1,9 +1,22 @@
 angular.module('starter.controllers')
-.controller('FeedsCtrl', function($scope, auth, store, $state, $timeout, PersonService, $cordovaToast,$firebaseArray,CtrlService,$cordovaSocialSharing,localStorage) {
+.controller('FeedsCtrl', function($scope, auth, store, $state, $timeout, PersonService, $cordovaToast,$firebaseArray,CtrlService,$cordovaSocialSharing,localStorage,$ionicModal) {
 	  $scope.auth = auth;
 	  
 	  $scope.items = [];
-	//  var allFeeds = [];
+	  
+	  $ionicModal.fromTemplateUrl('templates/composeIdea.html', {
+		    scope: $scope,
+		    animation: 'slide-in-up'
+		  }).then(function(modal) {
+		    $scope.composeIdeaModal = modal;
+		});
+	  
+	  $ionicModal.fromTemplateUrl('templates/confirmationModal.html', {
+		    scope: $scope,
+		    animation: 'slide-in-up'
+		  }).then(function(modal) {
+		    $scope.confirmationModal = modal;
+		});
 	  
 	  function loadLikesFromCache() {
 		  var likedFeeds = JSON.parse(localStorage.get("liked"));
@@ -24,6 +37,12 @@ angular.module('starter.controllers')
 	  CtrlService.setFeeds($scope.items);
 	  scrollRef.scroll.next(3);
 	 
+	  
+	  ////
+	  var lastIdeaRef = new Firebase('https://teamsterapp.firebaseio.com/lastIdea');
+	  var feedQuery = lastIdeaRef.orderByChild("id").equalTo(1); // We just have one obj but getting it as an array.
+	  var lastIdeaArr = $firebaseArray(feedQuery);
+	  ////
 
 	  $scope.isLiked = function(feed) {
 		  var likedFeeds = loadLikesFromCache();
@@ -43,6 +62,10 @@ angular.module('starter.controllers')
 		    scrollRef.scroll.next(1);
 		  $scope.$broadcast('scroll.infiniteScrollComplete');
 	  };
+	  
+	  $scope.getDate = function(dateString) {
+		  return new Date(dateString);
+	  }
 	  
 	  $scope.isItemHot = function(feed) {
 		  var hotNumber = JSON.parse(localStorage.get("hotnessNumber"));
@@ -86,6 +109,48 @@ angular.module('starter.controllers')
 		  localStorage.set("liked",JSON.stringify(likedFeeds));
 		  $scope.items[index] = obj;
 		  $scope.items.$save(obj);   // synchronize it with Firebase array
+	  }
+	  
+	  $scope.openComposer = function() {
+		  $scope.newIdea = {proprietary:false};
+		 $scope.composeIdeaModal.show();
+	  }
+	  
+	  $scope.closeComposer = function() {
+		  $scope.composeIdeaModal.hide();
+	  }
+	  
+	  $scope.openConfirmation = function() {
+		  $scope.confirmationModal.show();
+	  }
+	  $scope.closeConfirmation = function() {
+		  $scope.confirmationModal.hide();
+	  }
+	  
+	  function getRandomImg() {
+		  return "http://images.huffingtonpost.com/2015-06-23-1435071172-9008959-brainstormidea.jpg";
+	  }
+	  
+	  $scope.finalSubmit = function() {
+		  $scope.confirmationModal.hide();
+		  $scope.composeIdeaModal.hide();
+		  var date = new Date();
+		  var obj = {
+				  article:$scope.newIdea.desc,
+				  name: PersonService.GetUserDetails().name,
+				  articleImg : getRandomImg(),
+				  sharing: $scope.newIdea.proprietary ? false : true,
+				  id:lastIdeaArr[0].lastIdeaId+1,
+				  order:lastIdeaArr[0].lastIdeaOrder-1,
+				  articleDate: date.toString(),
+				  picture: {thumbnail : PersonService.GetUserDetails().img},
+				  likes:0
+				  };
+		  $scope.items.$add(obj);
+	    
+		  var fredNameRef = new Firebase('https://teamsterapp.firebaseio.com/lastIdea/0');
+		fredNameRef.update({ lastIdeaId: lastIdeaArr[0].lastIdeaId+1, lastIdeaOrder: lastIdeaArr[0].lastIdeaOrder-1 });
+		  
 	  }
 	  
 	});
