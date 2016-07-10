@@ -30,13 +30,26 @@
 
           <div class="item item-avatar">
             <img ng-src="{{item.picture.thumbnail}}">
-            <h2>{{item.name}}</h2>
-            <p>{{getDate(item.articleDate) | date:'MMMM dd, yyyy'}}</p>
+            <h2>{{item.name}}
+            	<a class="pull-right" ng-click="openEditor(item)" ng-show="{{isItMine(item)}}">
+	              <i class="icon ion-edit"></i>
+	            </a>
+            </h2>
+            <p>{{getDate(item.articleDate) | date:'MMMM dd, yyyy'}}
+	            <a class="pull-right" ng-click="items.$remove(item)" ng-show="{{isItMine(item)}}">
+	              <i class="icon ion-trash-a"></i>
+	            </a>
+            </p>
+            
+             
           </div>
 			<a  href="#/app/feeds/detail/{{item.id}}">
 		
 	          <div class="item item-body">
 	            <img class="full-image" ng-src={{item.articleImg}}>
+	              <p class="center">
+	              <strong>{{item.title | limitTo: 100}}</strong>
+	            </p>
 	            <p class="center">
 	              {{item.article | limitTo: 100}}
 	            </p>
@@ -62,6 +75,7 @@
               <i class="icon ion-share"></i>
               Share
             </a>
+           
           </div>
 	
         </div>

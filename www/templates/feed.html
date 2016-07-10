@@ -14,7 +14,7 @@
           <div class="item item-avatar">
             <img src="{{feed.picture.thumbnail}}">
             <h2>{{feed.name}}</h2>
-            <p>November 05, 1955</p>
+            <p ng-controller="FeedsCtrl">{{getDate(feed.articleDate) | date:'MMMM dd, yyyy'}}</p>
           </div>
 		
 	          <div class="item item-body">
@@ -40,6 +40,7 @@
               <i class="icon ion-share"></i>
               Share
             </a>
+          
           </div>
 
         </div>

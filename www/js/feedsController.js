@@ -11,6 +11,14 @@ angular.module('starter.controllers')
 		    $scope.composeIdeaModal = modal;
 		});
 	  
+	  $ionicModal.fromTemplateUrl('templates/editIdea.html', {
+		    scope: $scope,
+		    animation: 'slide-in-up'
+		  }).then(function(modal) {
+		    $scope.editIdeaModal = modal;
+		});
+	  
+	  
 	  $ionicModal.fromTemplateUrl('templates/confirmationModal.html', {
 		    scope: $scope,
 		    animation: 'slide-in-up'
@@ -116,8 +124,19 @@ angular.module('starter.controllers')
 		 $scope.composeIdeaModal.show();
 	  }
 	  
+	  $scope.openEditor = function(item) {
+		  $scope.idToEdit = item.$id;
+		  $scope.editIdea = {};
+		  $scope.editIdea.proprietary = item.sharing == true ? false : true;
+		  $scope.editIdea.title = item.title;
+		  $scope.editIdea.desc = item.article;
+		  $scope.editIdeaModal.show();
+	  }
+	  
+	  
 	  $scope.closeComposer = function() {
 		  $scope.composeIdeaModal.hide();
+		  $scope.editIdeaModal.hide();
 	  }
 	  
 	  $scope.openConfirmation = function() {
@@ -135,7 +154,9 @@ angular.module('starter.controllers')
 		  $scope.confirmationModal.hide();
 		  $scope.composeIdeaModal.hide();
 		  var date = new Date();
+		  
 		  var obj = {
+				  title:$scope.newIdea.title,
 				  article:$scope.newIdea.desc,
 				  name: PersonService.GetUserDetails().name,
 				  articleImg : getRandomImg(),
@@ -146,11 +167,38 @@ angular.module('starter.controllers')
 				  picture: {thumbnail : PersonService.GetUserDetails().img},
 				  likes:0
 				  };
+		  
 		  $scope.items.$add(obj);
 	    
 		  var fredNameRef = new Firebase('https://teamsterapp.firebaseio.com/lastIdea/0');
-		fredNameRef.update({ lastIdeaId: lastIdeaArr[0].lastIdeaId+1, lastIdeaOrder: lastIdeaArr[0].lastIdeaOrder-1 });
+		  fredNameRef.update({ lastIdeaId: lastIdeaArr[0].lastIdeaId+1, lastIdeaOrder: lastIdeaArr[0].lastIdeaOrder-1 });
 		  
 	  }
+	  
+	  $scope.saveEdit = function() {
+		  $scope.editIdeaModal.hide();
+		  var obj = {
+				  title:$scope.editIdea.title,
+				  article:$scope.editIdea.desc,
+				  name: PersonService.GetUserDetails().name,
+				  articleImg : getRandomImg(),
+				  sharing: $scope.editIdea.proprietary ? false : true,
+				  articleDate: new Date().toString(),
+				  picture: {thumbnail : PersonService.GetUserDetails().img}
+				  };
+		  
+		  var url = 'https://teamsterapp.firebaseio.com/feeds/' + $scope.idToEdit;
+		  var fredNameRef = new Firebase(url);
+		  fredNameRef.update(obj);
+		  
+	  }
+	  
+	  $scope.isItMine = function(item) {
+		  if(PersonService.GetUserDetails().name == item.name) {
+			  return true;
+		  }
+		  return false;
+	  }
+	  
 	  
 	});
