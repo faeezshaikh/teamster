@@ -4,13 +4,12 @@ angular.module(
   ])
   
 // TODO:
-
+// 18. Bug - On updatinglikes Hotness will go away .. try with min 1 chatter 
   //  8. Push Notification - iOS
   // 15. Social Sharing
   // 11. Twitter page scrolling
   // 12. Twitter back from twitter buttons goes back to Chat
- //  7. Implement Adding new Article
- //  5. Article Date
+
   //  3. Article Content.
   // 13. Settings page  - Limit numner of Favorites, Push Not, Tags 
   // 14. Splash screen and logo - Test with Push Notifications
@@ -24,6 +23,8 @@ angular.module(
 //  10. Login page Test?
   
   
+   //  7. Implement Adding new Article *****
+ //  5. Article Date ****
   //  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight  **** 
   // 18. Hotness factor  **
   // 18. Settings page - Checkbox not toggable ****

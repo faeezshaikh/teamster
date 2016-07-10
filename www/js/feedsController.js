@@ -70,7 +70,26 @@ angular.module('starter.controllers')
 			  }
 	  }
 		  
+	  $scope.updateLikes = function(index,obj) {
+		  obj = $scope.items[index]; // need to refresh
+		  var likedFeeds = loadLikesFromCache();
 		  
+		  if($scope.isLiked(obj))  {
+			  $scope.liked=false
+			  likedFeeds.splice(likedFeeds.indexOf(obj.id),1);
+			  obj.likes --;
+		  }
+		  else { // not liked yet, so go ahead and like it
+			
+			  $scope.liked= true;
+			  obj.likes++;
+			  likedFeeds.push(obj.id);
+		  }
+		  localStorage.set("liked",JSON.stringify(likedFeeds));
+		  $scope.items[index] = obj;
+		  $scope.items.$save(obj);   // synchronize it with Firebase array
+	  }
+	  		  
 	  // This function is called whenever the user reaches the bottom
 	  $scope.loadMore = function() {
 		  console.log('loadmore fired');
@@ -109,24 +128,6 @@ angular.module('starter.controllers')
 		    });
 	  }
 	  
-	  $scope.updateLikes = function(index,obj) {
-		  var likedFeeds = loadLikesFromCache();
-		  if($scope.isLiked(obj))  {
-			  $scope.liked=false
-			  likedFeeds.splice(likedFeeds.indexOf(obj.id),1);
-			  obj.likes --;
-		  }
-		  else { // not liked yet, so go ahead and like it
-			
-			  $scope.liked= true;
-			  obj.likes++;
-			  likedFeeds.push(obj.id);
-		  }
-		  localStorage.set("liked",JSON.stringify(likedFeeds));
-		  $scope.items[index] = obj;
-		  $scope.items.$save(obj);   // synchronize it with Firebase array
-	  }
-	  
 	  $scope.openComposer = function() {
 		  $scope.newIdea = {proprietary:false};
 		 $scope.composeIdeaModal.show();
@@ -138,6 +139,9 @@ angular.module('starter.controllers')
 		  $scope.editIdea.proprietary = item.sharing == true ? false : true;
 		  $scope.editIdea.title = item.title;
 		  $scope.editIdea.desc = item.article;
+		  $scope.editIdea.author = item.name;
+		  $scope.editIdea.authorPic = item.picture.thumbnail,
+		  $scope.editIdea.articleImg = item.articleImg;
 		  $scope.editIdeaModal.show();
 	  }
 	  
@@ -179,8 +183,8 @@ angular.module('starter.controllers')
 		  var obj = {
 				  title:$scope.newIdea.title,
 				  article:$scope.newIdea.desc,
-				  name: PersonService.GetUserDetails().name,
-				  articleImg : getRandomImg(),
+				  name: PersonService.GetUserDetails().name, // We could do that, but if admin wants to secretly update an idea it would expose the admin
+				  articleImg : getRandomImg(),  // Same reason as above
 				  sharing: $scope.newIdea.proprietary ? false : true,
 				  id:lastIdeaArr[0].lastIdeaId+1,
 				  order:lastIdeaArr[0].lastIdeaOrder-1,
@@ -201,11 +205,14 @@ angular.module('starter.controllers')
 		  var obj = {
 				  title:$scope.editIdea.title,
 				  article:$scope.editIdea.desc,
-				  name: PersonService.GetUserDetails().name,
-				  articleImg : getRandomImg(),
+//				  name: PersonService.GetUserDetails().name,   // We could do that, but if admin wants to secretly update an idea it would expose the admin
+				  name: $scope.editIdea.author, 
+//				  articleImg : getRandomImg(),  // Same reason as above
+				  articleImg : $scope.editIdea.articleImg,
 				  sharing: $scope.editIdea.proprietary ? false : true,
 				  articleDate: new Date().toString(),
-				  picture: {thumbnail : PersonService.GetUserDetails().img}
+//				  picture: {thumbnail : PersonService.GetUserDetails().img},
+				  picture: {thumbnail : $scope.editIdea.authorPic}, 
 				  };
 		  
 		  var url = 'https://teamsterapp.firebaseio.com/feeds/' + $scope.idToEdit;

@@ -29,7 +29,7 @@ angular.module('starter.controllers')
 	var feedsRef = new Firebase('https://teamsterapp.firebaseio.com/feeds');
 	var feedQuery = feedsRef
 					.orderByChild("id")
-					.equalTo($scope.feedId);
+					.equalTo(parseInt($scope.feedId));  // String to Int. since id is 'int'
 	var feed = $firebaseArray(feedQuery);
 	
 	
@@ -80,7 +80,7 @@ angular.module('starter.controllers')
 			
 			$scope.data.message = '';
 			
-		
+
 			if(feed[0].commenters) {
 				if(feed[0].commenters.indexOf($scope.getName() + '_' +$scope.getImg()) == -1) {
 					// Not found so add commenter
@@ -92,6 +92,8 @@ angular.module('starter.controllers')
 				feed[0].commenters.push($scope.getName() + '_' +$scope.getImg());
 				feed.$save(feed[0]);
 			}
+		
+		
 			$ionicScrollDelegate.$getByHandle('show-page').scrollBottom(true);
 		}
 
