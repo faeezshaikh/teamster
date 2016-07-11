@@ -48,7 +48,15 @@ angular.module('starter.controllers')
       $scope.loggedIn = true;
       $rootScope.currentUser = "user";
       $scope.explModal.hide();
-      $window.location.href = "#/app/chat/";
+//      $window.location.href = "#/app/chat/";
+      console.log('Chat controller. State name = ',$state.current.name);
+      if($state.current.name == 'app.chat') {
+    	  $state.go('app.chat');
+//    	  $window.location.href = "#/app/chat/";
+      } else {
+    	  $state.go('app.feeds');
+    	 // $window.location.href = "#/app/feeds";
+      }
       if (authData.provider == 'facebook') {
         $scope.userName = authData.facebook.displayName;
         $scope.userImg = authData.facebook.profileImageURL;

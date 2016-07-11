@@ -143,7 +143,8 @@ angular.module(
         url: '/chat',
         views: {
           'menuContent': {
-            templateUrl: 'templates/chat.html'
+            templateUrl: 'templates/chat.html',
+            controller: 'chatController'
           }
         }
       })
@@ -238,12 +239,14 @@ angular.module(
       // this is due to the chatUI widget with hyperlinks, so if anytime other than the first login a link is clicked go to chat.
       $urlRouterProvider.otherwise(function($injector, $location) {
         var state = $injector.get('$state');
-        if (state.current.name == '') {
+        console.log('State name = ',state.current.name);
+        if (state.current.name == '' || state.current.name == 'app.chat') {
+        	
           state.go('app.chat');
         } 
-//        else {
-//          state.go('app.feeds');
-//        }
+        else {
+          state.go('app.feeds');
+        }
         return $location.path();
       });
 
