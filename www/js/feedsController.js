@@ -148,7 +148,7 @@ angular.module('starter.controllers')
 		 $scope.composeIdeaModal.show();
 	  }
 	  
-	  $scope.openEditor = function(indexOfItem,item) {
+	  $scope.openEditor = function(item) {
 		  $scope.idToEdit = item.$id;
 		  $scope.editIdea = {};
 		  $scope.editIdea.proprietary = item.sharing == true ? false : true;

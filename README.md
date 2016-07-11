@@ -64,6 +64,9 @@ Body:
     }
 }
 
+POSTMAN Collection:
+https://www.getpostman.com/collections/e1b96873e0dd5aa76190
+
 To Get Tokens:
 ==============
 GET

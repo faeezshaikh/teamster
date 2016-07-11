@@ -31,8 +31,7 @@
           <div class="item item-avatar">
             <img ng-src="{{item.picture.thumbnail}}">
             <h2>{{item.name}}
-            	<!-- <a class="pull-right" ng-click="openEditor(item)" ng-show="{{isItMine(item)}}"> -->
-            	<a class="pull-right" ng-click="openEditor(items.indexOf(item),item)" ng-show="true">
+            	<a class="pull-right" ng-click="openEditor(item)" ng-show="{{isItMine(item)}}">
 	              <i class="icon ion-edit"></i>
 	            </a>
             </h2>
