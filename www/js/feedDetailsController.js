@@ -7,12 +7,23 @@ angular.module('starter.controllers')
 	
 		$scope.feedDetailId = $stateParams.feedId;
 		var key = $scope.feedDetailId;
-		 var feeds = CtrlService.getFeeds();
-		 console.log('Feeds:' ,feeds);
 
-         $scope.feed = $filter('getById')(feeds, key);
-         console.log("Found" , $scope.feed);
-//         $scope.selected = JSON.stringify(found);
+		var url = 'https://teamsterapp.firebaseio.com/feeds/' + key;
+		var feedDetail = new Firebase(url);
+
+		// TODO: Show a spinner.. Test in slow connections
+		  feedDetail.on("value", function(snapshot) {
+			  console.log(snapshot.val());
+			  $scope.feed = snapshot.val();
+			}, function (errorObject) {
+			  console.log("The read failed: " + errorObject.code);
+			});
+		  
+		  
+//		var feeds = CtrlService.getFeeds();
+//		 console.log('Feeds:' ,feeds);
+//         $scope.feed = $filter('getById')(feeds, key);
+//         console.log("Found" , $scope.feed);
      
          $scope.share = function(item) {
        	  $cordovaSocialSharing

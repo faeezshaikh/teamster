@@ -32,7 +32,7 @@
             <img ng-src="{{item.picture.thumbnail}}">
             <h2>{{item.name}}
             	<!-- <a class="pull-right" ng-click="openEditor(item)" ng-show="{{isItMine(item)}}"> -->
-            	<a class="pull-right" ng-click="openEditor(item)" ng-show="true">
+            	<a class="pull-right" ng-click="openEditor(items.indexOf(item),item)" ng-show="true">
 	              <i class="icon ion-edit"></i>
 	            </a>
             </h2>
@@ -44,22 +44,22 @@
             
              
           </div>
-			<a  href="#/app/feeds/detail/{{item.id}}">
+			<a  href="#/app/feeds/detail/{{item.$id}}">
 		
 	          <div class="item item-body">
 	            <img class="full-image" ng-src={{item.articleImg}}>
 	              <p class="center">
-	              <strong>{{item.title | limitTo: 100}}</strong>
+	              <strong>{{item.title | limitTo: 80}}</strong>
 	            </p>
 	            <p class="center">
-	              {{item.article | limitTo: 100}}
+	              {{item.article | limitTo: 100}}<span ng-show="{{item.article.length>100}}">...</span>
 	            </p>
 	            
 	            <p>
 	              <a class="subdued">{{item.likes == 0 ? '' : item.likes}} {{item.likes > 1 ? 'Votes' : item.likes == 0 ? '' : 'Vote'}}</a>
 		            <span ng-show="isItemHot(item)" class="ion ion-fireball" style="color:red;"></span> <a  ng-show="isItemHot(item)" class="subdued" style="color:red;">Hot</a>
 	              
-	              <a href="#/app/feeds/detail/{{item.id}}"><span class='pull-right'>Read More</span></a> 
+	              <a href="#/app/feeds/detail/{{item.$id}}"><span class='pull-right'>Read More</span></a> 
 	            </p>
 	          </div>
           </a>

@@ -5,6 +5,7 @@ angular.module(
   
 // TODO:
 // 18. Bug - On updatinglikes Hotness will go away .. try with min 1 chatter 
+  // 19. Bug - Get Feed Details - Show spinner
   //  8. Push Notification - iOS
   // 15. Social Sharing
   // 11. Twitter page scrolling
@@ -37,6 +38,7 @@ angular.module(
 //  Google API Key
 //  AIzaSyD5r8X2j7QoWemIiQizNN5EjJqzsgHYU48
 		  
+.constant('FIREBASE_BASE_URL','https://teamsterapp.firebaseio.com/')
 .run(function($ionicPlatform, auth, $rootScope, store,$ionicModal,$window,$http) {
 	
 	

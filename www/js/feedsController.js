@@ -1,9 +1,9 @@
 angular.module('starter.controllers')
 .controller('FeedsCtrl', function($scope, auth, store, $state, $timeout, PersonService, $cordovaToast,$firebaseArray,CtrlService,$cordovaSocialSharing,localStorage,$ionicModal) {
 	  $scope.auth = auth;
-	  
 	  $scope.items = [];
 	  var ideaToDelete = {};
+	  
 	  $ionicModal.fromTemplateUrl('templates/composeIdea.html', {
 		    scope: $scope,
 		    animation: 'slide-in-up'
@@ -34,6 +34,34 @@ angular.module('starter.controllers')
 		    $scope.confirmationModal = modal;
 		});
 	  
+	  
+	  
+	  var baseRef = new Firebase('https://teamsterapp.firebaseio.com/feeds');
+
+	  var scrollRef = new Firebase.util.Scroll(baseRef, 'order');
+	  $scope.items = $firebaseArray(scrollRef);
+	  CtrlService.setFeeds($scope.items);
+	  scrollRef.scroll.next(3);
+	 
+	  
+	  ////
+	  var lastIdeaRef = new Firebase('https://teamsterapp.firebaseio.com/lastIdea');
+//	  var feedQuery = lastIdeaRef.orderByChild("id").equalTo(1); // We just have one obj but getting it as an array.
+//	  var lastIdeaArr = $firebaseArray(feedQuery);
+//	  
+	  
+	  var lastIdeaId,lastIdeaOrder;
+	  
+	  lastIdeaRef.on("value", function(snapshot) {
+		  console.log('Last Idea objec',snapshot.val());
+		  lastIdeaId =  snapshot.val().lastIdeaId;
+		  lastIdeaOrder = snapshot.val().lastIdeaOrder;
+//		  $scope.feed = snapshot.val();
+		}, function (errorObject) {
+		  console.log("The read of lastIdea Object failed: " + errorObject.code);
+		});
+	  ////
+  
 	  function loadLikesFromCache() {
 		  var likedFeeds = JSON.parse(localStorage.get("liked"));
 		  if(likedFeeds) {
@@ -45,20 +73,6 @@ angular.module('starter.controllers')
 			  } 
 		  }
 	  }
-
-	  var baseRef = new Firebase('https://teamsterapp.firebaseio.com/feeds');
-
-	  var scrollRef = new Firebase.util.Scroll(baseRef, 'order');
-	  $scope.items = $firebaseArray(scrollRef);
-	  CtrlService.setFeeds($scope.items);
-	  scrollRef.scroll.next(3);
-	 
-	  
-	  ////
-	  var lastIdeaRef = new Firebase('https://teamsterapp.firebaseio.com/lastIdea');
-	  var feedQuery = lastIdeaRef.orderByChild("id").equalTo(1); // We just have one obj but getting it as an array.
-	  var lastIdeaArr = $firebaseArray(feedQuery);
-	  ////
 
 	  $scope.isLiked = function(feed) {
 		  var likedFeeds = loadLikesFromCache();
@@ -95,6 +109,7 @@ angular.module('starter.controllers')
 		  console.log('loadmore fired');
 		    // load the next item
 		    scrollRef.scroll.next(1);
+		    CtrlService.setFeeds($scope.items);
 		  $scope.$broadcast('scroll.infiniteScrollComplete');
 	  };
 	  
@@ -133,7 +148,7 @@ angular.module('starter.controllers')
 		 $scope.composeIdeaModal.show();
 	  }
 	  
-	  $scope.openEditor = function(item) {
+	  $scope.openEditor = function(indexOfItem,item) {
 		  $scope.idToEdit = item.$id;
 		  $scope.editIdea = {};
 		  $scope.editIdea.proprietary = item.sharing == true ? false : true;
@@ -186,8 +201,10 @@ angular.module('starter.controllers')
 				  name: PersonService.GetUserDetails().name, // We could do that, but if admin wants to secretly update an idea it would expose the admin
 				  articleImg : getRandomImg(),  // Same reason as above
 				  sharing: $scope.newIdea.proprietary ? false : true,
-				  id:lastIdeaArr[0].lastIdeaId+1,
-				  order:lastIdeaArr[0].lastIdeaOrder-1,
+//				  id:lastIdeaArr[0].lastIdeaId+1,
+//				  order:lastIdeaArr[0].lastIdeaOrder-1,
+				  id:lastIdeaId+1,
+				  order:lastIdeaOrder-1,
 				  articleDate: date.toString(),
 				  picture: {thumbnail : PersonService.GetUserDetails().img},
 				  likes:0
@@ -195,8 +212,8 @@ angular.module('starter.controllers')
 		  
 		  $scope.items.$add(obj);
 	    
-		  var fredNameRef = new Firebase('https://teamsterapp.firebaseio.com/lastIdea/0');
-		  fredNameRef.update({ lastIdeaId: lastIdeaArr[0].lastIdeaId+1, lastIdeaOrder: lastIdeaArr[0].lastIdeaOrder-1 });
+		  var fredNameRef = new Firebase('https://teamsterapp.firebaseio.com/lastIdea');
+		  fredNameRef.update({ lastIdeaId: lastIdeaId+1, lastIdeaOrder: lastIdeaOrder-1 });
 		  
 	  }
 	  
@@ -218,6 +235,8 @@ angular.module('starter.controllers')
 		  var url = 'https://teamsterapp.firebaseio.com/feeds/' + $scope.idToEdit;
 		  var fredNameRef = new Firebase(url);
 		  fredNameRef.update(obj);
+		  
+		  
 		  
 	  }
 	  
