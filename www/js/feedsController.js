@@ -143,8 +143,9 @@ angular.module('starter.controllers')
 		    });
 	  }
 	  
+	  $scope.newIdea = {proprietary:false};
 	  $scope.openComposer = function() {
-		  $scope.newIdea = {proprietary:false};
+		  
 		 $scope.composeIdeaModal.show();
 	  }
 	  
@@ -247,5 +248,26 @@ angular.module('starter.controllers')
 		  return false;
 	  }
 	  
+	  
+	  $scope.isIdeaValid = function(title, desc) {
+		  if( $scope.isTitleValid(title) && $scope.isDescValid(desc) ) {
+			  return true;
+		  }
+		  return false;
+	  }
+	  
+	 $scope.isTitleValid = function(title) {
+		 if(title && title.length>8 && title.length<40) {
+			 return true;
+		 }
+		 return false;
+	 }
+	 $scope.isDescValid = function(desc) {
+		 if(desc && desc.length>100) {
+			 return true;
+		 }
+		 return false;
+	 }
+
 	  
 	});

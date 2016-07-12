@@ -6,16 +6,26 @@
         <ion-content class="padding">
           <div class="list">
             <label class="item item-input item-stacked-label" >
-              <span class="input-label">Title</span>
+              <span class="input-label">Title*&nbsp;<span ng-show="!isTitleValid(editIdea.title)" style="font-size:50%">Min 8 chars - Max 40 chars</span></span>
               <input ng-model="editIdea.title" type="text" placeholder="Catchy Name">
             </label>
             <label class="item item-input item-stacked-label">
-              <span class="input-label">Description</span>
+              <span class="input-label">Description*&nbsp;<small ng-show="!isDescValid(editIdea.desc)" style="font-size:50%">Min 100 chars</small></span>
               <textarea ng-model="editIdea.desc" type="text" placeholder="Detailed description" rows="25" cols="50"></textarea>
             </label>
             <!-- Some bug. UI has to refresh to show the sharing icon ng-show = {{item.sharing}} is not picking it up immediately -->
 <!--                <ion-checkbox ng-model="editIdea.proprietary">Has Ameren Trade Secrets?</ion-checkbox> -->
-            <button class="button button-full button-positive" ng-click="saveEdit()">Submit</button>
+            <!-- <button class="button button-full button-positive" ng-click="saveEdit()">Submit</button> -->
           </div>
          </ion-content>
+         
+         	<!-- Send Message Footer Area -->
+		<ion-footer-bar keyboard-attach
+	                class="bar-positive item-input-inset" >
+	
+		<i class="ion-ios-paperplane"></i><button class="button button-full button-positive"
+		       ng-disabled="!isIdeaValid(editIdea.title,editIdea.desc)" ng-click="openConfirmation()" >
+			Submit
+		</button >
+	</ion-footer-bar >
   </ion-modal-view>
