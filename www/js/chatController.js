@@ -7,6 +7,16 @@ angular.module('starter.controllers')
   $scope.msg = "Initializing chat..";
   $scope.date = new Date();
 
+  
+  $scope.ameren = {'username':'','password':''};
+  $scope.isFormValid = function() {
+	  if($scope.ameren.username &&  $scope.ameren.password  )  {
+		  return true;
+	  }
+	  return false;
+  }
+  
+  
   $scope.login = function(socialPlatform) {
     $scope.loginProgress = true;
     auth.$authWithOAuthPopup(socialPlatform).then(function(authData) {
