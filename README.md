@@ -171,3 +171,14 @@ To demo
 
 As soon as you load 'feeds' EVERYTHING gets deleted..all references.
 lastIdea needs to be present if you have feeds loaded, otherwise error		
+
+
+Splash Screen
+==============
+By default ios splash screen works fine, android does not test in emulator by running in Genymotion
+
+		sudo ionic run android
+
+To make splash screen work in android install cordoval splash screen plugin. No need to remove and add android platform
+
+	cordova plugin add cordova-plugin-splashscreen		
