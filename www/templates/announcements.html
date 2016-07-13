@@ -14,23 +14,17 @@
 		      	({{ filtered.length}})
 		    </div>
 		    
-		  <!--   <ion-list> 
-		
-    			<ion-item ng-repeat="announcement in filtered = announcements | filter:searchText)">
-					
-					</ion-item>
-			</ion-list> -->
 			  	
 			  	<div class="card"  ng-repeat="announcement in filtered = (announcements | filter:searchText)">
 				  <div class="item item-text-wrap">
 
-				    {{announcement.text}}
+				  <!-- <i class="icon ion-speakerphone"></i> -->  {{announcement.text}}
 				      
 				  <i  ng-click="updateFavorites(announcement)" ng-class="checkIfFavorite(announcement) ? 'icon ion-heart pull-right' : 'icon ion-ios-heart-outline pull-right balanced'"></i>
 				  </div>
 				</div>
 					
-			<!-- <ion-infinite-scroll on-infinite="loadMore()" distance="1%"></ion-infinite-scroll> -->
+			<ion-infinite-scroll immediate-check="false" on-infinite="loadMoreAnnouncements()" spinner="ripple" distance="1%"></ion-infinite-scroll>
 					
       
 	      </ion-content>

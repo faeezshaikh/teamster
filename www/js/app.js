@@ -4,6 +4,7 @@ angular.module(
   ])
   
 // TODO:
+  //  3. Article Content.
 // 18. Bug - On updatinglikes Hotness will go away .. try with min 1 chatter 
   // 18a. Likes on toggle doesnt highlight..Have to refresh.
   // 19. Bug - Get Feed Details - Show spinner
@@ -12,7 +13,7 @@ angular.module(
   // 11. Twitter page scrolling
   // 12. Twitter back from twitter buttons goes back to Chat
 
-  //  3. Article Content.
+  
   // 13. Settings page  - Limit numner of Favorites, Push Not, Tags 
   // 14. Splash screen and logo - Test with Push Notifications
   // 16. Demo Practice .Bitcoin article

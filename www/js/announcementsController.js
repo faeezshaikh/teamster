@@ -1,10 +1,23 @@
 angular.module('starter.controllers')
 
 
-.controller('AnnouncementsCtrl', function($scope,localStorage) {
-//	$scope.announcements = ["First announcement","Second announcements","Third announcements","Fourth announcements","Fifth announcements","Sixth announcement",]
-	$scope.announcements = [{"id":1, "text" : "First"},{"id":2, "text" : "Second"},{"id":3, "text" : "Third"}];
+.controller('AnnouncementsCtrl', function($scope,localStorage,$firebaseArray) {
 	
+	  var baseRef = new Firebase('https://teamsterapp.firebaseio.com/announcements');
+
+	  var scrollRef = new Firebase.util.Scroll(baseRef, 'order');
+	  $scope.announcements = $firebaseArray(scrollRef);
+	  scrollRef.scroll.next(3);
+	  
+//	$scope.announcements = [{"id":1, "text" : "First"},{"id":2, "text" : "Second"},{"id":3, "text" : "Third"}];
+	
+	  // This function is called whenever the user reaches the bottom
+	  $scope.loadMoreAnnouncements = function() {
+		  console.log('loadmore announcements fired');
+		    // load the next item
+		    scrollRef.scroll.next(1);
+		  $scope.$broadcast('scroll.infiniteScrollComplete');
+	  };
 	$scope.updateFavorites = function(announcement) {
 
 		  var favAnnouncements = loadAnnouncementsFromCache();

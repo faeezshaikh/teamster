@@ -194,10 +194,29 @@
 			"thumbnail": "https://s3-us-west-2.amazonaws.com/amerenppl/MaryRice.jpg"
 		}
 	}],
-	"lastIdea": 
-	{"id" : 1,
-	"lastIdeaId":13,
-	"lastIdeaOrder":-2},
-	"tweetorder" : 100000
-	
+	"lastIdea": {
+		"id": 1,
+		"lastIdeaId": 13,
+		"lastIdeaOrder": -2
+	},
+	"tweetorder": 100000,
+	"announcements": [{
+		"id": 1,
+		"text": "Security goes bananas over crazy virus",
+		"order": 100
+	}, {
+		"id": 2,
+		"text": "Free candy for Tech Planning guys!",
+		"order": 99
+	}, {
+		"id": 3,
+		"text": "Four days week starting August 2016 -- Woohoo!",
+		"order": 98
+	}],
+	"lastAnnouncement": {
+		"id": 1,
+		"lastAnnouncementId": 3,
+		"lastAnnouncementOrder": 98
+	}
+
 }
