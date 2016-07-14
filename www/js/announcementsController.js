@@ -5,9 +5,15 @@ angular.module('starter.controllers')
 	
 	  var baseRef = new Firebase('https://teamsterapp.firebaseio.com/announcements');
 
+	  $scope.announcementsLoading = true;
 	  var scrollRef = new Firebase.util.Scroll(baseRef, 'order');
 	  $scope.announcements = $firebaseArray(scrollRef);
-	  scrollRef.scroll.next(3);
+	  scrollRef.scroll.next(5);
+	  
+	  $scope.announcements.$loaded().then(function (data) {
+		  $scope.announcementsLoading  = false;
+		  
+		});
 	  
 //	$scope.announcements = [{"id":1, "text" : "First"},{"id":2, "text" : "Second"},{"id":3, "text" : "Third"}];
 	
@@ -15,7 +21,7 @@ angular.module('starter.controllers')
 	  $scope.loadMoreAnnouncements = function() {
 		  console.log('loadmore announcements fired');
 		    // load the next item
-		    scrollRef.scroll.next(1);
+		    scrollRef.scroll.next(2);
 		  $scope.$broadcast('scroll.infiniteScrollComplete');
 	  };
 	$scope.updateFavorites = function(announcement) {

@@ -3,7 +3,13 @@
 	<ion-pane class="background-color-grey">
 	
 	      <ion-content  view-title="Feed" header-shrink scroll-event-interval="5">
-	      <!-- <ion-refresher on-refresh="doRefresh()" pulling-text="Pull to refresh"></ion-refresher> --> 
+	      
+	      
+	      <!-- <ion-refresher on-refresh="doRefresh()" pulling-text="Pull to refresh"></ion-refresher> -->
+	   
+		    
+    
+     
 	       <div class="bar bar-header item-input-inset">
 		      <label class="item-input-wrapper">
 		        <i class="icon ion-ios-search placeholder-icon"></i>
@@ -14,15 +20,49 @@
 		      	({{ filtered.length}})
 		    </div>
 		    
+		    
+		    <ion-list show-reorder="model.reorderFlag" can-swipe="true">
+		    
+				    	<!-- Loading Indicator -->
+				<div class="loading"  ng-if="announcementsLoading" >
+					<ion-spinner icon="ripple" ></ion-spinner >
+					<p >Loading announcements...</p >
+				</div >
+		
+				<!-- Empty room message -->
+				<div class="loading center" ng-show="!announcementsLoading && announcements.length == 0" >
+						<div class="row">
+							<div class="col-10"></div>
+				     	 	<div class="col-80"><p class="text-muted">No organizational announcements have been made yet!</p></div>
+				     	 	<div class="col-10"></div>
+				     	 </div>
+				</div >
+
+		      <ion-item class="item item-text-wrap item-remove-animate" ng-repeat="announcement in filtered = (announcements | filter:searchText)"> 
+
+				  <span style="font-family:cursive">"
+				  	{{announcement.text}}"
+				  	</span>  
+				  	<p>&nbsp;</p>
+				  	<p><i class="ion ion-ios-calendar-outline"></i><span>&nbsp;&nbsp;{{announcement.time |  date:'MMMM dd, yyyy hh:mm:ss'}}</span></p>
+				      
+		
+		        <ion-reorder-button class="ion-navicon" on-reorder="moveStation(substation,$fromIndex,$toIndex)"></ion-reorder-button>
+		        <ion-option-button class="ameren" ng-click="updateFavorites(announcement); clicked=!clicked;"><i ng-class="checkIfFavorite(announcement) ? 'icon ion-ios-heart-outline' : 'icon ion-heart'"></i></ion-option-button>
+		
+		      </ion-item>
+		
+		
+		    </ion-list>
 			  	
-			  	<div class="card"  ng-repeat="announcement in filtered = (announcements | filter:searchText)">
+			 <!--  	<div class="card"  ng-repeat="announcement in filtered = (announcements | filter:searchText)">
 				  <div class="item item-text-wrap">
 
-				  <!-- <i class="icon ion-speakerphone"></i> -->  {{announcement.text}}
+				  <i class="icon ion-speakerphone"></i>  {{announcement.text}}
 				      
 				  <i  ng-click="updateFavorites(announcement)" ng-class="checkIfFavorite(announcement) ? 'icon ion-heart pull-right' : 'icon ion-ios-heart-outline pull-right balanced'"></i>
 				  </div>
-				</div>
+				</div> -->
 					
 			<ion-infinite-scroll immediate-check="false" on-infinite="loadMoreAnnouncements()" spinner="ripple" distance="1%"></ion-infinite-scroll>
 					
