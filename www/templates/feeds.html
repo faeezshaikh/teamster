@@ -50,10 +50,10 @@
 	              <p class="center">
 	              <strong>{{item.title | limitTo: 80}}</strong>
 	            </p>
-	            <p class="center">
+	            <p class="center" ng-hide="{{item.video}}">
 	              {{item.article | limitTo: 100}}<span ng-show="{{item.article.length>100}}">...</span>
 	            </p>
-	            
+	           
 	            <p>
 	              <a class="subdued">{{item.likes == 0 ? '' : item.likes}} {{item.likes > 1 ? 'Votes' : item.likes == 0 ? '' : 'Vote'}}</a>
 		            <span ng-show="isItemHot(item)" class="ion ion-fireball" style="color:red;"></span> <a  ng-show="isItemHot(item)" class="subdued" style="color:red;">Hot</a>
