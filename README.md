@@ -193,3 +193,7 @@ iOS Push Notifications
 https://devdactic.com/ionic-push-notifications-guide/
 http://docs.ionic.io/docs/ios-push-profiles
 Posidon745			
+
+ Uncaught TypeError: Cannot read property 'pushNotification' of undefined  ng-cordova.js:6180
+ 
+ Will appear in browser. But will work on actual device

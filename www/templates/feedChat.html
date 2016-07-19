@@ -10,20 +10,25 @@
 	<ion-content delegate-handle="show-page" >
 
 		<!-- Loading Indicator -->
-		<div class="loading"  ng-if="data.loading" >
-			<ion-spinner icon="ripple" ></ion-spinner >
-			<p >Loading messages...</p >
-		</div >
+		
+		<div class="row" ng-if="data.loading" >
+		    <div class="col">
+		        <div class="text-center">
+		           <ion-spinner icon="ripple" ></ion-spinner >
+					<p style="color:gray">Loading messages...</p >
+		        </div>
+		    </div>
+		</div>
 
 		<!-- Empty room message -->
-		<div class="loading center" ng-show="!data.loading && data.messages.length == 0" >
-				<div class="row">
-					<div class="col-10"></div>
-		     	 	<div class="col-80"><p class="text-muted">This room is empty, be the first to post!</p></div>
-		     	 	<div class="col-10"></div>
-		     	 </div>
-		</div >
-		
+		<div class="row" ng-show="!data.loading && data.messages.length == 0">
+		    <div class="col">
+		        <div class="text-center">
+		            <!-- <p style="text-align: center; color:gray">No comments yet. Be the first!</p> -->
+		            <p style="color:gray">No comments yet. Be the first!</p>
+		        </div>
+		    </div>
+		</div>
 	
 		<!-- Discussion list Old Style - comments style-->
 	<!-- 	<ol class="list"   >

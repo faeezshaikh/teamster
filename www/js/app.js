@@ -5,8 +5,6 @@ angular.module(
   
 // TODO:
 
-// 18. Bug - On updatinglikes Hotness will go away .. try with min 1 chatter 
-  // 18a. Likes on toggle doesnt highlight..Have to refresh.
   
   // 19. Bug - Get Feed Details - Show spinner
   //  8. Push Notification - iOS - Production
@@ -34,6 +32,9 @@ angular.module(
 //  10. Login page Test?
   
   
+  
+// 18. Bug - On updatinglikes Hotness will go away .. try with min 1 chatter  ***** 
+  // 18a. Likes on toggle doesnt highlight..Have to refresh. *****
     //  3. Article Content. ****
    //  7. Implement Adding new Article *****
  //  5. Article Date ****

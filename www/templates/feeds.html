@@ -64,8 +64,8 @@
           </a>
 
           <div class="item tabs tabs-secondary tabs-icon-left">
-            <a class="tab-item" ng-click= "updateLikes({{items.indexOf(item)}},{{item}})">
-        	      <i ng-class="{{isLiked(item)}} ? 'icon ion-thumbsup balanced' : 'icon ion-thumbsup'"></i>
+            <a class="tab-item" ng-click= "updateLikes(items.indexOf(item),item)">
+        	      <i ng-class="isLiked(item) ? 'icon ion-thumbsup balanced' : 'icon ion-thumbsup'"></i>
               Upvote
             </a>
             <a class="tab-item" href="#/app/feeds/{{item.id}}">

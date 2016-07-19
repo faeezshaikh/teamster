@@ -85,7 +85,7 @@ angular.module('starter.controllers')
 	  }
 		  
 	  $scope.updateLikes = function(index,obj) {
-		  obj = $scope.items[index]; // need to refresh
+//		  obj = $scope.items[index]; // need to refresh
 		  var likedFeeds = loadLikesFromCache();
 		  
 		  if($scope.isLiked(obj))  {
