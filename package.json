@@ -26,19 +26,15 @@
     "cordova-plugin-inappbrowser",
     "org.apache.cordova.inappbrowser",
     {
-      "locator": "https://github.com/phonegap-build/PushPlugin.git",
-      "id": "com.phonegap.plugins.PushPlugin"
+      "locator": "https://github.com/apache/cordova-plugin-whitelist.git",
+      "id": "cordova-plugin-whitelist"
     },
     {
       "variables": {
-        "SENDER_ID": "GCM_PROJECT_NUMBER"
+        "SENDER_ID": "315458224205"
       },
       "locator": "phonegap-plugin-push",
       "id": "phonegap-plugin-push"
-    },
-    {
-      "locator": "https://github.com/apache/cordova-plugin-whitelist.git",
-      "id": "cordova-plugin-whitelist"
     }
   ],
   "scripts": {

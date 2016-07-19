@@ -4,11 +4,19 @@ angular.module(
   ])
   
 // TODO:
-  //  3. Article Content.
+
 // 18. Bug - On updatinglikes Hotness will go away .. try with min 1 chatter 
   // 18a. Likes on toggle doesnt highlight..Have to refresh.
+  
   // 19. Bug - Get Feed Details - Show spinner
-  //  8. Push Notification - iOS
+  //  8. Push Notification - iOS - Production
+  		// 8a. Write to app when msg is pushed.
+  		// 8b. Utility that takes in msg, reads current registered tokens and pushes msg to all devices automatically.
+  
+  // 20. PPT & Talking points:
+//  			Show Social Chorus
+//  			3 of 6 True Norths
+//  			Sprinkler whole startups behind that one idea
   // 15. Social Sharing
   // 11. Twitter page scrolling
   // 12. Twitter back from twitter buttons goes back to Chat
@@ -26,6 +34,7 @@ angular.module(
 //  10. Login page Test?
   
   
+    //  3. Article Content. ****
    //  7. Implement Adding new Article *****
  //  5. Article Date ****
   //  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight  **** 
@@ -41,54 +50,92 @@ angular.module(
 //  AIzaSyD5r8X2j7QoWemIiQizNN5EjJqzsgHYU48
 		  
 .constant('FIREBASE_BASE_URL','https://teamsterapp.firebaseio.com/')
-.run(function($ionicPlatform, auth, $rootScope, store,$ionicModal,$window,$http) {
+.run(function($ionicPlatform, auth, $rootScope, store,$ionicModal,$window,$http,$cordovaPush) {
 	
 	
   $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
+	    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+	    // for form inputs)
+	  
+	  // Do not un-comment . This doesnt work on actual device because of which push notification doesnt work.
+	/*    if (window.cordova && window.cordova.plugins.Keyboard) {
+	      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+	      cordova.plugins.Keyboard.disableScroll(true);
+	
+	    }
+	    if (window.StatusBar) {
+	      // org.apache.cordova.statusbar required
+	      StatusBar.styleDefault();
+	    }*/
+	    
 
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
+		 var push = new Ionic.Push({
+		      "debug": false
+		    });
+
+	    push.register(function(token) {
+	      console.log("Device token:",token.token);
+	      // Only works on actual device
+	      // apps.ionic.io --> App --> Settings --> API Keys --> token
+	      push.saveToken(token,{'ignore_user': true});  // persist the token in the Ionic Platform
+	      registerDeviceTokenWithIonicApi(token.token);
+	    });
+ 
+  
+
+	    var iosConfig = {
+	        'badge': true,
+	        'sound': true,
+	        'alert': true,
+	      };
+
+	    $cordovaPush.register(iosConfig).then(function(result) {
+	      // Success -- send deviceToken to server, and store for future use
+	      console.log('iOS Device Token: ' + result)
+	      registerDeviceTokenWithIonicApi(result);
+	      //$http.post('http://server.co/', {user: 'Bob', tokenID: result.deviceToken})
+	    }, function(err) {
+	      console.log('Registration error: ' + err)
+	    });
+
+
+	    $rootScope.$on('$cordovaPush:notificationReceived', function(event, notification) {
+	      if (notification.alert) {
+	        navigator.notification.alert(notification.alert);
+	      }
+	
+	      if (notification.sound) {
+	        var snd = new Media(event.sound);
+	        snd.play();
+	      }
+	
+	      if (notification.badge) {
+	        $cordovaPush.setBadgeNumber(notification.badge).then(function(result) {
+	          // Success!
+	        }, function(err) {
+	          // An error occurred. Show a message to the user
+	        });
+	      }
+	    });
+ 
     
-
- var push = new Ionic.Push({
-      "debug": false
-    });
-
-    push.register(function(token) {
-      console.log("Device token:",token.token);
-      
-      // Only works on actual device
-      // apps.ionic.io --> App --> Settings --> API Keys --> token
-      var data = {};
-      var config = {
-          headers : {
-              'Content-Type': 'application/json',
-              'Authorization' : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhMDNjYjgwZi0yMmVmLTRmMDQtOTJhZi1kNDNiMWFlM2E3NDIifQ.FwRyg6N3Kr_9lU2sxvfHyLwOHWbHX4_rv_dUIGkknHw'
-          }
-      }
-      var url = "https://api.ionic.io/push/tokens?token=" + token.token;
-      $http.post(url, data, config)
-      .success(function (data, status, headers, config) {
-      	console.log('SUCCESS', data);
-      })
-      .error(function (data, status, header, config) {
-      	console.log('FAIL', data);
-      });
-      
-      
-     push.saveToken(token,{'ignore_user': true});  // persist the token in the Ionic Platform 
-    });
- 
- 
- 
+    function registerDeviceTokenWithIonicApi(token) {
+   	 var data = {};
+        var config = {
+            headers : {
+                'Content-Type': 'application/json',
+                'Authorization' : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhMDNjYjgwZi0yMmVmLTRmMDQtOTJhZi1kNDNiMWFlM2E3NDIifQ.FwRyg6N3Kr_9lU2sxvfHyLwOHWbHX4_rv_dUIGkknHw'
+            }
+        }
+        var url = "https://api.ionic.io/push/tokens?token=" + token;
+        $http.post(url, data, config)
+        .success(function (data, status, headers, config) {
+        	console.log('SUCCESS', data);
+        })
+        .error(function (data, status, header, config) {
+        	console.log('FAIL', data);
+        });
+    }
     
     
  

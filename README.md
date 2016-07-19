@@ -17,6 +17,9 @@ White screen of death probably due to plugins or network issues.
 3. ionic plugin add phonegap-plugin-push (see below point on how to install with GCM Number)
 4. Social Sharing plugin: cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git (see below for details)
 
+List all installed plugins
+
+	cordova plugins list
 
 For Inoic Push Notifications
 ==============================
@@ -181,4 +184,12 @@ By default ios splash screen works fine, android does not test in emulator by ru
 
 To make splash screen work in android install cordoval splash screen plugin. No need to remove and add android platform
 
-	cordova plugin add cordova-plugin-splashscreen		
+	cordova plugin add cordova-plugin-splashscreen
+	
+	
+iOS Push Notifications
+========================
+
+https://devdactic.com/ionic-push-notifications-guide/
+http://docs.ionic.io/docs/ios-push-profiles
+Posidon745			
