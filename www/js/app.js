@@ -9,7 +9,7 @@ angular.module(
   // 19. Bug - Get Feed Details - Show spinner
   //  8. Push Notification - iOS - Production
   		// 8a. Write to app when msg is pushed.
-  		// 8b. Utility that takes in msg, reads current registered tokens and pushes msg to all devices automatically.
+  		// 8b. Utility that takes in msg, reads current registered tokens and pushes msg to all devices automatically.+ writes to firebase
   
   // 20. PPT & Talking points:
 //  			Show Social Chorus

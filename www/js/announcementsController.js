@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
 
 
-.controller('AnnouncementsCtrl', function($scope,localStorage,$firebaseArray) {
+.controller('AnnouncementsCtrl', function($scope,localStorage,$firebaseArray,$http) {
 	
 	  var baseRef = new Firebase('https://teamsterapp.firebaseio.com/announcements');
 
@@ -15,8 +15,96 @@ angular.module('starter.controllers')
 		  
 		});
 	  
-//	$scope.announcements = [{"id":1, "text" : "First"},{"id":2, "text" : "Second"},{"id":3, "text" : "Third"}];
 	
+	 //// Adding announcements to Firebase while maintaing the order logic 
+	  var lastAnnouncementRef = new Firebase('https://teamsterapp.firebaseio.com/lastAnnouncement');
+	  var lastAnnouncementId,lastAnnouncementOrder;
+	  
+	  lastAnnouncementRef.on("value", function(snapshot) {
+		  console.log('Last Idea objec',snapshot.val());
+		  lastAnnouncementId =  snapshot.val().lastAnnouncementId;
+		  lastAnnouncementOrder = snapshot.val().lastAnnouncementOrder;
+		}, function (errorObject) {
+		  console.log("The read of lastIdea Object failed: " + errorObject.code);
+		});
+	  
+	  
+	  /// Push Notifications //////////
+	  
+	  function addNewAnnouncement(msg) {
+		  var obj = {
+				  id:lastAnnouncementId+1,
+				  order: lastAnnouncementOrder-1,
+				  text: msg,
+				  dateTime: new Date().getTime().toString()
+		  };
+		  $scope.announcements.$add(obj);
+		  var newLastAnnouncementRef = new Firebase('https://teamsterapp.firebaseio.com/lastAnnouncement');
+		  newLastAnnouncementRef.update({ lastAnnouncementId: lastAnnouncementId+1, lastAnnouncementOrder: lastAnnouncementOrder-1 });
+	  }
+	  
+	  function getRegisteredDeviceTokens() {
+		  return $http.get('https://api.ionic.io/push/tokens', {
+			    headers: {
+			    	"Content-Type" : 'application/json',
+			        "Authorization": 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhMDNjYjgwZi0yMmVmLTRmMDQtOTJhZi1kNDNiMWFlM2E3NDIifQ.FwRyg6N3Kr_9lU2sxvfHyLwOHWbHX4_rv_dUIGkknHw'
+			    }
+			  });
+	  }
+	  
+	  function sendPushNotification() {
+		  var title = 'New Msg to Jaan'
+		  var msg = "Why dont you sleep?!";
+		  
+		  
+		  getRegisteredDeviceTokens().then(
+				  function(response){
+					  	console.log('Response',response);
+					  	var deviceTokens = [];
+					    var array = response.data.data;
+					    angular.forEach(array, function(tokenObject, key) {
+					    	  if(tokenObject.valid) {
+					    		  deviceTokens.push(tokenObject.token);
+					    	  }
+					    	});
+					    console.log(deviceTokens);
+					    
+					    var postData = {
+							    "tokens": deviceTokens,
+							    "profile": "test",
+							    "notification": {
+							        "title": title,
+							        "message": msg,
+							        "ios": {
+							          "message": msg,
+							          "badge": 1
+							        },
+							        "template_defaults": {
+							          "name": "Tim"
+							        }
+							    }
+							};
+					    $http({
+				            url: 'https://api.ionic.io/push/notifications',
+				            method: "POST",
+				            data: postData,
+				            headers: {'Content-Type': 'application/json','Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhMDNjYjgwZi0yMmVmLTRmMDQtOTJhZi1kNDNiMWFlM2E3NDIifQ.FwRyg6N3Kr_9lU2sxvfHyLwOHWbHX4_rv_dUIGkknHw'}
+				        }).success(function (data, status, headers, config) {
+				                console.log('Success pushing notification'); 
+				                addNewAnnouncement(title + ': ' + msg );
+				            }).error(function (data, status, headers, config) {
+				            	console.log('Error pushing notification');
+				            });
+					  
+				  },
+				  function(error){
+					  console.log('Error getting device tokens');
+				  });
+		
+	  }
+	  
+	  ////// Push Notifications End ////////
+	  
 	  // This function is called whenever the user reaches the bottom
 	  $scope.loadMoreAnnouncements = function() {
 		  console.log('loadmore announcements fired');
@@ -36,7 +124,9 @@ angular.module('starter.controllers')
 			  favAnnouncements.push(announcement);
 		  }
 		  localStorage.set("announcements",JSON.stringify(favAnnouncements));
-	  
+		  
+//		  addNewAnnouncement();
+		  sendPushNotification();
 	}
 	
 	function loadAnnouncementsFromCache() {
