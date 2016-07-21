@@ -143,8 +143,8 @@ angular.module('starter.controllers')
 		    });
 	  }
 	  
-	  $scope.newIdea = {proprietary:false};
 	  $scope.openComposer = function() {
+		  $scope.newIdea = {title:'',desc:'',proprietary:false};
 		  
 		 $scope.composeIdeaModal.show();
 	  }
@@ -188,7 +188,15 @@ angular.module('starter.controllers')
 	  }
 	  
 	  function getRandomImg() {
-		  return "http://images.huffingtonpost.com/2015-06-23-1435071172-9008959-brainstormidea.jpg";
+		  var arrayOfImgs = ["http://images.huffingtonpost.com/2015-06-23-1435071172-9008959-brainstormidea.jpg",
+		                     "http://static1.squarespace.com/static/530d75c7e4b0027bb049b777/t/5316ca37e4b02dddf7547c7f/1394002491278/5220e801b1396_light_bulb_idea.jpg",
+		                     "http://1.bp.blogspot.com/-d6x0pLrpNyY/UA5Sz10gJaI/AAAAAAAAHH4/J7BPNgN2z6g/s1600/Idea_images.png",
+		                     "http://images.huffingtonpost.com/2015-04-10-1428680355-4850708-HowMuchIsIdeaWorth-thumb.jpg",
+		                     "https://www.ethos3.com/wp-content/uploads/2014/07/160231452.jpg",
+		                     "http://rockypeaklc.com/blog/wp-content/uploads/2014/03/getinthemind.jpg",
+		                     "http://media.bizj.us/view/img/5302701/idea*750xx3392-1908-0-182.jpg"];
+		  var randomImg = arrayOfImgs[Math.floor(Math.random() * arrayOfImgs.length)];
+		  return randomImg;
 	  }
 	  
 	  $scope.finalSubmit = function() {

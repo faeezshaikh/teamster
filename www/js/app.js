@@ -1,6 +1,6 @@
 angular.module(
   'starter', ['ionic', 'starter.controllers', 'auth0', 'angular-storage',
-     'ngCordova', 'firebase','angularMoment','ngtweet','angular-storage'
+     'ngCordova', 'firebase','angularMoment','ngtweet','angular-storage','socialShareModule'
   ])
   
 // TODO:
@@ -278,7 +278,7 @@ angular.module(
         views: {
           'menuContent': {
             templateUrl: 'templates/share.html',
-            controller: ''
+            controller: 'SocialShareCtrl'
           }
         }
       })

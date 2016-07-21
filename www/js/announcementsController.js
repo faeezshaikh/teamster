@@ -31,6 +31,8 @@ angular.module('starter.controllers')
 	  
 	  /// Push Notifications //////////
 	  
+//	  http://chariotsolutions.com/blog/post/angularjs-corner-using-promises-q-handle-asynchronous-calls/
+		  
 	  function addNewAnnouncement(msg) {
 		  var obj = {
 				  id:lastAnnouncementId+1,
