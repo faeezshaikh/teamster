@@ -193,7 +193,7 @@ angular.module(
         views: {
           'menuContent': {
             templateUrl: 'templates/chat.html',
-            controller: 'chatController'
+            controller: 'AppCtrl'
           }
         }
       })
@@ -214,7 +214,7 @@ angular.module(
         views: {
           'menuContent': {
             templateUrl: 'templates/login.html',
-            controller: 'FeedsCtrl'
+            controller: ''
           }
         }
       })
@@ -225,6 +225,15 @@ angular.module(
     	          'menuContent': {
     	            templateUrl: 'templates/settings.html',
     	            controller: 'SettingsCtrl'
+    	          }
+    	        }
+      })
+     .state('app.admin', {
+    	   url: '/admin',
+    	   views: {
+    	          'menuContent': {
+    	            templateUrl: 'templates/admin.html',
+    	            controller: 'AnnouncementsCtrl'   // admin is only for push notifications so tied to announcements ctrl 
     	          }
     	        }
       })

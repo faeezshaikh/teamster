@@ -1,0 +1,27 @@
+<ion-view title="Admin Console"  class="show" >
+<ion-pane class="background-color-grey">
+	<ion-nav-buttons side="secondary" >
+		<button class="button button-clear"
+		        ng-click="user.toggleFavorite(show)" >
+			<!-- <i class="ion-heart" ng-class="{'assertive':user.current.favorites[show.showid]}" ></i > -->
+		</button >
+	</ion-nav-buttons >
+
+	<ion-content class="padding" >
+
+		<div class="list">
+            <label class="item  item-stacked-label" >
+              <span class="input-label">Title*&nbsp;</span>
+              <input ng-model="pushTitle" type="text" placeholder="">
+            </label>
+            <label class="item  item-stacked-label">
+              <span class="input-label">Message*&nbsp;</span>
+              <textarea ng-model="pushMessage" type="text" placeholder="" rows="10" cols="40"></textarea>
+            </label>
+           
+            <button class="button button-full button-positive" ng-click="sendPushNotification(pushTitle,pushMessage)">Send Push Notification</button>
+          </div>
+
+	</ion-content >
+</ion-pane>
+</ion-view >

@@ -52,9 +52,9 @@ angular.module('starter.controllers')
 			  });
 	  }
 	  
-	  function sendPushNotification() {
-		  var title = 'New Msg to Jaan'
-		  var msg = "Why dont you sleep?!";
+	  $scope.sendPushNotification = function(title,msg) {
+//		  var title = 'New Msg to Jaan'
+//		  var msg = "Why dont you sleep?!";
 		  
 		  
 		  getRegisteredDeviceTokens().then(
@@ -92,6 +92,7 @@ angular.module('starter.controllers')
 				        }).success(function (data, status, headers, config) {
 				                console.log('Success pushing notification'); 
 				                addNewAnnouncement(title + ': ' + msg );
+				                alert('Notification successfully sent.');
 				            }).error(function (data, status, headers, config) {
 				            	console.log('Error pushing notification');
 				            });
@@ -125,8 +126,6 @@ angular.module('starter.controllers')
 		  }
 		  localStorage.set("announcements",JSON.stringify(favAnnouncements));
 		  
-//		  addNewAnnouncement();
-		  sendPushNotification();
 	}
 	
 	function loadAnnouncementsFromCache() {
