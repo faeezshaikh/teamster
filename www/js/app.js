@@ -1,6 +1,6 @@
 angular.module(
   'starter', ['ionic', 'starter.controllers', 'auth0', 'angular-storage',
-     'ngCordova', 'firebase','angularMoment','ngtweet','angular-storage','socialShareModule'
+     'ngCordova', 'firebase','angularMoment','ngtweet','angular-storage'
   ])
   
 // TODO:

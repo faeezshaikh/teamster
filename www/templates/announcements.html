@@ -48,7 +48,7 @@
 				      
 		
 		        <ion-reorder-button class="ion-navicon" on-reorder="moveStation(substation,$fromIndex,$toIndex)"></ion-reorder-button>
-		        <ion-option-button class="ameren" ng-click="updateFavorites(announcement); clicked=!clicked;"><i ng-class="checkIfFavorite(announcement) ? 'icon ion-ios-heart-outline' : 'icon ion-heart'"></i></ion-option-button>
+		        <ion-option-button class="ameren" ng-click="updateFavorites(announcement); clicked=!clicked;"><i ng-class="!checkIfFavorite(announcement) ? 'icon ion-ios-heart-outline' : 'icon ion-heart'"></i></ion-option-button>
 		
 		      </ion-item>
 		

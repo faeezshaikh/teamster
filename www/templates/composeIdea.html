@@ -28,9 +28,9 @@
 	<ion-footer-bar keyboard-attach
 	                class="bar-positive item-input-inset" >
 	
-		<i class="ion-ios-paperplane"></i><button class="button button-full button-positive"
+		<button class="button button-full button-positive"
 		       ng-disabled="!isIdeaValid(newIdea.title,newIdea.desc)" ng-click="openConfirmation()" >
-			Submit
+			<i class="ion-ios-paperplane"></i>&nbsp;&nbsp;Submit
 		</button >
 	</ion-footer-bar >
   </ion-modal-view>

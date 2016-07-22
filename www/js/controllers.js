@@ -41,7 +41,7 @@ angular.module('starter.controllers', [])
     
     ////
     
-
+	 $scope.date = new Date(); // for the chat page
     var chatRef = new Firebase('https://teamsterapp.firebaseio.com/');
     var auth = $firebaseAuth(chatRef);
 
