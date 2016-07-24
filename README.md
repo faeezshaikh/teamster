@@ -197,3 +197,23 @@ Posidon745
  Uncaught TypeError: Cannot read property 'pushNotification' of undefined  ng-cordova.js:6180
  
  Will appear in browser. But will work on actual device
+ 
+ 
+ Screenshots:
+ ============
+ http://www.appscreenshot.me
+ faeez.shaikh@gmail.com
+ 
+ For Aug4 demo: 
+ http://mockuphone.com/preview/aaca6f9233157297a975d89d99b62d13
+ 
+ 
+ Icon maker:
+ https://makeappicon.com
+ 
+ Android Feature Graphic in Canva.com
+ 
+ iOS Ipad Screenshot for iTunes - ios-simulator deviceType = iPad-Pro
+ 
+ Other: (not used)
+ https://placeit.net/

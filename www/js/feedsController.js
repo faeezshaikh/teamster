@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-.controller('FeedsCtrl', function($scope, auth, store, $state, $timeout, PersonService, $cordovaToast,$firebaseArray,CtrlService,$cordovaSocialSharing,localStorage,$ionicModal) {
+.controller('FeedsCtrl', function($scope, auth, store, $state, $timeout, PersonService, $cordovaToast,$firebaseArray,CtrlService,$cordovaSocialSharing,localStorage,$ionicModal,$ionicScrollDelegate) {
 	  $scope.auth = auth;
 	  $scope.items = [];
 	  var ideaToDelete = {};
@@ -210,8 +210,6 @@ angular.module('starter.controllers')
 				  name: PersonService.GetUserDetails().name, // We could do that, but if admin wants to secretly update an idea it would expose the admin
 				  articleImg : getRandomImg(),  // Same reason as above
 				  sharing: $scope.newIdea.proprietary ? false : true,
-//				  id:lastIdeaArr[0].lastIdeaId+1,
-//				  order:lastIdeaArr[0].lastIdeaOrder-1,
 				  id:lastIdeaId+1,
 				  order:lastIdeaOrder-1,
 				  articleDate: date.toString(),
@@ -221,9 +219,11 @@ angular.module('starter.controllers')
 		  
 		  $scope.items.$add(obj);
 	    
+		  
 		  var fredNameRef = new Firebase('https://teamsterapp.firebaseio.com/lastIdea');
 		  fredNameRef.update({ lastIdeaId: lastIdeaId+1, lastIdeaOrder: lastIdeaOrder-1 });
 		  
+		  $ionicScrollDelegate.$getByHandle('feeds-page').scrollTop(true);
 	  }
 	  
 	  $scope.saveEdit = function() {

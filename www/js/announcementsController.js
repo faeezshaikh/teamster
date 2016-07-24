@@ -58,8 +58,8 @@ angular.module('starter.controllers')
 //		  var title = 'New Msg to Jaan'
 //		  var msg = "Why dont you sleep?!";
 		  
-		  addNewAnnouncement(title + ': ' + msg );
-		 /* getRegisteredDeviceTokens().then(
+		  //addNewAnnouncement(title + ': ' + msg );
+		  getRegisteredDeviceTokens().then(
 				  function(response){
 					  	console.log('Response',response);
 					  	var deviceTokens = [];
@@ -102,7 +102,7 @@ angular.module('starter.controllers')
 				  },
 				  function(error){
 					  console.log('Error getting device tokens');
-				  });  */
+				  });  
 		
 	  }
 	  
