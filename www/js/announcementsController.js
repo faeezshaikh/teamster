@@ -2,18 +2,26 @@ angular.module('starter.controllers')
 
 
 .controller('AnnouncementsCtrl', function($scope,localStorage,$firebaseArray,$http) {
-	
-	  var baseRef = new Firebase('https://teamsterapp.firebaseio.com/announcements');
+	var scrollRef;
+	var favsShowing;
+	function init() {
+		favsShowing = false;
+		 var baseRef = new Firebase('https://teamsterapp.firebaseio.com/announcements');
 
-	  $scope.announcementsLoading = true;
-	  var scrollRef = new Firebase.util.Scroll(baseRef, 'order');
-	  $scope.announcements = $firebaseArray(scrollRef);
-	  scrollRef.scroll.next(5);
-	  
-	  $scope.announcements.$loaded().then(function (data) {
-		  $scope.announcementsLoading  = false;
+		  $scope.announcementsLoading = true;
+		   scrollRef = new Firebase.util.Scroll(baseRef, 'order');
+		  $scope.announcements = $firebaseArray(scrollRef);
+		  scrollRef.scroll.next(8);
 		  
-		});
+		  
+		  $scope.announcements.$loaded().then(function (data) {
+			  $scope.announcementsLoading  = false;
+			  
+			});
+	}
+	 init();
+	  
+	 
 	  
 	
 	 //// Adding announcements to Firebase while maintaing the order logic 
@@ -73,7 +81,7 @@ angular.module('starter.controllers')
 					    
 					    var postData = {
 							    "tokens": deviceTokens,
-							    "profile": "test",
+							    "profile": "production",
 							    "notification": {
 							        "title": title,
 							        "message": msg,
@@ -121,6 +129,8 @@ angular.module('starter.controllers')
 		  if($scope.checkIfFavorite(announcement))  {
 			  if(getIndexInArray(announcement,favAnnouncements) != -1) {
 				  favAnnouncements.splice(getIndexInArray(announcement,favAnnouncements),1);
+				  localStorage.set("announcements",JSON.stringify(favAnnouncements));
+				  $scope.showFavoritesOnly();
 			  }
 		  }
 		  else { // not liked yet, so go ahead and like it
@@ -128,6 +138,9 @@ angular.module('starter.controllers')
 		  }
 		  localStorage.set("announcements",JSON.stringify(favAnnouncements));
 		  
+		  if(!$scope.areFavoritesPreset) {
+			  init();
+		  }
 	}
 	
 	function loadAnnouncementsFromCache() {
@@ -141,6 +154,32 @@ angular.module('starter.controllers')
 		
 	}
 	
+	$scope.areFavoritesPreset = function(){
+		if(loadAnnouncementsFromCache().length!=0){
+			return true;
+		}
+		return false;
+	}
+	
+	$scope.areFavoritesShowing = function() {
+		return favsShowing;
+	}
+	
+	$scope.showAllButton = function() {
+		init();
+	}
+	
+	$scope.showFavoritesOnly = function() {
+		favsShowing = true;
+		var favs = loadAnnouncementsFromCache();
+		 if(favs.length == 0) {
+			  init();
+		  } 
+		 else {
+			 $scope.announcements = favs;
+		 }
+
+	}
 	function containsObject(obj, list) {
 	    var i;
 	    for (i = 0; i < list.length; i++) {

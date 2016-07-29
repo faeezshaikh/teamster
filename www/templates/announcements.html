@@ -11,13 +11,14 @@
     
      
 	       <div class="bar bar-header item-input-inset">
+	       <button class="button button-icon ion-heart" style="color:white;" ng-show="areFavoritesPreset() && !areFavoritesShowing() " ng-click="showFavoritesOnly();"></button>
+	       <button class="button button-icon ion-reply-all" style="color:white;" ng-show="areFavoritesShowing()" ng-click="showAllButton();"></button>
 		      <label class="item-input-wrapper">
 		        <i class="icon ion-ios-search placeholder-icon"></i>
 		        <input  type="search" placeholder="Search" ng-model="searchText">
 		      </label>
-		      <button  class="button button-icon ion-android-cancel" ng-click="searchText=''; cancelFilter();">
-		      </button>
-		      	({{ filtered.length}})
+		      <button  class="button button-icon ion-android-cancel"  style="color:white;" ng-click="searchText=''; cancelFilter();"></button>
+		      <span style="color:white;">({{ filtered.length}})</span>	
 		    </div>
 		    
 		    
