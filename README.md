@@ -46,6 +46,27 @@ https://devdactic.com/ionic-push-notifications-guide/
 		
 		sudo ionic config set gcm_key 315458224205
 		
+		
+		
+iOS Push Notifications
+========================
+
+https://devdactic.com/ionic-push-notifications-guide/
+http://docs.ionic.io/docs/ios-push-profiles
+Posidon745			
+
+ Uncaught TypeError: Cannot read property 'pushNotification' of undefined  ng-cordova.js:6180
+ 
+ Will appear in browser. But will work on actual device
+ 
+ 
+ 1. In apps.ionic.com --> Settings -> Certificates make two profiles. One for 'Test' (development) and other for 'Production'.
+ 	Under 'Production' profile upload the .p12 (production certificate). for iOS. For android get the API key from google console.
+ 	
+ 2. Refer the screenshot for 'Build Settings' and 'Code Signing' properties. (Use correct provisioning profile)
+ 3. For iOS - Make App Id. Provisoning profile (See Udemy video). Uploaded through command line and set "production_mode = n" although new documentation doesnt have that. In new Doc you upload the .p12 files through the ionic site.
+ 			
+		
 To send push notifications from Postman
 =======================================
 
@@ -187,17 +208,7 @@ To make splash screen work in android install cordoval splash screen plugin. No 
 	cordova plugin add cordova-plugin-splashscreen
 	
 	
-iOS Push Notifications
-========================
 
-https://devdactic.com/ionic-push-notifications-guide/
-http://docs.ionic.io/docs/ios-push-profiles
-Posidon745			
-
- Uncaught TypeError: Cannot read property 'pushNotification' of undefined  ng-cordova.js:6180
- 
- Will appear in browser. But will work on actual device
- 
  
  Screenshots:
  ============

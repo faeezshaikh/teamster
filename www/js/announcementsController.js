@@ -81,7 +81,7 @@ angular.module('starter.controllers')
 					    
 					    var postData = {
 							    "tokens": deviceTokens,
-							    "profile": "production",
+							    "profile": "production",  // this should match the name in ionic's settings (certificates)
 							    "notification": {
 							        "title": title,
 							        "message": msg,
@@ -118,7 +118,7 @@ angular.module('starter.controllers')
 	  
 	  // This function is called whenever the user reaches the bottom
 	  $scope.loadMoreAnnouncements = function() {
-		  console.log('loadmore announcements fired');
+//		  console.log('loadmore announcements fired');
 		    // load the next item
 		    scrollRef.scroll.next(2);
 		  $scope.$broadcast('scroll.infiniteScrollComplete');

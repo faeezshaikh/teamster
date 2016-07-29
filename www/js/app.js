@@ -3,50 +3,6 @@ angular.module(
      'ngCordova', 'firebase','angularMoment','ngtweet','angular-storage'
   ])
   
-// TODO:
-
-  
-  // 19. Bug - Get Feed Details - Show spinner
-  //  8. Push Notification - iOS - Production
-  		// 8a. Write to app when msg is pushed.
-  		// 8b. Utility that takes in msg, reads current registered tokens and pushes msg to all devices automatically.+ writes to firebase
-  
-  // 20. PPT & Talking points:
-//  			Show Social Chorus
-//  			3 of 6 True Norths
-//  			Sprinkler whole startups behind that one idea
-  // 15. Social Sharing
-  // 11. Twitter page scrolling
-  // 12. Twitter back from twitter buttons goes back to Chat
-
-  
-  // 13. Settings page  - Limit numner of Favorites, Push Not, Tags 
-  // 14. Splash screen and logo - Test with Push Notifications
-  // 16. Demo Practice .Bitcoin article
-  // 17. Firechat showing multiple msgs
-  
-
- 
-
-//  9. Ideas Tab?
-//  10. Login page Test?
-  
-  
-  
-// 18. Bug - On updatinglikes Hotness will go away .. try with min 1 chatter  ***** 
-  // 18a. Likes on toggle doesnt highlight..Have to refresh. *****
-    //  3. Article Content. ****
-   //  7. Implement Adding new Article *****
- //  5. Article Date ****
-  //  1. Likes - preserve state. Bug on load sometimes its on by default but doesnt hightlight  **** 
-  // 18. Hotness factor  **
-  // 18. Settings page - Checkbox not toggable ****
-  // 11. Page Title   ********
-  //  6. Hotness in article detail - show  ******
-  //  2. Load chat performance. Create indexes on FB ****
-   //  4. Implement Share ********
-  
-
 //  Google API Key
 //  AIzaSyD5r8X2j7QoWemIiQizNN5EjJqzsgHYU48
 		  
@@ -70,6 +26,7 @@ angular.module(
 	    }*/
 	    
 
+	  console.log('In the ready mode...');
 		 var push = new Ionic.Push({
 		      "debug": false
 		    });
@@ -84,13 +41,14 @@ angular.module(
  
   
 
-	    var iosConfig = {
+	   var iosConfig = {
 	        'badge': true,
 	        'sound': true,
 	        'alert': true,
 	      };
 
-	    $cordovaPush.register(iosConfig).then(function(result) {
+	   console.log('iosConfig = ', iosConfig);
+	   $cordovaPush.register(iosConfig).then(function(result) {
 	      // Success -- send deviceToken to server, and store for future use
 	      console.log('iOS Device Token: ' + result)
 	      registerDeviceTokenWithIonicApi(result);
@@ -99,7 +57,8 @@ angular.module(
 	      console.log('Registration error: ' + err)
 	    });
 
-
+	   console.log('Done registering');
+	
 	    $rootScope.$on('$cordovaPush:notificationReceived', function(event, notification) {
 	      if (notification.alert) {
 	        navigator.notification.alert(notification.alert);
