@@ -2,30 +2,289 @@
   "alertRecepients" : {
     "-KMS4ol6ERs2uBlkEIlQ" : {
       "displayName" : "Faeez"
+    },
+    "-KNCGrT29d3Z0kBpqvlX" : {
+      "displayName" : "Faeez"
+    },
+    "-KNEtmOGP78XpP9b4tJR" : {
+      "displayName" : "Faeez"
+    },
+    "-KNR8MU0_cXcHc6IXW_i" : {
+      "displayName" : "Faeez"
     }
   },
-  "announcements" : [ {
-    "id" : 1,
-    "order" : 100,
-    "text" : "Security goes bananas over crazy virus"
-  }, {
-    "id" : 2,
-    "order" : 99,
-    "text" : "Free candy for Tech Planning guys!"
-  }, {
-    "id" : 3,
-    "order" : 98,
-    "text" : "Four days week starting August 2016 -- Woohoo!"
-  }, {
-    "id" : 4,
-    "order" : 97,
-    "text" : "Storm Update - As of this morning we have restored powert to an estimated 35K customers. We plan on employing 1200 workers to complete the restoration process. Damage was mainly in St. Louis South city, South County and Jefferson County"
-  }, {
-    "id" : 5,
-    "order" : 96,
-    "text" : "IT Organizational Announcement - Following the catastrophic failure of the Ameren Idea App, Faeez Shaikh will be fired from Ameren effective immediately",
-    "time" : "Sat Jul 09 2016 20:53:07 GMT-0500 (CDT)"
-  } ],
+  "announcements" : {
+    "-KNFSoLFIUqgOH6oa9DD" : {
+      "dateTime" : "1469155067343",
+      "id" : 10,
+      "order" : 91,
+      "text" : "Storm Restoration Update: Ameren.com and E-Customer. All is green. CSS: All is green.The system wide freeze has been lifted but not the targeted weather freeze.  Another update is due at 4:30 PM today."
+    },
+    "-KNFT5plYpwt_y4274zP" : {
+      "dateTime" : "1469155143088",
+      "id" : 11,
+      "order" : 90,
+      "text" : "Critical Storm Update: AMEREN.COM – Starting at 4:00 p.m. there were widespread issues with AMEREN.COM/E-Customer.  CPU usage spiked to 90%; Connectria also saw the traffic spike.  MQ triggers were recycled around 5:15 p.m.   A conference call is currently underway investigating the issue.  \nContact the NOC at 314-206-0662 if there are questions."
+    },
+    "-KNFTtmkNk_qiV7EcJRE" : {
+      "dateTime" : "1469155351791",
+      "id" : 12,
+      "order" : 89,
+      "text" : "IT Org Change: Please join us in congratulating Anthony Arnzen on his promotion to IT Programmer Analyst II."
+    },
+    "-KNZ7i49VB9KHnhlZlQC" : {
+      "dateTime" : "1469485080149",
+      "id" : 24,
+      "order" : 77,
+      "text" : "Rest message: This is a test drive"
+    },
+    "-KNZ82dKoD3aTWLhaLpZ" : {
+      "dateTime" : "1469485168472",
+      "id" : 25,
+      "order" : 76,
+      "text" : "Rest message two: This is a test drive  two"
+    },
+    "-KNZ9JCWf3N29W4epFtq" : {
+      "dateTime" : "1469485498475",
+      "id" : 26,
+      "order" : 75,
+      "text" : "New York city: This is a test drive  two"
+    },
+    "-KNZDYq4Nq5pgx9DBgvU" : {
+      "dateTime" : "1469486612063",
+      "id" : 27,
+      "order" : 74,
+      "text" : "Hjj: Jhjj"
+    },
+    "-KNZIB_9OZ7a7p78E3ja" : {
+      "dateTime" : "1469487826891",
+      "id" : 28,
+      "order" : 73,
+      "text" : "New msg: New York city"
+    },
+    "-KNeUakubebXoHZd0ifV" : {
+      "dateTime" : "1469591743705",
+      "id" : 29,
+      "order" : 72,
+      "text" : "Test message: His name is Jay"
+    },
+    "-KNoEjEEMdm7Kb-tdcVa" : {
+      "dateTime" : "1469755355292",
+      "id" : 30,
+      "order" : 71,
+      "text" : "Test notification: This is a test drive 123"
+    },
+    "-KNoFnkxZW1hlZ6WU2V9" : {
+      "dateTime" : "1469755635978",
+      "id" : 31,
+      "order" : 70,
+      "text" : "New Jersey: New msg.. This is a test drive 123"
+    },
+    "-KNoGi5FR6Nr-6rZZSn8" : {
+      "dateTime" : "1469755874910",
+      "id" : 32,
+      "order" : 69,
+      "text" : "New Jersey: Ones New msg.. This is a test drive 123"
+    },
+    "-KNoGrTn4U189S4CdkT4" : {
+      "dateTime" : "1469755913345",
+      "id" : 33,
+      "order" : 68,
+      "text" : "New Jersey: Ones New msg.. This is a test drive 123"
+    },
+    "-KNoH3kF2EzguVTZudIS" : {
+      "dateTime" : "1469755967709",
+      "id" : 34,
+      "order" : 67,
+      "text" : "Ios: IOS Ones New msg.. This is a test drive 123"
+    },
+    "-KNoL6L55cok8WoyFEGi" : {
+      "dateTime" : "1469757026831",
+      "id" : 35,
+      "order" : 66,
+      "text" : "New ios: Reboot. IOS Ones New msg.. This is a test drive 123"
+    },
+    "-KNoPpfqQmnHPmXairbX" : {
+      "dateTime" : "1469758265211",
+      "id" : 36,
+      "order" : 65,
+      "text" : "New ios: Reboot. IOS Ones New msg.. This is a test drive 123"
+    },
+    "-KNoQ9WyVOluIVf9tSVO" : {
+      "dateTime" : "1469758351502",
+      "id" : 37,
+      "order" : 64,
+      "text" : "hello there: new test msg"
+    },
+    "-KNoR3Xy0U_ZnxT7jlJf" : {
+      "dateTime" : "1469758589133",
+      "id" : 38,
+      "order" : 63,
+      "text" : "new test: second new test msg"
+    },
+    "-KNoRfpFTOMhDhI2GzSr" : {
+      "dateTime" : "1469758750048",
+      "id" : 39,
+      "order" : 62,
+      "text" : "hello test: hello second new test msg"
+    },
+    "-KNoUJim2kF5TrtXWPiU" : {
+      "dateTime" : "1469759441858",
+      "id" : 40,
+      "order" : 61,
+      "text" : "new new: new new test"
+    },
+    "-KNoUv2lmLRm6CUdI1S8" : {
+      "dateTime" : "1469759598849",
+      "id" : 41,
+      "order" : 60,
+      "text" : "test new: trest new new test"
+    },
+    "-KNoUzt5yL6dEovdjGlT" : {
+      "dateTime" : "1469759618646",
+      "id" : 42,
+      "order" : 59,
+      "text" : "new 1: 123 trest new new test"
+    },
+    "-KNoVA92YmJe9aIoKKtK" : {
+      "dateTime" : "1469759664787",
+      "id" : 43,
+      "order" : 58,
+      "text" : "new 1: fine trest new new test"
+    },
+    "-KNoVWcDB_Ve29vTI9cO" : {
+      "dateTime" : "1469759756830",
+      "id" : 44,
+      "order" : 57,
+      "text" : "new 1: fine trest new new test"
+    },
+    "-KNoWPqvqOlWMVxDmTJn" : {
+      "dateTime" : "1469759991241",
+      "id" : 45,
+      "order" : 56,
+      "text" : "hello test: test hello"
+    },
+    "-KNoWcYFh328JP3UOW_H" : {
+      "dateTime" : "1469760047326",
+      "id" : 46,
+      "order" : 55,
+      "text" : "hello test: test hello"
+    },
+    "-KNoWgjR2iUynEsMH8EA" : {
+      "dateTime" : "1469760064490",
+      "id" : 47,
+      "order" : 54,
+      "text" : "hello test: test hello"
+    },
+    "-KNoX9JhDFpnhwGlDHTy" : {
+      "dateTime" : "1469760185659",
+      "id" : 48,
+      "order" : 53,
+      "text" : "hello test: test hello"
+    },
+    "-KNoXKXPG-t1MF9vVjgL" : {
+      "dateTime" : "1469760231591",
+      "id" : 49,
+      "order" : 52,
+      "text" : "ios push: new ios push"
+    },
+    "-KNoYv0WNbI3RTu56v3G" : {
+      "dateTime" : "1469760647278",
+      "id" : 50,
+      "order" : 51,
+      "text" : "ios push 2: 23 new ios push"
+    },
+    "-KNoa884sU9m84b8mayf" : {
+      "dateTime" : "1469761229394",
+      "id" : 51,
+      "order" : 50,
+      "text" : "ios push 2: 23 new ios push"
+    },
+    "-KNoaLtan9952fZulS74" : {
+      "dateTime" : "1469761285753",
+      "id" : 52,
+      "order" : 49,
+      "text" : "sdfdss: sdtetsts"
+    },
+    "-KNocdcqxBJqRnEkw-zl" : {
+      "dateTime" : "1469761886792",
+      "id" : 53,
+      "order" : 48,
+      "text" : "sdfdss: sdtetsts"
+    },
+    "-KNod8NEWS-y1V7MIvMs" : {
+      "dateTime" : "1469762016802",
+      "id" : 54,
+      "order" : 47,
+      "text" : "sdfdss: sdtetsts"
+    },
+    "-KNq0p4qjYcrfUbBXufM" : {
+      "dateTime" : "1469785264587",
+      "id" : 55,
+      "order" : 46,
+      "text" : "one twto: theres test"
+    },
+    "-KNq1Q71Cbb2ipdzbrsW" : {
+      "dateTime" : "1469785420375",
+      "id" : 56,
+      "order" : 45,
+      "text" : "one twto: theres test"
+    },
+    "-KNq7mVHcXb0kTqd9Yii" : {
+      "dateTime" : "1469787088959",
+      "id" : 57,
+      "order" : 44,
+      "text" : "new notifi: hello new notif"
+    },
+    "-KNq7tv4qcC2WLV8Y3O_" : {
+      "dateTime" : "1469787119347",
+      "id" : 58,
+      "order" : 43,
+      "text" : "new notifi: hello new notif"
+    },
+    "-KNq8Fjmnh0gYsuQezrz" : {
+      "dateTime" : "1469787212790",
+      "id" : 59,
+      "order" : 42,
+      "text" : "secdone notif: second not"
+    },
+    "-KNq94Ih4-3EpUgTiPIA" : {
+      "dateTime" : "1469787428081",
+      "id" : 60,
+      "order" : 41,
+      "text" : "Organization Announcement: Free ice cream tomorrow from 11 am to 1 pm."
+    },
+    "-KNqEKAUFQSGnO_MwHN3" : {
+      "dateTime" : "1469788803856",
+      "id" : 61,
+      "order" : 40,
+      "text" : "test not: this is a test"
+    },
+    "-KNqERDfGioGpL6UAs0L" : {
+      "dateTime" : "1469788832732",
+      "id" : 62,
+      "order" : 39,
+      "text" : "second test not: this is a second this is a test"
+    },
+    "-KNqHg35EE0hyScrTA-O" : {
+      "dateTime" : "1469789684055",
+      "id" : 63,
+      "order" : 38,
+      "text" : "dev push: this is dev push"
+    },
+    "-KNqHlGM4shPQW-cwaem" : {
+      "dateTime" : "1469789705384",
+      "id" : 64,
+      "order" : 37,
+      "text" : "dev push: this is dev push"
+    },
+    "-KNsJNG3t9HNDAWXNYHr" : {
+      "dateTime" : "1469823681609",
+      "id" : 65,
+      "order" : 36,
+      "text" : "friday test: test msg"
+    }
+  },
   "feeds" : [ {
     "article" : " This%20is%20a%20%27Facebook%27%20styled%20Card.%20The%20header%20is%20created%20from%20a%20Thumbnail%20List%20item%2C%0A%09%20%20%20%20%20%20%20%20%20%20%20%20%20%20the%20content%20is%20from%20a%20card-body%20consisting%20of%20an%20image%20and%20paragraph%20text.%20The%20footer%0A%09%20%20%20%20%20%20%20%20%20%20%20%20%20%20consists%20of%20tabs%2C%20icons%20aligned%20left%2C%20within%20the%20card-footer.%20%20%20This%20is%20a%20%27Facebook%27%20styled%20Card.%20The%20header%20is%20created%20from%20a%20Thumbnail%20List%20item%2C%0A%09%20%20%20%20%20%20%20%20%20%20%20%20%20%20the%20content%20is%20from%20a%20card-body%20consisting%20of%20an%20image%20and%20paragraph%20text.%20The%20footer%0A%09%20%20%20%20%20%20%20%20%20%20%20%20%20%20consists%20of%20tabs%2C%20icons%20aligned%20left%2C%20within%20the%20card-footer.%20%20%20This%20is%20a%20%27Facebook%27%20styled%20Card.%20The%20header%20is%20created%20from%20a%20Thumbnail%20List%20item%2C%0A%09%20%20%20%20%20%20%20%20%20%20%20%20%20%20the%20content%20is%20from%20a%20card-body%20consisting%20of%20an%20image%20and%20paragraph%20text.%20The%20footer%0A%09%20%20%20%20%20%20%20%20%20%20%20%20%20%20consists%20of%20tabs%2C%20icons%20aligned%20left%2C%20within%20the%20card-footer.%20%20%20This%20is%20a%20%27Facebook%27%20styled%20Card.%20The%20header%20is%20created%20from%20a%20Thumbnail%20List%20item%2C%0A%09%20%20%20%20%20%20%20%20%20%20%20%20%20%20the%20content%20is%20from%20a%20card-body%20consisting%20of%20an%20image%20and%20paragraph%20text.%20The%20footer%0A%09%20%20%20%20%20%20%20%20%20%20%20%20%20%20consists%20of%20tabs%2C%20icons%20aligned%20left%2C%20within%20the%20card-footer.%20%20%20This%20is%20a%20%27Facebook%27%20styled%20Card.%20The%20header%20is%20created%20from%20a%20Thumbnail%20List%20item%2C%0A%09%20%20%20%20%20%20%20%20%20%20%20%20%20%20the%20content%20is%20from%20a%20card-body%20consisting%20of%20an%20image%20and%20paragraph%20text.%20The%20footer%0A%09%20%20%20%20%20%20%20%20%20%20%20%20%20%20consists%20of%20tabs%2C%20icons%20aligned%20left%2C%20within%20the%20card-footer.",
     "articleDate" : "Sat Jul 09 2016 20:53:07 GMT-0500 (CDT)",
@@ -113,7 +372,7 @@
     "articleImg" : "http://images.huffingtonpost.com/2014-03-28-ExceptionalCIO.png",
     "author" : "",
     "id" : 6,
-    "likes" : 1,
+    "likes" : 2,
     "name" : "Mary Heger",
     "order" : 2,
     "picture" : {
@@ -142,8 +401,9 @@
     "articleDate" : "Sat Jul 09 2016 20:53:07 GMT-0500 (CDT)",
     "articleImg" : "http://www.lovehearttshirts.com/shop/images/780/I+LOVE+THE+RISK+T+SHIRT+BLACK.jpg",
     "author" : "",
+    "commenters" : [ "Faeez_https://avatars.githubusercontent.com/u/3466845?v=3" ],
     "id" : 8,
-    "likes" : 1,
+    "likes" : 4,
     "name" : "Risk Laing",
     "order" : 1,
     "picture" : {
@@ -158,8 +418,9 @@
     "articleDate" : "Sat Jul 09 2016 20:53:07 GMT-0500 (CDT)",
     "articleImg" : "http://www.throwcase.com/wp-content/uploads/2014/12/monkeys-e1419187612146.jpg",
     "author" : "",
+    "commenters" : [ "Faeez_https://avatars.githubusercontent.com/u/3466845?v=3" ],
     "id" : 9,
-    "likes" : 1,
+    "likes" : 4,
     "name" : "The Boss",
     "order" : 0,
     "picture" : {
@@ -222,9 +483,9 @@
     "articleDate" : "Sat Jul 09 2016 20:53:07 GMT-0500 (CDT)",
     "articleImg" : "http://support.frontrange.com/common/Images/Xtra_Sites/eBook/images/chapters/chapter-3/the-itsm-maturity-model.png",
     "author" : "",
-    "commenters" : [ "Cloud Pros_https://abs.twimg.com/sticky/default_profile_images/default_profile_0_normal.png", "Faeez_https://avatars.githubusercontent.com/u/3466845?v=3" ],
+    "commenters" : [ "Cloud Pros_https://abs.twimg.com/sticky/default_profile_images/default_profile_0_normal.png", "Faeez_https://avatars.githubusercontent.com/u/3466845?v=3", "Steve Rubin_https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg", "Blitz Blitz_https://scontent.xx.fbcdn.net/v/t1.0-1/s100x100/10354686_10150004552801856_220367501106153455_n.jpg?oh=41c50bbb7229d5480c6eccac22876ea3&oe=58297273" ],
     "id" : 13,
-    "likes" : 3,
+    "likes" : 11,
     "name" : "Mary Rice",
     "order" : -2,
     "picture" : {
@@ -237,49 +498,63 @@
   } ],
   "lastAnnouncement" : {
     "id" : 1,
-    "lastAnnouncementId" : 3,
-    "lastAnnouncementOrder" : 98
+    "lastAnnouncementId" : 65,
+    "lastAnnouncementOrder" : 36
   },
   "lastIdea" : {
     "id" : 1,
-    "lastIdeaId" : 16,
-    "lastIdeaOrder" : -5
+    "lastIdeaId" : 39,
+    "lastIdeaOrder" : -28
   },
   "messages" : {
-    "-KMS4zr91cJjknmvUQ9K" : {
-      "feedId" : "14",
+    "-KN4PgkbP39G4RfUhqqI" : {
+      "feedId" : "13",
+      "profilePic" : "https://abs.twimg.com/sticky/default_profile_images/default_profile_0_normal.png",
+      "text" : "hi",
+      "timestamp" : 1468969700461,
+      "username" : "Cloud Pros"
+    },
+    "-KNCH5mtJHtRgAyTsHTe" : {
+      "feedId" : "8",
       "profilePic" : "https://avatars.githubusercontent.com/u/3466845?v=3",
-      "text" : "Hi",
-      "timestamp" : 1468293184740,
+      "text" : "Great.  I feel like the new monkey who gets beat up for no apparent reason",
+      "timestamp" : 1469101664987,
       "username" : "Faeez"
     },
-    "-KMS5Gelw_QJknhDuMzH" : {
-      "feedId" : "14",
-      "profilePic" : "https://abs.twimg.com/sticky/default_profile_images/default_profile_0_normal.png",
-      "text" : "Yea cool",
-      "timestamp" : 1468293257691,
-      "username" : "Cloud Pros"
-    },
-    "-KMf29apZoOFps6Rg7pU" : {
-      "feedId" : "13",
-      "profilePic" : "https://abs.twimg.com/sticky/default_profile_images/default_profile_0_normal.png",
-      "text" : "sfd",
-      "timestamp" : 1468527323652,
-      "username" : "Cloud Pros"
-    },
-    "-KMf2C_YRDFGiFqXarrB" : {
+    "-KNDEyFsY459jIn-hVhr" : {
       "feedId" : "13",
       "profilePic" : "https://avatars.githubusercontent.com/u/3466845?v=3",
-      "text" : "fd",
-      "timestamp" : 1468527335835,
+      "text" : "nice article",
+      "timestamp" : 1469117883463,
       "username" : "Faeez"
     },
-    "-KMj-4mMWkPF99PIGJTD" : {
+    "-KNFasjg4cDIMkZYMP0f" : {
       "feedId" : "13",
-      "profilePic" : "https://abs.twimg.com/sticky/default_profile_images/default_profile_0_normal.png",
-      "text" : "Cool idea",
-      "timestamp" : 1468593626060,
-      "username" : "Cloud Pros"
+      "profilePic" : "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg",
+      "text" : "why hasnt ITIL updated since 2011?",
+      "timestamp" : 1469157444597,
+      "username" : "Steve Rubin"
+    },
+    "-KNFb9AyTLgq4mrm1pZR" : {
+      "feedId" : "13",
+      "profilePic" : "https://scontent.xx.fbcdn.net/v/t1.0-1/s100x100/10354686_10150004552801856_220367501106153455_n.jpg?oh=41c50bbb7229d5480c6eccac22876ea3&oe=58297273",
+      "text" : "Because it was done right the first time..maybe?",
+      "timestamp" : 1469157516039,
+      "username" : "Blitz Blitz"
+    },
+    "-KNFbSUqkHW76LGxRfj-" : {
+      "feedId" : "13",
+      "profilePic" : "https://avatars.githubusercontent.com/u/3466845?v=3",
+      "text" : "Where is Ameren's ITSM maturity level at?",
+      "timestamp" : 1469157595135,
+      "username" : "Faeez"
+    },
+    "-KNTDscC3EgObwf_zhR1" : {
+      "feedId" : "9",
+      "profilePic" : "https://avatars.githubusercontent.com/u/3466845?v=3",
+      "text" : "Great. I feel like the new monkey who gets beat up for no apparent reason",
+      "timestamp" : 1469386033046,
+      "username" : "Faeez"
     }
   },
   "room-messages" : {
@@ -325,6 +600,14 @@
         "timestamp" : 1468298208443,
         "type" : "default",
         "userId" : "twitter:4337715193"
+      },
+      "-KNFbqCTXgAfGPdUSTBu" : {
+        ".priority" : 1469157696382,
+        "message" : "Office 365 team - When are we updating sharepoint to its latest version?",
+        "name" : "Faeez",
+        "timestamp" : 1469157696382,
+        "type" : "default",
+        "userId" : "github:3466845"
       }
     }
   },
@@ -347,18 +630,38 @@
   "room-users" : {
     "-KMS4CS0mPEpZjmbDCiP" : {
       "github:3466845" : {
-        "-KMw7rRFmCPSE2MLa6AG" : {
+        "-KNso5cWRZLH1JsyDQeM" : {
           "id" : "github:3466845",
           "name" : "Faeez"
         },
-        "-KMw7rRP35NoTLOuxb8M" : {
+        "-KNso5cahI6XMRcEqyvh" : {
+          "id" : "github:3466845",
+          "name" : "Faeez"
+        },
+        "-KNso7-ZJHd53WxRsecj" : {
+          "id" : "github:3466845",
+          "name" : "Faeez"
+        }
+      }
+    },
+    "-KMSNxAvn7lz9s_ep-Os" : {
+      "github:3466845" : {
+        "-KNso5cWRZLH1JsyDQeM" : {
+          "id" : "github:3466845",
+          "name" : "Faeez"
+        },
+        "-KNso5cahI6XMRcEqyvh" : {
+          "id" : "github:3466845",
+          "name" : "Faeez"
+        },
+        "-KNso7-ZJHd53WxRsecj" : {
           "id" : "github:3466845",
           "name" : "Faeez"
         }
       }
     }
   },
-  "tweetorder" : 99920,
+  "tweetorder" : 99756,
   "tweets" : {
     "-KMS5a0zyXarjD51UCPC" : {
       "orderId" : 99999,
@@ -982,21 +1285,1178 @@
       "statusId" : "752704056905256963",
       "text" : "RT @CrushTheStreet: #BREXIT to cause $3,000/oz+ #Gold price as world #StockMarketCrash and #EURO fails  https://t.co/TkUCX0djUj #EUref\nhttp…",
       "tweetUrl" : "https://twitter.com/psc96180_pablo/status/752704056905256963"
+    },
+    "-KNFY3NVxcYJ1KztcOLE" : {
+      "orderId" : 99919,
+      "screenName" : "markusGoener",
+      "statusId" : "756323055564156930",
+      "text" : "RT @mareinicke: Beachtlich, was alles in einen Micra passt. Nach dem #Brexit sind diese Briten gut gerüstet für den Stau #A6 \uD83D\uDE01 https://t.co…",
+      "tweetUrl" : "https://twitter.com/markusGoener/status/756323055564156930"
+    },
+    "-KNFY3mnkhI92sp9_6xB" : {
+      "orderId" : 99918,
+      "screenName" : "GMillerAuthor",
+      "statusId" : "756323063206146048",
+      "text" : "RT @Hambiuk: 1 wk after #brexit vote &amp; #EU federal superstate effectively here. #Poland leaks fed doc, #Juncker says #EU supreme on #CETA n…",
+      "tweetUrl" : "https://twitter.com/GMillerAuthor/status/756323063206146048"
+    },
+    "-KNFYZwELSeQJ_074HP9" : {
+      "orderId" : 99917,
+      "screenName" : "cloudpros1",
+      "statusId" : "756323615801344000",
+      "text" : "#ameren https://t.co/lX1tUACayc",
+      "tweetUrl" : "https://twitter.com/cloudpros1/status/756323615801344000"
+    },
+    "-KNFYfGLunY0RbifHgkf" : {
+      "orderId" : 99916,
+      "screenName" : "coachkstl",
+      "statusId" : "756323724488536064",
+      "text" : "@AmerenMissouri power is out on Park Rd in 63119. Really? Again!? Please get it going.",
+      "tweetUrl" : "https://twitter.com/coachkstl/status/756323724488536064"
+    },
+    "-KNFZ4Y-jjwVw9iy8W9c" : {
+      "orderId" : 99915,
+      "screenName" : "Real_Big_Red",
+      "statusId" : "756324176416296961",
+      "text" : "@AmerenMissouri lol I work outside tomorrow so much for a cool nights sleep and thanks for waiting til 10 giving me no chance to leave",
+      "tweetUrl" : "https://twitter.com/Real_Big_Red/status/756324176416296961"
+    },
+    "-KNFZKQ3aXmFSNGVqka2" : {
+      "orderId" : 99914,
+      "screenName" : "Real_Big_Red",
+      "statusId" : "756324449012424704",
+      "text" : "@AmerenMissouri \uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE\uD83D\uDEAE",
+      "tweetUrl" : "https://twitter.com/Real_Big_Red/status/756324449012424704"
+    },
+    "-KNFZo05EXc9weP9Mb1W" : {
+      "orderId" : 99913,
+      "screenName" : "cloudpros1",
+      "statusId" : "756324972864282624",
+      "text" : "#ameren crews working hard to restore power. Keep up the good work. https://t.co/eNs5bt8EeR",
+      "tweetUrl" : "https://twitter.com/cloudpros1/status/756324972864282624"
+    },
+    "-KNFes7qOb9m9Tp7NZOz" : {
+      "orderId" : 99912,
+      "screenName" : "catgirl1967",
+      "statusId" : "756331642013163524",
+      "text" : "@AmerenCorp @AmerenMissouri ummmm...what to do with heat advisory and power out in 63119? \uD83D\uDE14",
+      "tweetUrl" : "https://twitter.com/catgirl1967/status/756331642013163524"
+    },
+    "-KNFndvNPZMSK5r4RJBV" : {
+      "orderId" : 99911,
+      "screenName" : "MaestrOberlin",
+      "statusId" : "756341293635088384",
+      "text" : "Smartflower POP Solar System Set to Take Industry by Storm https://t.co/7DIRPc2kIU @AmerenMissouri this should be in every (my) backyard!",
+      "tweetUrl" : "https://twitter.com/MaestrOberlin/status/756341293635088384"
+    },
+    "-KNGVFJsBRfSBa99vlDY" : {
+      "orderId" : 99910,
+      "screenName" : "multi_utilities",
+      "statusId" : "756390331327721472",
+      "text" : "BRIEF: #Ameren, Sierra Club reach $2 million settlement over air quality . Read more: https://t.co/hVUPMCz7jp $AEE",
+      "tweetUrl" : "https://twitter.com/multi_utilities/status/756390331327721472"
+    },
+    "-KNGVOJ4GuoxLjc112ED" : {
+      "orderId" : 99909,
+      "screenName" : "multi_utilities",
+      "statusId" : "756390486651219968",
+      "text" : "#Ameren, Sierra Club reach $2 million settlement over air quality. Read more: https://t.co/SStm1oinbV $AEE",
+      "tweetUrl" : "https://twitter.com/multi_utilities/status/756390486651219968"
+    },
+    "-KNG_2PQomqStFqQ-fIa" : {
+      "orderId" : 99908,
+      "screenName" : "SanFranPlaces",
+      "statusId" : "756395607342800896",
+      "text" : "Latest buzz and reviews for Sierra Club: https://t.co/68xgKABif9 - RT @multi_utilities BRIEF: #Ameren, Sierra Club reach $2 million settl...",
+      "tweetUrl" : "https://twitter.com/SanFranPlaces/status/756395607342800896"
+    },
+    "-KNHXiFklIwLn9ndDjs-" : {
+      "orderId" : 99907,
+      "screenName" : "KGlovesLinux",
+      "statusId" : "756463413467807745",
+      "text" : "@AmerenMissouri we got power outage here in my neighborhood are code 63031",
+      "tweetUrl" : "https://twitter.com/KGlovesLinux/status/756463413467807745"
+    },
+    "-KNHfKCjk8lqtirzzNhz" : {
+      "orderId" : 99906,
+      "screenName" : "bbakin",
+      "statusId" : "756472878644682752",
+      "text" : "@amerenillinois 3rd missed deadline.  Need directions to my street?",
+      "tweetUrl" : "https://twitter.com/bbakin/status/756472878644682752"
+    },
+    "-KNHtFQ22lwBcVrWe6Vp" : {
+      "orderId" : 99905,
+      "screenName" : "bbakin",
+      "statusId" : "756488189817257985",
+      "text" : "@AmerenIllinois 1803 east st jude ct peoria heights",
+      "tweetUrl" : "https://twitter.com/bbakin/status/756488189817257985"
+    },
+    "-KNI-Q3ZizVyTarAqWsQ" : {
+      "orderId" : 99904,
+      "screenName" : "ILCleanJobs",
+      "statusId" : "756496069467312128",
+      "text" : ".@dickmunson @EDFEnergyEX: rejection of new #energyefficiency \"drains the pocketbooks\" of @AmerenIllinois customers. https://t.co/3YOtQ7gs2d",
+      "tweetUrl" : "https://twitter.com/ILCleanJobs/status/756496069467312128"
+    },
+    "-KNI363Q1pFFlzxmB5TL" : {
+      "orderId" : 99903,
+      "screenName" : "DanielleCricket",
+      "statusId" : "756500123799007232",
+      "text" : "It's Career Day for @WymanCenter teens! We're headed to @AmerenMissouri @STLCC Emerson Center &amp; Center for Plant &amp; Life Sciences.",
+      "tweetUrl" : "https://twitter.com/DanielleCricket/status/756500123799007232"
+    },
+    "-KNIH1oiGIdb3qjtEQoj" : {
+      "orderId" : 99902,
+      "screenName" : "stlbizkkeller",
+      "statusId" : "756515442491924481",
+      "text" : ".@AmerenMissouri Sierra Club reach $2 million settlement https://t.co/Qy3ew0UgDi https://t.co/vjApiYT8gf",
+      "tweetUrl" : "https://twitter.com/stlbizkkeller/status/756515442491924481"
+    },
+    "-KNIJk8iAeipJTSbLfkD" : {
+      "orderId" : 99901,
+      "screenName" : "AmerenCorp",
+      "statusId" : "756518420502511616",
+      "text" : "@linzi__ Be sure to report outages at https://t.co/4wRLsNgwVE. You can also message @AmerenMissouri or @AmerenIllinois directly for info.",
+      "tweetUrl" : "https://twitter.com/AmerenCorp/status/756518420502511616"
+    },
+    "-KNIUM0KehoAWMuc0lKl" : {
+      "orderId" : 99900,
+      "screenName" : "spencerh45",
+      "statusId" : "756530083213508608",
+      "text" : "@AmerenMissouri y'all been changin the eta all morning. First it was 9, then 10:30, then 11:30 and now it's 1. Come on now",
+      "tweetUrl" : "https://twitter.com/spencerh45/status/756530083213508608"
+    },
+    "-KNIabjRS74C98SjXS5P" : {
+      "orderId" : 99899,
+      "screenName" : "multi_utilities",
+      "statusId" : "756538068291710976",
+      "text" : "#Ameren Missouri, Sierra Club reach $2 million settlement. Read more: https://t.co/NJWFjpT0WH $AEE",
+      "tweetUrl" : "https://twitter.com/multi_utilities/status/756538068291710976"
+    },
+    "-KNIakldBWniakhs-yOn" : {
+      "orderId" : 99898,
+      "screenName" : "multi_utilities",
+      "statusId" : "756538223531270144",
+      "text" : "#Ameren Missouri, Sierra Club reach $2 million settlement. Read more: https://t.co/mg8gKK4PRg $AEE",
+      "tweetUrl" : "https://twitter.com/multi_utilities/status/756538223531270144"
+    },
+    "-KNIe0r0evIGZaPi4SRT" : {
+      "orderId" : 99897,
+      "screenName" : "CrainsStLouis",
+      "statusId" : "756541815600349184",
+      "text" : "Ameren Missouri settles Sierra Club suit in a green way @AmerenMissouri @sierraclub https://t.co/YleRSe2wJN",
+      "tweetUrl" : "https://twitter.com/CrainsStLouis/status/756541815600349184"
+    },
+    "-KNIfffNU2fy6cXNSOfL" : {
+      "orderId" : 99896,
+      "screenName" : "HartmanMath",
+      "statusId" : "756543633239801859",
+      "text" : "@AmerenIllinois Power out in Mansfield Illinois.",
+      "tweetUrl" : "https://twitter.com/HartmanMath/status/756543633239801859"
+    },
+    "-KNIkiIy_DFxEdl5cjSH" : {
+      "orderId" : 99895,
+      "screenName" : "brody_keith",
+      "statusId" : "756549176335405056",
+      "text" : "@AmerenIllinois outages in Monticello Illinois any time table",
+      "tweetUrl" : "https://twitter.com/brody_keith/status/756549176335405056"
+    },
+    "-KNIn2IUDIbRrLWFhESr" : {
+      "orderId" : 99894,
+      "screenName" : "multi_utilities",
+      "statusId" : "756551735993245696",
+      "text" : "Jones Financial Companies Lllp Raises Stake in #Ameren Corp. (). Read more: https://t.co/uTqHHbRNjY $AEE",
+      "tweetUrl" : "https://twitter.com/multi_utilities/status/756551735993245696"
+    },
+    "-KNIoGDAYc_4orO1MvEl" : {
+      "orderId" : 99893,
+      "screenName" : "brody_keith",
+      "statusId" : "756553074844413952",
+      "text" : "@AmerenIllinois 52 Deer Run Monticello Illinois 61856",
+      "tweetUrl" : "https://twitter.com/brody_keith/status/756553074844413952"
+    },
+    "-KNIrrPsxaYJco_adlHx" : {
+      "orderId" : 99892,
+      "screenName" : "stlbizkukuljan",
+      "statusId" : "756557027330002945",
+      "text" : ".@AmerenMissouri &amp; @sierraclub reach $2M settlement over alleged Clean Air Act violations https://t.co/AO7vDEr6C9",
+      "tweetUrl" : "https://twitter.com/stlbizkukuljan/status/756557027330002945"
+    },
+    "-KNIvDn4WZoXG5BdHYf6" : {
+      "orderId" : 99891,
+      "screenName" : "sierraclub",
+      "statusId" : "756560728904073216",
+      "text" : "RT @stlbizkukuljan: .@AmerenMissouri &amp; @sierraclub reach $2M settlement over alleged Clean Air Act violations https://t.co/AO7vDEr6C9",
+      "tweetUrl" : "https://twitter.com/sierraclub/status/756560728904073216"
+    },
+    "-KNIvEgnJ7y-3DYFwgNA" : {
+      "orderId" : 99890,
+      "screenName" : "BeyondCoal",
+      "statusId" : "756560744645332994",
+      "text" : "RT @stlbizkukuljan: .@AmerenMissouri &amp; @sierraclub reach $2M settlement over alleged Clean Air Act violations https://t.co/AO7vDEr6C9",
+      "tweetUrl" : "https://twitter.com/BeyondCoal/status/756560744645332994"
+    },
+    "-KNIvW18LAiJhQh1o-BP" : {
+      "orderId" : 99889,
+      "screenName" : "Mattiechick",
+      "statusId" : "756561043237724160",
+      "text" : "RT @stlbizkukuljan: .@AmerenMissouri &amp; @sierraclub reach $2M settlement over alleged Clean Air Act violations https://t.co/AO7vDEr6C9",
+      "tweetUrl" : "https://twitter.com/Mattiechick/status/756561043237724160"
+    },
+    "-KNIw4PVUm1U-trqQMdP" : {
+      "orderId" : 99888,
+      "screenName" : "Michbassclub",
+      "statusId" : "756561668205785088",
+      "text" : "@stlbizkukuljan @sierraclub @AmerenMissouri not enough",
+      "tweetUrl" : "https://twitter.com/Michbassclub/status/756561668205785088"
+    },
+    "-KNJDuQPLEzFZfm9T00d" : {
+      "orderId" : 99887,
+      "screenName" : "stlouisbiz",
+      "statusId" : "756582369490907137",
+      "text" : ".@AmerenMissouri, @sierraclub reach $2 million settlement - see the details here: https://t.co/ycnmZdRSAL",
+      "tweetUrl" : "https://twitter.com/stlouisbiz/status/756582369490907137"
+    },
+    "-KNJYpy938bZNy8XbEBU" : {
+      "orderId" : 99886,
+      "screenName" : "shay_lianna",
+      "statusId" : "756605381518909440",
+      "text" : "@stlcsb 2 of 2 @AmerenMissouri contacted several times. Can you take care of it before it takes out wires? https://t.co/i9n8PldYMB",
+      "tweetUrl" : "https://twitter.com/shay_lianna/status/756605381518909440"
+    },
+    "-KNJaBYlhk8MNpyLjjba" : {
+      "orderId" : 99885,
+      "screenName" : "WillSeattle",
+      "statusId" : "756607970138591232",
+      "text" : "RT @stlbizkukuljan: .@AmerenMissouri &amp; @sierraclub reach $2M settlement over alleged Clean Air Act violations https://t.co/AO7vDEr6C9",
+      "tweetUrl" : "https://twitter.com/WillSeattle/status/756607970138591232"
+    },
+    "-KNKA87_OABpQ-L8uXzo" : {
+      "orderId" : 99884,
+      "screenName" : "GeraldMetts",
+      "statusId" : "756648590043406336",
+      "text" : "@AmerenMissouri there is crack Electric pole. There are some trees that need to be trimmed. https://t.co/CNUOw88YvY",
+      "tweetUrl" : "https://twitter.com/GeraldMetts/status/756648590043406336"
+    },
+    "-KNKAf1vYjkFbqkerYaQ" : {
+      "orderId" : 99883,
+      "screenName" : "GeraldMetts",
+      "statusId" : "756649175660527617",
+      "text" : "@AmerenMissouri also can you check out the Transformer behind 4008 Oakwood Also can upgrade the main transformers in pine lawn",
+      "tweetUrl" : "https://twitter.com/GeraldMetts/status/756649175660527617"
+    },
+    "-KNKAvElFbtVWnkeICMB" : {
+      "orderId" : 99882,
+      "screenName" : "GeraldMetts",
+      "statusId" : "756649451381526528",
+      "text" : "@AmerenMissouri this is the main transformers in pine lawn https://t.co/FVRUCxOROf",
+      "tweetUrl" : "https://twitter.com/GeraldMetts/status/756649451381526528"
+    },
+    "-KNKVO8fGBT2cQsaiI-D" : {
+      "orderId" : 99881,
+      "screenName" : "IICCinc",
+      "statusId" : "756671956762722304",
+      "text" : "@stlbizkukuljan @sierraclub @AmerenMissouri https://t.co/UvRW8TBmsY",
+      "tweetUrl" : "https://twitter.com/IICCinc/status/756671956762722304"
+    },
+    "-KNKXBUQAIKNnYmidA54" : {
+      "orderId" : 99880,
+      "screenName" : "Mista_Dont_Play",
+      "statusId" : "756673939816927232",
+      "text" : "Street light numbers KL41 KL250 and KL42 need replacement North Hanley/Dr MLK Blvd @AmerenMissouri",
+      "tweetUrl" : "https://twitter.com/Mista_Dont_Play/status/756673939816927232"
+    },
+    "-KNKfP4w20c7_SVtkyGA" : {
+      "orderId" : 99879,
+      "screenName" : "jh_singleton",
+      "statusId" : "756684068356587520",
+      "text" : "Storms came thru &amp; knocked some trees down about 6pm Power went out but is back on now! Thank you @AmerenMissouri :)",
+      "tweetUrl" : "https://twitter.com/jh_singleton/status/756684068356587520"
+    },
+    "-KNKsOyqsmlNrkocA8F_" : {
+      "orderId" : 99878,
+      "screenName" : "zenitram20",
+      "statusId" : "756698356102139904",
+      "text" : "Excessive heat warning. Power went out 2 hrs ago. 2 @AmerenIllinois trucks showed up, looked around for a bit and left. Still no power \uD83D\uDE3F",
+      "tweetUrl" : "https://twitter.com/zenitram20/status/756698356102139904"
+    },
+    "-KNKt0uPEb4jMtc_egll" : {
+      "orderId" : 99877,
+      "screenName" : "zenitram20",
+      "statusId" : "756699046421622784",
+      "text" : "We had reported outage immediately to @AmerenIllinois and told 11:40 pm anticipated time for power to be fixed. Must have been pretty bad!",
+      "tweetUrl" : "https://twitter.com/zenitram20/status/756699046421622784"
+    },
+    "-KNMATBzCRKcAN2jssuu" : {
+      "orderId" : 99876,
+      "screenName" : "zenitram20",
+      "statusId" : "756789692272705536",
+      "text" : "Power back on at 430! Thanks @AmerenIllinois ! Total #1stworldproblems my @blueapron arrived yesterday, so that's junk in the power outage",
+      "tweetUrl" : "https://twitter.com/zenitram20/status/756789692272705536"
+    },
+    "-KNNnrcGovgsUuwf746b" : {
+      "orderId" : 99875,
+      "screenName" : "themovieguy73",
+      "statusId" : "756904479040036865",
+      "text" : "@AmerenIllinois why didnt i get a text mess about my power outage?",
+      "tweetUrl" : "https://twitter.com/themovieguy73/status/756904479040036865"
+    },
+    "-KNNpwIXy9TkVHnDA8ub" : {
+      "orderId" : 99874,
+      "screenName" : "StPatCtrMary",
+      "statusId" : "756906756966486016",
+      "text" : "We see many businesses that do this! @wwt_inc @safetynational @AmerenMissouri @TheBooksource @EYnews are just a few. https://t.co/mJYRflITwN",
+      "tweetUrl" : "https://twitter.com/StPatCtrMary/status/756906756966486016"
+    },
+    "-KNNvF8zCriablfbRSTn" : {
+      "orderId" : 99873,
+      "screenName" : "themovieguy73",
+      "statusId" : "756912596591181824",
+      "text" : "@AmerenIllinois it shows that im signed up.",
+      "tweetUrl" : "https://twitter.com/themovieguy73/status/756912596591181824"
+    },
+    "-KNO4Wbw4g2LcN23puV1" : {
+      "orderId" : 99872,
+      "screenName" : "bobolwig",
+      "statusId" : "756923890400538624",
+      "text" : "RT @StPatCtrMary: We see many businesses that do this! @wwt_inc @safetynational @AmerenMissouri @TheBooksource @EYnews are just a few. http…",
+      "tweetUrl" : "https://twitter.com/bobolwig/status/756923890400538624"
+    },
+    "-KNO8MlwOSYYsR-RVh-O" : {
+      "orderId" : 99871,
+      "screenName" : "coyotegirl28",
+      "statusId" : "756928121123643392",
+      "text" : "Please @AmerenIllinois get our power back on soon. My mom has COPD and heart problems!",
+      "tweetUrl" : "https://twitter.com/coyotegirl28/status/756928121123643392"
+    },
+    "-KNOIv3-thVGFWsG9DHe" : {
+      "orderId" : 99870,
+      "screenName" : "coyotegirl28",
+      "statusId" : "756939720777752576",
+      "text" : "@AmerenIllinois Power is restored,  I tweeted because no one was in the office..... Thank you",
+      "tweetUrl" : "https://twitter.com/coyotegirl28/status/756939720777752576"
+    },
+    "-KNOKbX209YW4DUvStXQ" : {
+      "orderId" : 99869,
+      "screenName" : "robertstinnett",
+      "statusId" : "756941585548505088",
+      "text" : "@Sensi Love my Sensi thermostat,  but noticed that you guys are not on the wireless rebate list for @AmerenMissouri . Curious as to why?",
+      "tweetUrl" : "https://twitter.com/robertstinnett/status/756941585548505088"
+    },
+    "-KNOWQiwjwtsCpCbvEca" : {
+      "orderId" : 99868,
+      "screenName" : "elaine6972_cd",
+      "statusId" : "756954577367203842",
+      "text" : "RT @DanaElizabeth69: https://t.co/ehYkMOTIKs @GGNJ2000 @NASAKennedy @CERN @elaine6972_cd @lee_baier @AMD1_CEO @AmerenIllinois @GinaBar821 @…",
+      "tweetUrl" : "https://twitter.com/elaine6972_cd/status/756954577367203842"
+    },
+    "-KNPijqTcUPxy34MLZ7L" : {
+      "orderId" : 99867,
+      "screenName" : "Trickadlington",
+      "statusId" : "757039604063240192",
+      "text" : "@AmerenIllinois \nCalled in we have had 6  (1-2) minute outages tonight. Bad on all our electronics!",
+      "tweetUrl" : "https://twitter.com/Trickadlington/status/757039604063240192"
+    },
+    "-KNQ6Dwbxn_CZS0j6pX5" : {
+      "orderId" : 99866,
+      "screenName" : "MLISrevenge",
+      "statusId" : "757066529175326720",
+      "text" : "Thanks, @AmerenCorp for helping restore power in the Duluth area! I'm originally from IL and was an Ameren CIPS customer. @AmerenIllinois",
+      "tweetUrl" : "https://twitter.com/MLISrevenge/status/757066529175326720"
+    },
+    "-KNQ6d4-LiwhX_fY8WHe" : {
+      "orderId" : 99865,
+      "screenName" : "MLISrevenge",
+      "statusId" : "757066976753774592",
+      "text" : "Also a HUGE thanks to @mnpower for their hard work the past few days. Stay safe and cool! https://t.co/jYGAGRlLqH",
+      "tweetUrl" : "https://twitter.com/MLISrevenge/status/757066976753774592"
+    },
+    "-KNQK_cOnmHD3lQIjs5m" : {
+      "orderId" : 99864,
+      "screenName" : "aqeelkhan",
+      "statusId" : "757082290191118337",
+      "text" : "So @AmerenIllinois I hear power is out in Glendale Heights are of IL since 10 pm today &amp; won't be restore till noon tomorrow. #Whatgives ?",
+      "tweetUrl" : "https://twitter.com/aqeelkhan/status/757082290191118337"
+    },
+    "-KNTTFkH8KhpDGXm1nhO" : {
+      "orderId" : 99861,
+      "screenName" : "EduDiva",
+      "statusId" : "757302933054746629",
+      "text" : "Way too hot to lose power today! #stlwx #Ameren #heatwarning",
+      "tweetUrl" : "https://twitter.com/EduDiva/status/757302933054746629"
+    },
+    "-KNTcZUQZ3YaQJ0QpLvD" : {
+      "orderId" : 99860,
+      "screenName" : "hmkaluza",
+      "statusId" : "757314267758624769",
+      "text" : "I want to feel the cock inside your self do you want play with me?.\nFind my name here    https://t.co/Ws74KGxEDE https://t.co/tkEdm2cU88",
+      "tweetUrl" : "https://twitter.com/hmkaluza/status/757314267758624769"
+    },
+    "-KNUJpF6iRn84k-Orx4b" : {
+      "orderId" : 99859,
+      "screenName" : "youMADDbro9",
+      "statusId" : "757362934557179904",
+      "text" : "@AmerenMissouri you're kidding me?!? We have a transformer out and now no AC in 100* heat?!? Get a damn crew here! 63144",
+      "tweetUrl" : "https://twitter.com/youMADDbro9/status/757362934557179904"
+    },
+    "-KNUPy7QTbneo8om2yP4" : {
+      "orderId" : 99858,
+      "screenName" : "toasthaiku",
+      "statusId" : "757369684211531776",
+      "text" : "I'm grilling &amp; enjoying a gin &amp; tonic as @AmerenMissouri crews bust their butts in the hot sun next door. Thank you.",
+      "tweetUrl" : "https://twitter.com/toasthaiku/status/757369684211531776"
+    },
+    "-KNUQE3inJXJV-zjqs6D" : {
+      "orderId" : 99857,
+      "screenName" : "139_j",
+      "statusId" : "757369973874499584",
+      "text" : "Hot up here in these old, brick buildings in the city. Wish @AmerenMissouri would say the reasons behind these outages. #stlcity",
+      "tweetUrl" : "https://twitter.com/139_j/status/757369973874499584"
+    },
+    "-KNUWzuKzz1Gpo29Uz_I" : {
+      "orderId" : 99856,
+      "screenName" : "nightwi1derness",
+      "statusId" : "757377410677506048",
+      "text" : "RT @stlbizkukuljan: .@AmerenMissouri &amp; @sierraclub reach $2M settlement over alleged Clean Air Act violations https://t.co/AO7vDEr6C9",
+      "tweetUrl" : "https://twitter.com/nightwi1derness/status/757377410677506048"
+    },
+    "-KNUZspQi14y9FAWp8HL" : {
+      "orderId" : 99855,
+      "screenName" : "Starbuck_One",
+      "statusId" : "757380587891982336",
+      "text" : "@AmerenMissouri better get us power ASAP... We have old neighbors and pets in the building who can not stay in this heat! Hurry!",
+      "tweetUrl" : "https://twitter.com/Starbuck_One/status/757380587891982336"
+    },
+    "-KNUnkZzipVOryZwV0HL" : {
+      "orderId" : 99854,
+      "screenName" : "139_j",
+      "statusId" : "757396938887204865",
+      "text" : "@AmerenMissouri I can't afford losing all of this food.",
+      "tweetUrl" : "https://twitter.com/139_j/status/757396938887204865"
+    },
+    "-KNUsYba_zPqYcrYFmi5" : {
+      "orderId" : 99853,
+      "screenName" : "Starbuck_One",
+      "statusId" : "757402212955934721",
+      "text" : "I'm wondering if @AmerenMissouri @AmerenCorp cares people are sweltering, it took 7 hours just to assign a crew member?! It's HOT!",
+      "tweetUrl" : "https://twitter.com/Starbuck_One/status/757402212955934721"
+    },
+    "-KNUvnn8Vn54wzDVOh8X" : {
+      "orderId" : 99852,
+      "screenName" : "139_j",
+      "statusId" : "757405790651101184",
+      "text" : "@Starbuck_One @AmerenMissouri @AmerenCorp So hot.  Lots of my food is spoiling &amp; I can't afford to replace it.",
+      "tweetUrl" : "https://twitter.com/139_j/status/757405790651101184"
+    },
+    "-KNUw561oAogSAEVDu1i" : {
+      "orderId" : 99851,
+      "screenName" : "LindseyMills7",
+      "statusId" : "757406105156800512",
+      "text" : ".@AmerenIllinois reporting 2,309 customers in McLean County without power. Nearly a thousand without power in Tazewell County @WMBDNews",
+      "tweetUrl" : "https://twitter.com/LindseyMills7/status/757406105156800512"
+    },
+    "-KNUwce11OeecFvCt6Ge" : {
+      "orderId" : 99850,
+      "screenName" : "Starbuck_One",
+      "statusId" : "757406698990559232",
+      "text" : "RT @139_j: Hot up here in these old, brick buildings in the city. Wish @AmerenMissouri would say the reasons behind these outages. #stlcity",
+      "tweetUrl" : "https://twitter.com/Starbuck_One/status/757406698990559232"
+    },
+    "-KNV2zRYtABfXFIXTTGt" : {
+      "orderId" : 99849,
+      "screenName" : "LindseyMills7",
+      "statusId" : "757414786896310272",
+      "text" : "Power outage update: 1,300+ McLean Co. 1,077 Tazewell Co. @AmerenIllinois #wmbd",
+      "tweetUrl" : "https://twitter.com/LindseyMills7/status/757414786896310272"
+    },
+    "-KNV4eRcUXXpDXnXdiZl" : {
+      "orderId" : 99848,
+      "screenName" : "WMBDNews",
+      "statusId" : "757416624269856769",
+      "text" : "RT @LindseyMills7: Power outage update: 1,300+ McLean Co. 1,077 Tazewell Co. @AmerenIllinois #wmbd",
+      "tweetUrl" : "https://twitter.com/WMBDNews/status/757416624269856769"
+    },
+    "-KNV4pI29PYDC2MBGC24" : {
+      "orderId" : 99847,
+      "screenName" : "lindajoy54",
+      "statusId" : "757416810694213632",
+      "text" : "RT @LindseyMills7: Power outage update: 1,300+ McLean Co. 1,077 Tazewell Co. @AmerenIllinois #wmbd",
+      "tweetUrl" : "https://twitter.com/lindajoy54/status/757416810694213632"
+    },
+    "-KNV4upzcQvcJi8bcxss" : {
+      "orderId" : 99846,
+      "screenName" : "cams2tamie",
+      "statusId" : "757416906894696448",
+      "text" : "RT @LindseyMills7: Power outage update: 1,300+ McLean Co. 1,077 Tazewell Co. @AmerenIllinois #wmbd",
+      "tweetUrl" : "https://twitter.com/cams2tamie/status/757416906894696448"
+    },
+    "-KNV5gL5cNmZhCj3KXV5" : {
+      "orderId" : 99845,
+      "screenName" : "Garrett_White",
+      "statusId" : "757417756765499392",
+      "text" : "@AmerenMissouri 5+ hours w/o power in 63139. 0 updates from your site or operators. How can it be this hard to find out what's going on?",
+      "tweetUrl" : "https://twitter.com/Garrett_White/status/757417756765499392"
+    },
+    "-KNV6sXzh5X1tFmCqrXq" : {
+      "orderId" : 99844,
+      "screenName" : "139_j",
+      "statusId" : "757419065904431105",
+      "text" : "RT @Garrett_White: @AmerenMissouri 5+ hours w/o power in 63139. 0 updates from your site or operators. How can it be this hard to find out…",
+      "tweetUrl" : "https://twitter.com/139_j/status/757419065904431105"
+    },
+    "-KNVEBLdwcrAmeeWDjQl" : {
+      "orderId" : 99843,
+      "screenName" : "Kody_Baseball15",
+      "statusId" : "757427102710915072",
+      "text" : "@AmerenIllinois powers out",
+      "tweetUrl" : "https://twitter.com/Kody_Baseball15/status/757427102710915072"
+    },
+    "-KNVHEIqkHv48YG2UVSN" : {
+      "orderId" : 99842,
+      "screenName" : "hyperhouse",
+      "statusId" : "757430451883667456",
+      "text" : "We're 4 hours without power. @AmerenMissouri thinks another 6+ hours is fine. Why isn't anything being done?",
+      "tweetUrl" : "https://twitter.com/hyperhouse/status/757430451883667456"
+    },
+    "-KNVHSdiaclXrz9ZzIyK" : {
+      "orderId" : 99841,
+      "screenName" : "hyperhouse",
+      "statusId" : "757430698944888833",
+      "text" : "RT @Garrett_White: @AmerenMissouri 5+ hours w/o power in 63139. 0 updates from your site or operators. How can it be this hard to find out…",
+      "tweetUrl" : "https://twitter.com/hyperhouse/status/757430698944888833"
+    },
+    "-KNVHYBVduBiN9lOtLe6" : {
+      "orderId" : 99840,
+      "screenName" : "albright82",
+      "statusId" : "757430793941557248",
+      "text" : "@AmerenMissouri you say the 63139 problem is at Clayton and San Jacinto but there are 0 crews there.",
+      "tweetUrl" : "https://twitter.com/albright82/status/757430793941557248"
+    },
+    "-KNVO9gXhl5wPyvdyCe7" : {
+      "orderId" : 99839,
+      "screenName" : "hyperhouse",
+      "statusId" : "757438068093771776",
+      "text" : "800+ people w/o power now that storms are rolling in. Bet @AmerenMissouri wishes they'd gotten a head start. 5 hours now w/o power.",
+      "tweetUrl" : "https://twitter.com/hyperhouse/status/757438068093771776"
+    },
+    "-KNVYa5tv5R7EgpK3pX_" : {
+      "orderId" : 99838,
+      "screenName" : "hyperhouse",
+      "statusId" : "757449535262232576",
+      "text" : "It's 2 degrees cooler in my house than outside. After 5 hours @AmerenMissouri assigned a person to our outage. Still no power.",
+      "tweetUrl" : "https://twitter.com/hyperhouse/status/757449535262232576"
+    },
+    "-KNVfYhGRfbI75FXWegv" : {
+      "orderId" : 99837,
+      "screenName" : "Irish_Girl98",
+      "statusId" : "757458290510921729",
+      "text" : "@AmerenIllinois yo can you come turn my power back on so I can play my video game",
+      "tweetUrl" : "https://twitter.com/Irish_Girl98/status/757458290510921729"
+    },
+    "-KNVyhq7fozxhixjK0kb" : {
+      "orderId" : 99836,
+      "screenName" : "hyperhouse",
+      "statusId" : "757479353680887808",
+      "text" : "Have to miss some work tomorrow since I can't sleep in this heat. Have to replace all my groceries I bought. Thanks @AmerenMissouri #hour7",
+      "tweetUrl" : "https://twitter.com/hyperhouse/status/757479353680887808"
+    },
+    "-KN_raenFwyj18TVt4iI" : {
+      "orderId" : 99835,
+      "screenName" : "multi_utilities",
+      "statusId" : "757823379097333761",
+      "text" : "#Ameren : Garbage truck tangles with power lines . Read more: https://t.co/8Tunm4SypH $AEE",
+      "tweetUrl" : "https://twitter.com/multi_utilities/status/757823379097333761"
+    },
+    "-KNal0Zm2jQ6GQHhwnCb" : {
+      "orderId" : 99834,
+      "screenName" : "petejbrown51",
+      "statusId" : "757886512964993024",
+      "text" : "@AmerenMissouri outages to report ?",
+      "tweetUrl" : "https://twitter.com/petejbrown51/status/757886512964993024"
+    },
+    "-KNbJDiBrK57eqXYD3Pl" : {
+      "orderId" : 99833,
+      "screenName" : "DrEmilyT",
+      "statusId" : "757925219323502596",
+      "text" : "St. Louis teachers learn about STEM careers w/ @AmerenMissouri &amp; @WUSTL. #community https://t.co/pOfgdBaBLe https://t.co/cKHrztJhu4",
+      "tweetUrl" : "https://twitter.com/DrEmilyT/status/757925219323502596"
+    },
+    "-KNbmMgV17q4c7tHtEau" : {
+      "orderId" : 99832,
+      "screenName" : "MoEnviron",
+      "statusId" : "757958362025693184",
+      "text" : "St. Louis will gain electric buses through #Ameren legal settlement https://t.co/wdZqkoPxB6 via @MWenergynews @MOsierraclub",
+      "tweetUrl" : "https://twitter.com/MoEnviron/status/757958362025693184"
+    },
+    "-KNc-QHDWk92W2kDXAHu" : {
+      "orderId" : 99831,
+      "screenName" : "ServeIllinois",
+      "statusId" : "757973816601608192",
+      "text" : "Effingham group receives @AmerenIllinois grant https://t.co/QICdsVgM2O @BlessinBackpack",
+      "tweetUrl" : "https://twitter.com/ServeIllinois/status/757973816601608192"
+    },
+    "-KNc5qE3vn7UXylMR-rZ" : {
+      "orderId" : 99830,
+      "screenName" : "BlessinBackpack",
+      "statusId" : "757980876617551872",
+      "text" : "Thank you, @AmerenIllinois for feeding 40 children this school year!  \uD83C\uDF4E #FeedtheFuture #FoodThisFriday https://t.co/GZrL6qVcLz",
+      "tweetUrl" : "https://twitter.com/BlessinBackpack/status/757980876617551872"
+    },
+    "-KNcTqi_ktDzwO8MkdBi" : {
+      "orderId" : 99829,
+      "screenName" : "missaliyahprice",
+      "statusId" : "758007273721475072",
+      "text" : "RT @MoEnviron: St. Louis will gain electric buses through #Ameren legal settlement https://t.co/wdZqkoPxB6 via @MWenergynews @MOsierraclub",
+      "tweetUrl" : "https://twitter.com/missaliyahprice/status/758007273721475072"
+    },
+    "-KNdhqNXqdcX5Of-4-bC" : {
+      "orderId" : 99828,
+      "screenName" : "JamesMcKee",
+      "statusId" : "758094128429223936",
+      "text" : "@AmerenMissouri  is the @WiserAir wifi thermostat eligible for the efficiency rebate?",
+      "tweetUrl" : "https://twitter.com/JamesMcKee/status/758094128429223936"
+    },
+    "-KNdjt2QH9VYb6-oTSJ_" : {
+      "orderId" : 99827,
+      "screenName" : "IMLLeague",
+      "statusId" : "758096373443076096",
+      "text" : "@ChathamPride  Thank you, Scott! https://t.co/IQ7glA7a5M",
+      "tweetUrl" : "https://twitter.com/IMLLeague/status/758096373443076096"
+    },
+    "-KNg_ewvpDKUnqHAD41v" : {
+      "orderId" : 99826,
+      "screenName" : "EDUgirlsRock",
+      "statusId" : "758296242849976320",
+      "text" : "RT @EDUgirlsRock: I would like to thank all of my corporate sponsors @Target  @AmerenMissouri @Walmart @SamsClub  @LacledeGas . https://t.c…",
+      "tweetUrl" : "https://twitter.com/EDUgirlsRock/status/758296242849976320"
+    },
+    "-KNgj10kFfurtGMBOV_g" : {
+      "orderId" : 99825,
+      "screenName" : "AmerenCorp",
+      "statusId" : "758306534698782720",
+      "text" : "Wonder how you might benefit from an internship? See what Jonathan's learning on @AmerenMissouri's Real Estate team.\nhttps://t.co/6YRJUgDpW4",
+      "tweetUrl" : "https://twitter.com/AmerenCorp/status/758306534698782720"
+    },
+    "-KNgpoMI0FnCcC7-M5Ym" : {
+      "orderId" : 99824,
+      "screenName" : "RecruiterHouTX",
+      "statusId" : "758313996827054082",
+      "text" : "RT @AmerenCorp: Wonder how you might benefit from an internship? See what Jonathan's learning on @AmerenMissouri's Real Estate team.\nhttps:…",
+      "tweetUrl" : "https://twitter.com/RecruiterHouTX/status/758313996827054082"
+    },
+    "-KNgzzLbtYmcnfB5QpcW" : {
+      "orderId" : 99823,
+      "screenName" : "AmerenMissouri",
+      "statusId" : "758325180884189184",
+      "text" : "RT @AmerenCorp: Wonder how you might benefit from an internship? See what Jonathan's learning on @AmerenMissouri's Real Estate team.\nhttps:…",
+      "tweetUrl" : "https://twitter.com/AmerenMissouri/status/758325180884189184"
+    },
+    "-KNh1ArMLZJIechtucpG" : {
+      "orderId" : 99822,
+      "screenName" : "Elevate_Energy",
+      "statusId" : "758327594194468865",
+      "text" : "Elevator Adena spoke to Mason Cty IL abt how to use #smartgrid, @AmerenIllinois @PowerSmart to save on energy bills. https://t.co/Z8ux90dGU7",
+      "tweetUrl" : "https://twitter.com/Elevate_Energy/status/758327594194468865"
+    },
+    "-KNh2hke2KY-hvMmvjnj" : {
+      "orderId" : 99821,
+      "screenName" : "kabbath",
+      "statusId" : "758329276504547329",
+      "text" : "RT @AmerenCorp: Wonder how you might benefit from an internship? See what Jonathan's learning on @AmerenMissouri's Real Estate team.\nhttps:…",
+      "tweetUrl" : "https://twitter.com/kabbath/status/758329276504547329"
+    },
+    "-KNhAor3KOscECiICTlH" : {
+      "orderId" : 99820,
+      "screenName" : "rgordongor6",
+      "statusId" : "758338194593112064",
+      "text" : "@AmerenMissouri outages in downtown Jefferson City.",
+      "tweetUrl" : "https://twitter.com/rgordongor6/status/758338194593112064"
+    },
+    "-KNhBXHfIH0ERQtK1gsU" : {
+      "orderId" : 99819,
+      "screenName" : "markburgerenerg",
+      "statusId" : "758338975060811778",
+      "text" : "RT @Elevate_Energy: Elevator Adena spoke to Mason Cty IL abt how to use #smartgrid, @AmerenIllinois @PowerSmart to save on energy bills. ht…",
+      "tweetUrl" : "https://twitter.com/markburgerenerg/status/758338975060811778"
+    },
+    "-KNhGUbjr3Bw9FWeaH5z" : {
+      "orderId" : 99818,
+      "screenName" : "duncjojo",
+      "statusId" : "758344426175336449",
+      "text" : "@AmerenMissouri Any idea when power will be restored in #downtownjcmo #gettinghotinhere",
+      "tweetUrl" : "https://twitter.com/duncjojo/status/758344426175336449"
+    },
+    "-KNhGoGv6CAQMIjgyII8" : {
+      "orderId" : 99817,
+      "screenName" : "NewsTribune",
+      "statusId" : "758344780665487360",
+      "text" : "UPDATE: @AmerenMissouri says power shut off due to repair of gas leak on East High St. #jcmo @DowntownJCMO https://t.co/Y2g7BRWGjs",
+      "tweetUrl" : "https://twitter.com/NewsTribune/status/758344780665487360"
+    },
+    "-KNhGtD-1rk63udsM-YS" : {
+      "orderId" : 99816,
+      "screenName" : "beccamar10",
+      "statusId" : "758344866040582144",
+      "text" : "RT @NewsTribune: UPDATE: @AmerenMissouri says power shut off due to repair of gas leak on East High St. #jcmo @DowntownJCMO https://t.co/Y2…",
+      "tweetUrl" : "https://twitter.com/beccamar10/status/758344866040582144"
+    },
+    "-KNhGuFb34Wzd5Frk9dn" : {
+      "orderId" : 99815,
+      "screenName" : "mleroux821",
+      "statusId" : "758344883484536832",
+      "text" : "RT @NewsTribune: UPDATE: @AmerenMissouri says power shut off due to repair of gas leak on East High St. #jcmo @DowntownJCMO https://t.co/Y2…",
+      "tweetUrl" : "https://twitter.com/mleroux821/status/758344883484536832"
+    },
+    "-KNhGvRZuWmC0hFW31ta" : {
+      "orderId" : 99814,
+      "screenName" : "NTedit",
+      "statusId" : "758344903680294912",
+      "text" : "RT @NewsTribune: UPDATE: @AmerenMissouri says power shut off due to repair of gas leak on East High St. #jcmo @DowntownJCMO https://t.co/Y2…",
+      "tweetUrl" : "https://twitter.com/NTedit/status/758344903680294912"
+    },
+    "-KNhHFkWTQjNoWj6xp93" : {
+      "orderId" : 99813,
+      "screenName" : "ShelbyDRowe",
+      "statusId" : "758345270769836032",
+      "text" : "RT @NewsTribune: UPDATE: @AmerenMissouri says power shut off due to repair of gas leak on East High St. #jcmo @DowntownJCMO https://t.co/Y2…",
+      "tweetUrl" : "https://twitter.com/ShelbyDRowe/status/758345270769836032"
+    },
+    "-KNhHIw7DGDTIHsCNkm2" : {
+      "orderId" : 99812,
+      "screenName" : "DowntownJCMO",
+      "statusId" : "758345325249572864",
+      "text" : "RT @NewsTribune: UPDATE: @AmerenMissouri says power shut off due to repair of gas leak on East High St. #jcmo @DowntownJCMO https://t.co/Y2…",
+      "tweetUrl" : "https://twitter.com/DowntownJCMO/status/758345325249572864"
+    },
+    "-KNhHs_Pe3HKx7Ylqe-r" : {
+      "orderId" : 99811,
+      "screenName" : "tanusaxena3761",
+      "statusId" : "758345954986749952",
+      "text" : "RT @AmerenCorp: Wonder how you might benefit from an internship? See what Jonathan's learning on @AmerenMissouri's Real Estate team.\nhttps:…",
+      "tweetUrl" : "https://twitter.com/tanusaxena3761/status/758345954986749952"
+    },
+    "-KNhHubo_8Ao7GSB_LS4" : {
+      "orderId" : 99810,
+      "screenName" : "duncjojo",
+      "statusId" : "758345990269177860",
+      "text" : "@AmerenMissouri We are back up!!!",
+      "tweetUrl" : "https://twitter.com/duncjojo/status/758345990269177860"
+    },
+    "-KNhILoqa9_Xsg3jq1lT" : {
+      "orderId" : 99809,
+      "screenName" : "AnuSwth",
+      "statusId" : "758346474350583808",
+      "text" : "RT @AmerenCorp: Wonder how you might benefit from an internship? See what Jonathan's learning on @AmerenMissouri's Real Estate team.\nhttps:…",
+      "tweetUrl" : "https://twitter.com/AnuSwth/status/758346474350583808"
+    },
+    "-KNhKJcox8cqZ2XDbqM_" : {
+      "orderId" : 99808,
+      "screenName" : "NewsTribune",
+      "statusId" : "758348635503329280",
+      "text" : "UPDATE: Power has been restored in @DowntownJCMO after @AmerenMissouri shut it off as a precaution. https://t.co/zTDCK4bQcJ #jcmo",
+      "tweetUrl" : "https://twitter.com/NewsTribune/status/758348635503329280"
+    },
+    "-KNhKT5WO0YUYhaNJIF7" : {
+      "orderId" : 99807,
+      "screenName" : "beccamar10",
+      "statusId" : "758348798456246272",
+      "text" : "RT @NewsTribune: UPDATE: Power has been restored in @DowntownJCMO after @AmerenMissouri shut it off as a precaution. https://t.co/zTDCK4bQc…",
+      "tweetUrl" : "https://twitter.com/beccamar10/status/758348798456246272"
+    },
+    "-KNhMW9Z9f_2_ncojYR6" : {
+      "orderId" : 99806,
+      "screenName" : "mleroux821",
+      "statusId" : "758351049644122112",
+      "text" : "RT @NewsTribune: UPDATE: Power has been restored in @DowntownJCMO after @AmerenMissouri shut it off as a precaution. https://t.co/zTDCK4bQc…",
+      "tweetUrl" : "https://twitter.com/mleroux821/status/758351049644122112"
+    },
+    "-KNhN0YfgHESYQG2n5gY" : {
+      "orderId" : 99805,
+      "screenName" : "SuspiciousJane",
+      "statusId" : "758351607075631104",
+      "text" : "RT @NewsTribune: UPDATE: Power has been restored in @DowntownJCMO after @AmerenMissouri shut it off as a precaution. https://t.co/zTDCK4bQc…",
+      "tweetUrl" : "https://twitter.com/SuspiciousJane/status/758351607075631104"
+    },
+    "-KNhSBsNoPliYMczLS4I" : {
+      "orderId" : 99804,
+      "screenName" : "GovJayNixon",
+      "statusId" : "758357299022991360",
+      "text" : "Power being restored to @DowntownJCMO &amp; Capitol Cplx. Appreciate the quick work by @AmerenMissouri to get the lights on &amp; to keep folks safe",
+      "tweetUrl" : "https://twitter.com/GovJayNixon/status/758357299022991360"
+    },
+    "-KNhVR4NXLRvwH3QrelW" : {
+      "orderId" : 99803,
+      "screenName" : "BigEquityAlerts",
+      "statusId" : "758360858049310720",
+      "text" : "Ameren hits a 1 month low https://t.co/gZwaoDfkue $AEE #Ameren https://t.co/pfACes3paL",
+      "tweetUrl" : "https://twitter.com/BigEquityAlerts/status/758360858049310720"
+    },
+    "-KNhbnffIWNJ8vdysaU6" : {
+      "orderId" : 99802,
+      "screenName" : "MBEF",
+      "statusId" : "758368960035160064",
+      "text" : "#energy #infrastructure #moleg https://t.co/bvUywWZjFu",
+      "tweetUrl" : "https://twitter.com/MBEF/status/758368960035160064"
+    },
+    "-KNhnMYsMykCSGaOEJxI" : {
+      "orderId" : 99801,
+      "screenName" : "HannahMonty10",
+      "statusId" : "758381671548878848",
+      "text" : "Can't remember the ladies name that I just talked to from @AmerenIllinois but she was so kind &amp; I needed that today after dealing w rude ppl",
+      "tweetUrl" : "https://twitter.com/HannahMonty10/status/758381671548878848"
+    },
+    "-KNhxoeEmj3AEW6VDkw4" : {
+      "orderId" : 99800,
+      "screenName" : "DConford",
+      "statusId" : "758393165539790848",
+      "text" : "Send a message to @AmerenMissouri CEO Warner Baxter calling for Ameren to invest in 100 percent renewable energy. https://t.co/lWc5j7TLCp",
+      "tweetUrl" : "https://twitter.com/DConford/status/758393165539790848"
+    },
+    "-KNi1zijPvIg9Obj36zH" : {
+      "orderId" : 99799,
+      "screenName" : "xenoview13",
+      "statusId" : "758398853506674689",
+      "text" : "Send a message to @AmerenMissouri CEO Warner Baxter calling for Ameren to invest in 100 percent renewable energy. https://t.co/fx57HiMzFP",
+      "tweetUrl" : "https://twitter.com/xenoview13/status/758398853506674689"
+    },
+    "-KNi2PbzL87oKQxJXn20" : {
+      "orderId" : 99798,
+      "screenName" : "mjdesart",
+      "statusId" : "758399316201316359",
+      "text" : "Send a message to @AmerenMissouri CEO Warner Baxter calling for Ameren to invest in 100 percent renewable energy. https://t.co/oIHfuJF4aK",
+      "tweetUrl" : "https://twitter.com/mjdesart/status/758399316201316359"
+    },
+    "-KNi31BIwpLgYD1vdqdW" : {
+      "orderId" : 99797,
+      "screenName" : "PovertyEnding",
+      "statusId" : "758399996697931776",
+      "text" : "RT @xenoview13: Send a message to @AmerenMissouri CEO Warner Baxter calling for Ameren to invest in 100 percent renewable energy. https://t…",
+      "tweetUrl" : "https://twitter.com/PovertyEnding/status/758399996697931776"
+    },
+    "-KNi4w1FkYur2HAtgaiQ" : {
+      "orderId" : 99796,
+      "screenName" : "WiseLionMan",
+      "statusId" : "758402088967647233",
+      "text" : "Send a message to @AmerenMissouri CEO Warner Baxter calling for Ameren to invest in 100 percent renewable energy. https://t.co/0khZPNN0sa",
+      "tweetUrl" : "https://twitter.com/WiseLionMan/status/758402088967647233"
+    },
+    "-KNi5NaLw0DSjp3nlNLP" : {
+      "orderId" : 99795,
+      "screenName" : "CoolWhiteRoofs",
+      "statusId" : "758402580103860224",
+      "text" : "@AmerenMissouri Please invest in 100 percent renewable energy--for the sake of our health, our families and our future!",
+      "tweetUrl" : "https://twitter.com/CoolWhiteRoofs/status/758402580103860224"
+    },
+    "-KNi5R6ILRiVgMlXuMeq" : {
+      "orderId" : 99794,
+      "screenName" : "rrichreba",
+      "statusId" : "758402640380243968",
+      "text" : "Send a message to @AmerenMissouri CEO Warner Baxter calling for Ameren to invest in 100 percent renewable energy. https://t.co/3q0bsqiQgm",
+      "tweetUrl" : "https://twitter.com/rrichreba/status/758402640380243968"
+    },
+    "-KNi7uDrSk3ePVKO3DsQ" : {
+      "orderId" : 99793,
+      "screenName" : "GeneBert",
+      "statusId" : "758405356959641600",
+      "text" : "Send a message to @AmerenMissouri CEO Warner Baxter calling for Ameren to invest in 100 percent renewable energy. https://t.co/DPFOkFoubF",
+      "tweetUrl" : "https://twitter.com/GeneBert/status/758405356959641600"
+    },
+    "-KNi8lyEfds3DnbRnXX-" : {
+      "orderId" : 99792,
+      "screenName" : "rabonin54",
+      "statusId" : "758406314510938112",
+      "text" : "Send a message to @AmerenMissouri CEO Warner Baxter calling for Ameren to invest in 100 percent renewable energy. https://t.co/jQxGecZanH",
+      "tweetUrl" : "https://twitter.com/rabonin54/status/758406314510938112"
+    },
+    "-KNiA9fb35E7vL480s9h" : {
+      "orderId" : 99791,
+      "screenName" : "scottymacred",
+      "statusId" : "758407838104293377",
+      "text" : "@AmerenMissouri you're giving warnings about the heat, yet we've been without power for 7 hours now , I'm confused",
+      "tweetUrl" : "https://twitter.com/scottymacred/status/758407838104293377"
+    },
+    "-KNiAxI2v90qcyMP8fmd" : {
+      "orderId" : 99790,
+      "screenName" : "GetIntoEnergy",
+      "statusId" : "758408708426756096",
+      "text" : "RT @AmerenCorp: Wonder how you might benefit from an internship? See what Jonathan's learning on @AmerenMissouri's Real Estate team.\nhttps:…",
+      "tweetUrl" : "https://twitter.com/GetIntoEnergy/status/758408708426756096"
+    },
+    "-KNiBFUkwBdotRffc9Ve" : {
+      "orderId" : 99789,
+      "screenName" : "JFHQMOJOC",
+      "statusId" : "758409038099058688",
+      "text" : "RT @NewsTribune: UPDATE: Power has been restored in @DowntownJCMO after @AmerenMissouri shut it off as a precaution. https://t.co/zTDCK4bQc…",
+      "tweetUrl" : "https://twitter.com/JFHQMOJOC/status/758409038099058688"
+    },
+    "-KNiCLF-jeDp0UxTZmgO" : {
+      "orderId" : 99788,
+      "screenName" : "WilenDavid",
+      "statusId" : "758410235430133761",
+      "text" : "Send a message to @AmerenMissouri CEO Warner Baxter calling for Ameren to invest in 100 percent renewable energy. https://t.co/MPLSH4C8JU",
+      "tweetUrl" : "https://twitter.com/WilenDavid/status/758410235430133761"
+    },
+    "-KNiCr8YL4Ld8ukeSa2E" : {
+      "orderId" : 99787,
+      "screenName" : "mnpower",
+      "statusId" : "758410801782763520",
+      "text" : "Thank you @AmerenMissouri M.J. Electric @XcelEnergyMN, Intren, MP Techologies &amp; all tree crews for Duluth area restoration work! #Grateful",
+      "tweetUrl" : "https://twitter.com/mnpower/status/758410801782763520"
+    },
+    "-KNiDuqGIa4SDc1GcuFI" : {
+      "orderId" : 99786,
+      "screenName" : "theradicoolest",
+      "statusId" : "758411963584184321",
+      "text" : "RT @mnpower: Thank you @AmerenMissouri M.J. Electric @XcelEnergyMN, Intren, MP Techologies &amp; all tree crews for Duluth area restoration wor…",
+      "tweetUrl" : "https://twitter.com/theradicoolest/status/758411963584184321"
+    },
+    "-KNiEbdYI5WtBgh7BXe3" : {
+      "orderId" : 99785,
+      "screenName" : "Renewmarket_Ind",
+      "statusId" : "758412734492995585",
+      "text" : "RT @xenoview13: Send a message to @AmerenMissouri CEO Warner Baxter calling for Ameren to invest in 100 percent renewable energy. https://t…",
+      "tweetUrl" : "https://twitter.com/Renewmarket_Ind/status/758412734492995585"
+    },
+    "-KNiHw3kV_Y0Pt7kURdM" : {
+      "orderId" : 99784,
+      "screenName" : "zmann1",
+      "statusId" : "758416383843545088",
+      "text" : "Send a message to @AmerenMissouri CEO Warner Baxter calling for Ameren to invest in 100 percent renewable energy. https://t.co/0cvn517w3m",
+      "tweetUrl" : "https://twitter.com/zmann1/status/758416383843545088"
+    },
+    "-KNiI0CIYb2QfpEqSyZh" : {
+      "orderId" : 99783,
+      "screenName" : "BradAWaldrop",
+      "statusId" : "758416466743918592",
+      "text" : "@LacledeGas trying to join @AmerenMissouri in devastating @StLouisWashAVE $17M fed-fund streetscape.  C'mon guys. https://t.co/5qqhwCRhu0",
+      "tweetUrl" : "https://twitter.com/BradAWaldrop/status/758416466743918592"
+    },
+    "-KNiITcSNlMDfaQHrLoK" : {
+      "orderId" : 99782,
+      "screenName" : "joshrestivo",
+      "statusId" : "758416977182334976",
+      "text" : "RT @BradAWaldrop: @LacledeGas trying to join @AmerenMissouri in devastating @StLouisWashAVE $17M fed-fund streetscape.  C'mon guys. https:/…",
+      "tweetUrl" : "https://twitter.com/joshrestivo/status/758416977182334976"
+    },
+    "-KNiJBaPaHEZh4KewawW" : {
+      "orderId" : 99781,
+      "screenName" : "nickpistor",
+      "statusId" : "758417766508474368",
+      "text" : "RT @BradAWaldrop: @LacledeGas trying to join @AmerenMissouri in devastating @StLouisWashAVE $17M fed-fund streetscape.  C'mon guys. https:/…",
+      "tweetUrl" : "https://twitter.com/nickpistor/status/758417766508474368"
+    },
+    "-KNiJE7CovQ4DFYod_nG" : {
+      "orderId" : 99780,
+      "screenName" : "MarissaR1",
+      "statusId" : "758417810515079168",
+      "text" : "Send a message to @AmerenMissouri CEO Warner Baxter calling for #Ameren to invest in 100% renewable energy. https://t.co/bdJPPE5C8X",
+      "tweetUrl" : "https://twitter.com/MarissaR1/status/758417810515079168"
+    },
+    "-KNiJMACSU4eRSO4fkFM" : {
+      "orderId" : 99779,
+      "screenName" : "ECFamousEntrepr",
+      "statusId" : "758417948864225281",
+      "text" : "@AmerenMissouri - Congratulations on making on our Top Twitter list!https://t.co/HrwDzuDpkh\nfrom @LoveFromEC https://t.co/B5WsKeCBMZ",
+      "tweetUrl" : "https://twitter.com/ECFamousEntrepr/status/758417948864225281"
+    },
+    "-KNiL8lVbaXmaPB78t3x" : {
+      "orderId" : 99778,
+      "screenName" : "DanSTL77",
+      "statusId" : "758419917242630144",
+      "text" : "RT @BradAWaldrop: @LacledeGas trying to join @AmerenMissouri in devastating @StLouisWashAVE $17M fed-fund streetscape.  C'mon guys. https:/…",
+      "tweetUrl" : "https://twitter.com/DanSTL77/status/758419917242630144"
+    },
+    "-KNir0YBsRoXATZvby_d" : {
+      "orderId" : 99777,
+      "screenName" : "multi_utilities",
+      "statusId" : "758456060252262400",
+      "text" : "Panagora Asset Management Inc. Raises Stake in #Ameren Corp. (). Read more: https://t.co/eGY9QUJkay $AEE",
+      "tweetUrl" : "https://twitter.com/multi_utilities/status/758456060252262400"
+    },
+    "-KNirjCcev9_fszLlVa5" : {
+      "orderId" : 99776,
+      "screenName" : "dbeebestl",
+      "statusId" : "758456844377436160",
+      "text" : "RT @BradAWaldrop: @LacledeGas trying to join @AmerenMissouri in devastating @StLouisWashAVE $17M fed-fund streetscape.  C'mon guys. https:/…",
+      "tweetUrl" : "https://twitter.com/dbeebestl/status/758456844377436160"
+    },
+    "-KNj7yUAu4B3AdkVGDvu" : {
+      "orderId" : 99775,
+      "screenName" : "timhav",
+      "statusId" : "758475798449881089",
+      "text" : "@AmerenMissouri  lost power again... how about all this money u charge us, u put into some infastructure bright and sunny and 95 degrees out",
+      "tweetUrl" : "https://twitter.com/timhav/status/758475798449881089"
+    },
+    "-KNj9aGraDuNQ97sTus5" : {
+      "orderId" : 99774,
+      "screenName" : "rtoinsider",
+      "statusId" : "758477576599773185",
+      "text" : "From @MWenergynews - St. Louis will gain electric buses through @AmerenMissouri legal settlement https://t.co/8rOsuCXE8Y",
+      "tweetUrl" : "https://twitter.com/rtoinsider/status/758477576599773185"
+    },
+    "-KNjkuujONSXBvaZ5BhG" : {
+      "orderId" : 99773,
+      "screenName" : "MrsWolv",
+      "statusId" : "758519717422178310",
+      "text" : "@AmerenIllinois your 6+ hour power outage in New Burnside is physically making myself &amp; my dogs ill! I have never spoken to such a rude rep!",
+      "tweetUrl" : "https://twitter.com/MrsWolv/status/758519717422178310"
+    },
+    "-KNnlUXQBlI4T18568uz" : {
+      "orderId" : 99772,
+      "screenName" : "IllinoisMfgAssc",
+      "statusId" : "758801821544570881",
+      "text" : "Congrats to IMA member @AmerenIllinois! 2016 Most Trusted Business Partners revealed by Cogent Reports #energy #mrx https://t.co/gFs5O4xOE7",
+      "tweetUrl" : "https://twitter.com/IllinoisMfgAssc/status/758801821544570881"
+    },
+    "-KNo3Kf6LzUQkrQW3M0W" : {
+      "orderId" : 99771,
+      "screenName" : "MartyMurrayJr",
+      "statusId" : "758822543058886661",
+      "text" : "Hey @FPNA the @AmerenMissouri substation is still on the 5 yr plan. Update is that its still in motion. Consensus is the demo is not favored",
+      "tweetUrl" : "https://twitter.com/MartyMurrayJr/status/758822543058886661"
+    },
+    "-KNoEfzcZeqMpcXsD4zL" : {
+      "orderId" : 99770,
+      "screenName" : "bmwheeler",
+      "statusId" : "758835021008424960",
+      "text" : "RT @IllinoisMfgAssc: Congrats to IMA member @AmerenIllinois! 2016 Most Trusted Business Partners revealed by Cogent Reports #energy #mrx ht…",
+      "tweetUrl" : "https://twitter.com/bmwheeler/status/758835021008424960"
+    },
+    "-KNoGlOX0eB5asNWyViL" : {
+      "orderId" : 99769,
+      "screenName" : "kmoxnews",
+      "statusId" : "758837312188850177",
+      "text" : "What's the Cardinals dugout like? @MattCarp13 tells @KyleMcClellan46 https://t.co/9hlL02KSlO #InsidePitch sponsored by @AmerenIllinois",
+      "tweetUrl" : "https://twitter.com/kmoxnews/status/758837312188850177"
+    },
+    "-KNoH2zUnJHkvD56z2ls" : {
+      "orderId" : 99768,
+      "screenName" : "rickeybolin",
+      "statusId" : "758837632851816449",
+      "text" : "RT @kmoxnews: What's the Cardinals dugout like? @MattCarp13 tells @KyleMcClellan46 https://t.co/9hlL02KSlO #InsidePitch sponsored by @Amere…",
+      "tweetUrl" : "https://twitter.com/rickeybolin/status/758837632851816449"
+    },
+    "-KNoHQs6YQKK962cbPCg" : {
+      "orderId" : 99767,
+      "screenName" : "Unlikely007",
+      "statusId" : "758838043386097668",
+      "text" : "RT @kmoxnews: What's the Cardinals dugout like? @MattCarp13 tells @KyleMcClellan46 https://t.co/9hlL02KSlO #InsidePitch sponsored by @Amere…",
+      "tweetUrl" : "https://twitter.com/Unlikely007/status/758838043386097668"
+    },
+    "-KNoI4Z1RQcBFAASeZ9u" : {
+      "orderId" : 99766,
+      "screenName" : "et_ericthomas75",
+      "statusId" : "758838758699511808",
+      "text" : "Always classy @MattCarp13. Great job @KyleMcClellan46 #STLCards https://t.co/hQA7EAIOeO",
+      "tweetUrl" : "https://twitter.com/et_ericthomas75/status/758838758699511808"
+    },
+    "-KNoIK661bmAsvkyAwrW" : {
+      "orderId" : 99765,
+      "screenName" : "KyleMcClellan46",
+      "statusId" : "758839026442842112",
+      "text" : "RT @kmoxnews: What's the Cardinals dugout like? @MattCarp13 tells @KyleMcClellan46 https://t.co/9hlL02KSlO #InsidePitch sponsored by @Amere…",
+      "tweetUrl" : "https://twitter.com/KyleMcClellan46/status/758839026442842112"
+    },
+    "-KNoITo-D_Gslys4SRDH" : {
+      "orderId" : 99764,
+      "screenName" : "jcsalmons19",
+      "statusId" : "758839192906366976",
+      "text" : "RT @kmoxnews: What's the Cardinals dugout like? @MattCarp13 tells @KyleMcClellan46 https://t.co/9hlL02KSlO #InsidePitch sponsored by @Amere…",
+      "tweetUrl" : "https://twitter.com/jcsalmons19/status/758839192906366976"
+    },
+    "-KNqzd9OlllWNQKWi1Gk" : {
+      "orderId" : 99763,
+      "screenName" : "meauxburns",
+      "statusId" : "759028486702899201",
+      "text" : "@AmerenMissouri i have a question concerning payment. can u pls DM me?",
+      "tweetUrl" : "https://twitter.com/meauxburns/status/759028486702899201"
+    },
+    "-KNr6cpFXQjA-9l6eDLd" : {
+      "orderId" : 99762,
+      "screenName" : "EDUgirlsRock",
+      "statusId" : "759037274780610561",
+      "text" : "We would like to thank @AmerenMissouri for sponsoring our 2016 Annual \"Fight to Focus\" event. #EducatedGirlsRock https://t.co/WhssWZV919",
+      "tweetUrl" : "https://twitter.com/EDUgirlsRock/status/759037274780610561"
+    },
+    "-KNrtW2iEDOLZmkiSA8Y" : {
+      "orderId" : 99761,
+      "screenName" : "truckey",
+      "statusId" : "759092118983802880",
+      "text" : "@AmerenMissouri Hey thanks! I am sure the neighbors will be quite happy!",
+      "tweetUrl" : "https://twitter.com/truckey/status/759092118983802880"
+    },
+    "-KNrwvNyIwzMJcO6YHTg" : {
+      "orderId" : 99760,
+      "screenName" : "stlcsb",
+      "statusId" : "759095867760599040",
+      "text" : "@truckey We will notify @AmerenMissouri @CharterCom  Downed wire blocking alley at 3863 Connecticut. Ameren or cable? Thx for reporting. ^rq",
+      "tweetUrl" : "https://twitter.com/stlcsb/status/759095867760599040"
+    },
+    "-KNs0HeQmmohjFmsYjkb" : {
+      "orderId" : 99759,
+      "screenName" : "truckey",
+      "statusId" : "759100668120444928",
+      "text" : "@stlcsb @AmerenMissouri @CharterCom Thank you! @AmerenMissouri somehow got my # and updated me on progress! Crazy! Said it was a phone line",
+      "tweetUrl" : "https://twitter.com/truckey/status/759100668120444928"
+    },
+    "-KNsYVZkS4swzB-AadeA" : {
+      "orderId" : 99758,
+      "screenName" : "kb_technologies",
+      "statusId" : "759138288481566721",
+      "text" : "Our Brad Boucher conducts #slurry testing for Aldridge Electric on this @AmerenIllinois job. https://t.co/YWgWbFlOHw https://t.co/blZYsi8lfK",
+      "tweetUrl" : "https://twitter.com/kb_technologies/status/759138288481566721"
+    },
+    "-KNsdiYta7jyfQ22AKBV" : {
+      "orderId" : 99757,
+      "screenName" : "MattGuerra89",
+      "statusId" : "759145127528935426",
+      "text" : "Please vote for @AmerenIllinois ad on refrigeration recycling I help create! https://t.co/DXRBqFvzWl #UtilityAdAwards #GraphicDesign",
+      "tweetUrl" : "https://twitter.com/MattGuerra89/status/759145127528935426"
+    },
+    "-KNse01HICiHys2ll74Y" : {
+      "orderId" : 99756,
+      "screenName" : "MattGuerra89",
+      "statusId" : "759145445574610944",
+      "text" : "Please \"Like\" the @AmerenIllinois ad on refrigerator recycling I help create! https://t.co/DXRBqFvzWl #UtilityAdAwards #graphicdesign",
+      "tweetUrl" : "https://twitter.com/MattGuerra89/status/759145445574610944"
     }
   },
   "user-names-online" : {
     "faeez" : {
-      "-KMw7rRFmCPSE2MLa6AG" : {
+      "-KNso5cWRZLH1JsyDQeM" : {
         "id" : "github:3466845",
         "name" : "Faeez"
       },
-      "-KMw7rRP35NoTLOuxb8M" : {
+      "-KNso5cahI6XMRcEqyvh" : {
+        "id" : "github:3466845",
+        "name" : "Faeez"
+      },
+      "-KNso7-ZJHd53WxRsecj" : {
         "id" : "github:3466845",
         "name" : "Faeez"
       }
     }
   },
   "users" : {
+    "8b329cdd-de6d-4e58-910c-086873f5d8bb" : {
+      "id" : "8b329cdd-de6d-4e58-910c-086873f5d8bb",
+      "name" : "Steve Stephanopolis"
+    },
+    "eaef99cd-5943-446d-9736-37682d9457dc" : {
+      "id" : "eaef99cd-5943-446d-9736-37682d9457dc",
+      "name" : "hifs smith",
+      "rooms" : {
+        "-KMS4CS0mPEpZjmbDCiP" : {
+          "active" : true,
+          "id" : "-KMS4CS0mPEpZjmbDCiP",
+          "name" : "Technology planning"
+        }
+      }
+    },
+    "facebook:10157106963240425" : {
+      "id" : "facebook:10157106963240425",
+      "name" : "Blitz Blitz"
+    },
     "github:3466845" : {
       "id" : "github:3466845",
       "invites" : {
@@ -1015,11 +2475,17 @@
           "active" : true,
           "id" : "-KMS4CS0mPEpZjmbDCiP",
           "name" : "Technology planning"
+        },
+        "-KMSNxAvn7lz9s_ep-Os" : {
+          "active" : true,
+          "id" : "-KMSNxAvn7lz9s_ep-Os",
+          "name" : "Office 365"
         }
       },
       "sessions" : {
-        "-KMw7rRFmCPSE2MLa6AG" : true,
-        "-KMw7rRP35NoTLOuxb8M" : true
+        "-KNso5cWRZLH1JsyDQeM" : true,
+        "-KNso5cahI6XMRcEqyvh" : true,
+        "-KNso7-ZJHd53WxRsecj" : true
       }
     },
     "google:106320993017642195141" : {
